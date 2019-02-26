@@ -1,0 +1,67 @@
++------+
+|Target|
++------+
+more than 2 people who want to meet together in the same place.
+
++-------------------------------------+
+|Flow : User Level (High Level Design)|
++-------------------------------------+
+Type.1 : guest 
+{start web application} -> {typing the location} -> {click search button}
+-> {select a chat room from the list} -> {completed}
+
+Type.2 : host 
+{start web application} -> {click create button} -> {login sequence} -> {typing the location...}
+-> {click complete button} -> {wait for the people} -> {completed}
+
++----------------------+
+|High Level Design(Lv1)|
++----------------------+
+{start page} : loading
+{chat list page} : create button, search bar, map, list
+{chat page} : # of participants, chat system, completed button(END)
+{create page} : input box, create button
+{login page} : input box, login button, join button
+{join page} : input box, join button
+
+
+{start page}-{chat list page}-{chat page}-END
+                             \{create page}-{login page}-END
+								           \{join page}-{login page}-END
+
++---------------------+
+|Low Level Design(Lv2)|
++---------------------+
+{start page}
+1. progress bar [css]
+2. loading {chat list page} [get loading state]
+
+{chat list page}
+1. get chat list data [DB]
+2. input text in search bar [?]
+3. get data and spray data to the list [DB]
+
+{chat page}
+(join)
+1. get status of chat room [DB]
+2. get # of participants [DB]
+(completed)
+1. set status of chat room [DB]
+
+{create page}
+1. set status of chat room [DB]
+
+{login page}
+1. get login information [DB]
+
+{join page}
+1. set status of user information [DB]
+
++---------------+
+|technical stack|
++---------------+
+(TODO)
+React
+React-router-module
+Node.js
+Django
