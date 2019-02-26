@@ -27,7 +27,7 @@ Type.2 : host
 
 {start page}-{chat list page}-{chat page}-END
                              \{create page}-{login page}-END
-								           \{join page}-{login page}-END
+                                           \{join page}-{login page}-END
 
 +---------------------+
 |Low Level Design(Lv2)|
