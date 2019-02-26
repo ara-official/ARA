@@ -21,13 +21,11 @@ Type.2 : host
 {chat list page} : create button, search bar, map, list
 {chat page} : # of participants, chat system, completed button(END)
 {create page} : input box, create button
-{login page} : input box, login button, join button
-{join page} : input box, join button
+{SNS login page} : input box, login button, join button
 
 
-{start page}-{chat list page}-{chat page}-END
-                             \{create page}-{login page}-END
-                                           \{join page}-{login page}-END
+{start page}-{SNS login page}-{chat list page}-{chat page}-END
+                                              \{create page}-END
 
 +---------------------+
 |Low Level Design(Lv2)|
@@ -51,11 +49,8 @@ Type.2 : host
 {create page}
 1. set status of chat room [DB]
 
-{login page}
-1. get login information [DB]
-
-{join page}
-1. set status of user information [DB]
+{SNS login page}
+1. get login information [DB?]
 
 +---------------+
 |technical stack|
