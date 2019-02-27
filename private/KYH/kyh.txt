@@ -1,0 +1,45 @@
+1. Concept of ARA
+  [Safe]
+  //TODO
+  [Simplicity]
+  //TODO
+  [Suitability]
+  //TODO
+
+2. Front-end
+  [Framework] React
+  [Composition of Pages]
+  //TODO
+  [Service Routine]
+  //TODO
+
+3. Back-end
+  [Language & Framework]
+  1. python + Django
+    - Pros: Security, DB 연동 쉬움, 개발 속도 빠름, 자료 많음
+    - Cons: 크기가 큼, 작고 간단한 앱에는 부적합, Framework에 대한 완전한 이해 필요
+  2. Node.js + Express.js
+    - Pros: 성능이 좋음, API 만드는데 좋음, 동시 요청 관리 용이
+    - Cons: 비동기식 프로그래밍의 어려움, Single Thread, 콜백지옥
+  3. Criteria for choosing Language & Framework
+    - CRUD(Create, Read, Update, Delete) 위주의 Service라면 python + Django
+    - Realtime Service, API, Customize가 중요하다면 Node.js + Express.js
+  4. Conclusion
+    - ARA는 Realtime Service가 필요하지 않음
+    - 개발이 쉽고 확장성이 높은 Python 기반의 Django 프레임워크를 사용하는 것을 추천
+
+  [Database]
+  1. MySQL - RDBMS
+    - 기본적인 DB설계 및 회원 관리 용이
+    - SQL만 효율적으로 구현한다면 웬만큼 큰 서버 커버 가능
+    - 자료 많음
+  2. MongoDB - NoSQL
+    - 2차원 Index(2d)가 탑재되어 위치 정보 처리에 유리함
+    - KNN 쿼리를 통해 위치 주변에서 거리 순서로 정렬한 N개의 결과를 효율적으로 도출
+    - 위치정보만 MongoDB에 저장하는 방법도 있음
+  3. Conclusion
+    - ARA는 위치정보 기반으로 데이터를 제공하므로 MongoDB를 사용하면 좋을 듯
+    - 기본적인 데이터는 MySQL로 관리하되 MongoDB를 이용한 위치정보 Searching의 성능을 높이는 방법 추천
+
+4. Whole Architecture
+//TODO
