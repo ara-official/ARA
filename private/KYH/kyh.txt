@@ -1,17 +1,35 @@
-1. Concept of ARA
+d1. Concept of ARA
   [Safe]
-  //TODO
+  1. 동행 Leader/Follower 로서의 Data를 공개
+  2. 서로의 동행 이력을 보면서 신뢰감을 형성할 수 있음
+  3. 서로 평가가 가능. 하지만 공격적인 평가가 되지 않게 제한적인 평가 -> 성향을 알려주는 정도로 작용
+  
   [Simplicity]
-  //TODO
-  [Suitability]
-  //TODO
+  1. 쉬운 UI 및 UX
+  2. 한눈에 들어오는 Interface & Information
+  3. 단순하고 직관적인 Page Logic
+  
+  [Suitability] - Next Generation Item
+  1. Big data기반으로 사용자가 동행을 선택하고 구성하는데 도움을 준다.
+  2. 동행 장소 추천
+  3. 함게 하면 만족도 높은 동행자 성향 추천(자신의 성향 대비)
+  4. 여행지 별 만족도 높은 동행 Spec 추천
+  5. 위의 내용을 위해 데이터베이스 설계시 데이터 세분화 필요
 
 2. Front-end
   [Framework] React
-  [Composition of Pages]
-  //TODO
+  
+  [Composition of Pages] Page 구성은 최대한 간단하게 할 것
+  1. 로그인 및 회원가입(Naver, Kakao, Facebook등 연동 가능해야함)
+  2. 내 위치 정보 기반으로 주변 동행 모집 정보 확인(에어비앤비, 직방 등과 같이 지도 위에 간단한 정보를 띄워주는 방식)
+  3. 동행 모집 상세 Page: 지도 or 검색을 통해 선택하여 확인 가능한 Page
+  4. 동행 모집 키워드 검색 및 필터링
+  5. 동행 모집 글쓰기
+  6. My Page(내 성향, 정보, 내가 쓴 글, 동행이력 등)
+  7. 다른 사람 성향 및 정보 Page
+  
   [Service Routine]
-  //TODO
+  // TODO
 
 3. Back-end
   [Language & Framework]
