@@ -31,13 +31,23 @@ Type.2 : host
 |Low Level Design(Lv2)|
 +---------------------+
 {start page}
-1. progress bar [css]
-2. loading {chat list page} [get loading state]
+(init)
+    1. progress bar. // [css]
+    2. loading {chat list page} // get {chat list page} from [DB] 
+
+{SNS login page}
+(init)
+    1. get login information [DB?]
+(action)
+	1. input login information in text box.
+	2. click login button. // send login information [SNS] 
 
 {chat list page}
+(init)
 1. get chat list data [DB]
 2. input text in search bar [?]
 3. get data and spray data to the list [DB]
+(action)
 
 {chat page}
 (join)
@@ -49,8 +59,6 @@ Type.2 : host
 {create page}
 1. set status of chat room [DB]
 
-{SNS login page}
-1. get login information [DB?]
 
 +---------------+
 |technical stack|
