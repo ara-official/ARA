@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Home, Create, About } from 'pages';
-import { Menu } from 'components';
+import { Menu, MapAndList } from 'components';
 
 // css
 import logo from 'logo.svg'
@@ -29,6 +29,7 @@ class App extends Component {
         {/* <Menu/> */}
 
         <Route exact path="/" component={Home}/>
+        <Route exact path="/MapAndList" component={MapAndList}/>
         <Route path="/create" component={Create}/>
         <Switch>
           <Route path="/about/:name" component={About}/>

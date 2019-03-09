@@ -7,9 +7,9 @@ const Home = () =>{
     return (
         <div className="Home">
             {/* <h2>[Home.js]</h2> */}
-            {/* <Start/> */}
+            <Start/>
             {/* <SearchBox/> */}
-            <MapAndList/>
+            {/* <MapAndList/> */}
         </div>
     );
 }
