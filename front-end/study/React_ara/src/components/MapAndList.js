@@ -50,7 +50,7 @@ class MapAndList extends Component {
       <form className="MapAndList">
         {/* <h2>[MapAndList.js]</h2> */}
         <div className="top">
-          <img id="logo" src="https://avatars1.githubusercontent.com/u/47748609?s=200&v=4"/>
+          <img id="logo" src="https://github.com/ara-official/ARA/blob/master/front-end/img/nike.png?raw=true"/>
           <input id="searchBar" placeholder="검색"/>
         </div>
         {/* <SearchBoxMini/> */}

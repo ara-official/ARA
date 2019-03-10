@@ -27,7 +27,7 @@ class Content extends Component {
             <div className="Content">
                 {/* <h2>[Content.js]</h2> */}
                 <div id="contentImg">
-                    <img id="contentImgSelf" src="https://avatars1.githubusercontent.com/u/47748609?s=200&v=4"/>
+                    <img id="contentImgSelf" src="https://github.com/ara-official/ARA/blob/master/front-end/img/seoul.jpg?raw=true"/>
                 </div>
                 <div id="contentInfor">
                     <ul>
