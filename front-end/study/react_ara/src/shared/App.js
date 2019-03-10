@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Home, Create, About } from 'pages';
-import { Menu, MapAndList } from 'components';
+import { Home } from '../pages';
+import { MapAndList } from '../components';
 
 // css
-import logo from 'logo.svg'
-import 'css/App.css';
+import '../css/App.css';
 
 // sass
-import SassComponent from "SassComponent";
+// import SassComponent from "SassComponent";
 
 class App extends Component {
   render() {
@@ -18,11 +17,11 @@ class App extends Component {
       <div className="App">
         <Route exact path="/" component={Home}/>
         <Route exact path="/MapAndList" component={MapAndList}/>
-        <Route path="/create" component={Create}/>
-        <Switch>
+        {/* <Route path="/create" component={Create}/> */}
+        {/* <Switch>
           <Route path="/about/:name" component={About}/>
           <Route path="/about" component={About}/>
-        </Switch>
+        </Switch> */}
         {console.log('App.js render() END')}
       </div>
     );
