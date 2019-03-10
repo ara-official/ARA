@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Route, Link } from 'react-router-dom';
-import {Content} from 'components';
+import { Content } from 'components';
 import 'css/ContentList.css';
 
 class ContentList extends Component{
