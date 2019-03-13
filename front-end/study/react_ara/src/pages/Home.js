@@ -1,16 +1,22 @@
 import React from 'react';
-import { Start } from '../components';
+// import { Start, MapAndList } from '../components';
+import { MapAndList } from '../components';
 import '../css/Home.css';
-import MapAndList from '../components/MapAndList';
+// import MapAndList from '../components/MapAndList';
 
-const Home = () =>{
-    return (
-        <div className="Home">
-            {/* <h2>[Home.js]</h2> */}
-            <Start/>
-            {/* <MapAndList/> */}
-        </div>
-    );
+class Home extends React.Component{
+    render(){
+        console.log('Home.js START');
+        return (
+            <div className="Home">
+                {/* <h2>[Home.js]</h2> */}
+                {/* <Start/> */}
+                <MapAndList />
+            
+                {console.log('Home.js END')}
+            </div>
+        );
+    }
 }
 
 export default Home;

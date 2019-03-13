@@ -1,7 +1,7 @@
 import React from 'react'
 import 'css/FilterData.css'
 
-class FilterData extends React.Component{
+class FilterDate extends React.Component{
     render(){
         return(
             <div>
@@ -11,4 +11,4 @@ class FilterData extends React.Component{
     }
 }
 
-export default FilterData;
+export default FilterDate;
