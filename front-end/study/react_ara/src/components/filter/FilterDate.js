@@ -1,11 +1,13 @@
 import React from 'react'
-import '../../css/FilterData.css'
+import '../../css/FilterDate.css'
 
 class FilterDate extends React.Component{
     render(){
         return(
-            <div>
-                <h2>FilerDate.js</h2>
+            <div className="FilterDate">
+                <div className="InnerBox">
+                    <h2>FilterDate.js</h2>
+                </div>
             </div>
         );
     }

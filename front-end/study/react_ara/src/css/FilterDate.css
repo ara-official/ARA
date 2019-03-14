@@ -1,0 +1,15 @@
+.FilterDate{
+
+}
+
+.FilterDate .InnerBox{
+    margin-top: 4px;
+    margin-left: 24px;
+    width: 450px;
+    height: 500px;
+    background-color: white;
+
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 6px gainsboro;
+}

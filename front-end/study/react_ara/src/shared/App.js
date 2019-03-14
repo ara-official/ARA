@@ -11,34 +11,11 @@ import '../css/App.css';
 // import SassComponent from "SassComponent";
 
 class App extends Component {
-  static defaultProps = {
-    hidden: true
-}
-
-handleOnClickButton = (bSwitch) =>{
-    console.log('click button START');
-    if(bSwitch === true)
-    {
-        console.log('1111');
-      this.setState(() => ({hidden: bSwitch}));
-    }
-    else if(bSwitch === false)
-    {
-        console.log('2222');
-      this.setState(() => ({hidden: bSwitch}));
-    }
-
-    console.log('props.hidden : ' + this.props.hidden);
-
-    console.log('click button END');
-  }
-
   render() {
-
     console.log('App.js render() START');
     return (
       <div className="App">
-        <Route exact path="/" component={MapAndList} handleClick={this.handleOnClickButton} hidden={this.props.hidden} />
+        <Route exact path="/" component={Home} />
         <Route exact path={`/MapAndList/`} component={MapAndList} />
         {/* <Route path="/create" component={Create}/> */}
         {/* <Switch>

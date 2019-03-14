@@ -1,10 +1,13 @@
 import React from 'react'
+import '../../css/FilterPeople.css'
 
 class FilterPeople extends React.Component{
     render(){
         return(
-            <div>
-                <h2>FilerPeople.js</h2>
+            <div className="FilterPeople">
+                <div className="InnerBox">
+                    <h2>FilterPeople.js</h2>
+                </div>
             </div>
         );
     }

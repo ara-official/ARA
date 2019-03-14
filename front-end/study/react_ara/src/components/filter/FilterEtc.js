@@ -1,10 +1,13 @@
 import React from 'react'
+import '../../css/FilterEtc.css'
 
 class FilterEtc extends React.Component{
     render(){
         return(
-            <div>
-                <h2>FilerEtc.js</h2>
+            <div className="FilterEtc">
+                <div className="InnerBox">
+                    <h2>FilterEtc.js</h2>
+                </div>
             </div>
         );
     }
