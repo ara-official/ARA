@@ -3,6 +3,7 @@ import '../css/MapAndList.css'
 import {ContentList} from '../components';
 import {FilterDate, FilterPeople, FilterEtc} from '../components';
 // import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class MapAndList extends Component {
   constructor(props) {
@@ -94,7 +95,7 @@ class MapAndList extends Component {
         <form className="MapAndList">
           {/* <h2>[MapAndList.js]</h2> */}
           <div className="top">
-            <img id="logo" src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_2.png?raw=true"/>
+            <Link to="./"><img id="logo" src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_2.png?raw=true"/></Link>
             <input id="searchBar" placeholder="검색"/>
           </div>
 
