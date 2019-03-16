@@ -1,17 +1,22 @@
+
 import React from 'react'
-import {NavLink} from 'react-router-dom';
+import '../css/Start.css'
+import { Link } from 'react-router-dom';
+import MapAndList from './MapAndList';
+
 
 class Start extends React.Component{
     render(){
-        console.log('App.js render() START');
         return(
-            <div>
-                <h2>[Start.js]</h2>
-                <NavLink exact to ={`/MapAndList/`} >MapAndList</NavLink>
-                {console.log('App.js render() END')}
+            <div className="Start">
+                <div className="top">         
+                <input id="searchBar" placeholder="목적지 입력"/>
+                <Link to="./MapAndList"><button id="search">검색</button></Link>
+                </div>
             </div>
         );
     }
-}
+}   
 
 export default Start;
+
