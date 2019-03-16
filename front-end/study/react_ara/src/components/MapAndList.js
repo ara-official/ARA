@@ -15,31 +15,39 @@ class MapAndList extends Component {
       information: [
         {
           id: 0,
+          title: '경복궁 네 명 모아 봅니다.',
           numOfpeople: 0,
-          nickName: 'choi',
+          nickName: '최재훈',
           phone: '010-1111-1111',
-          perpose: 'have a lunch'
+          perpose: '관광, 기타',
+          imgSrc: 'https://github.com/ara-official/ARA/blob/master/front-end/img/seoul.jpg?raw=true'
         },
         {
           id: 1,
+          title: '첨성대 구경 후에 식사 하실 세 분 구해요',
           numOfpeople: 4,
-          nickName: 'son',
+          nickName: '손민식',
           phone: '010-2222-2222',
-          perpose: 'look around'
+          perpose: '관광, 식사',
+          imgSrc: 'https://image.ytn.co.kr/general/jpg/2016/0914/201609141101410773_t.jpg'
         },
         {
           id: 2,
+          title: '부산타워 구경!! 한 두 명 구해요',
           numOfpeople: 4,
-          nickName: 'park',
+          nickName: '권영한',
           phone: '010-3333-3333',
-          perpose: 'look around'
+          perpose: 'look around',
+          imgSrc: 'https://news.busan.go.kr/comm/getImage?srvcId=MEDIA&upperNo=1666&fileTy=MEDIA&fileNo=1'
         },
         {
           id: 3,
+          title: '',
           numOfpeople: 4,
-          nickName: 'kwon',
+          nickName: '민인식',
           phone: '010-4444-4444',
-          perpose: 'look around'
+          perpose: 'look around',
+          imgSrc: 'http://heritage.unesco.or.kr/wp-content/uploads/wh_img/hd6_394_i1.jpg'
         }
       ]
     }
@@ -77,7 +85,7 @@ class MapAndList extends Component {
         <form className="MapAndList">
           {/* <h2>[MapAndList.js]</h2> */}
           <div className="top">
-            <img id="logo" src="https://github.com/ara-official/ARA/blob/master/front-end/img/nike.png?raw=true"/>
+            <img id="logo" src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo.png?raw=true"/>
             <input id="searchBar" placeholder="검색"/>
           </div>
 

@@ -12,12 +12,18 @@
 #contentImg{
 }
 
+#contentTitle{
+    font-size: 24px;
+    text-align: left;
+}
+
 #contentImgSelf{
-    margin: 10px;
     margin-top: 20px;
-    margin-bottom: 20px;
     width: 85vw;
     height: auto;
+
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px gray;
 }
 
 #contentInfor{
@@ -25,4 +31,9 @@
     text-align: left;
 
     background-color: white;
+    margin-top: 24px;
+    margin-left: 24px;
+    margin-bottom: 14px;
+
+    border-bottom: 1px solid gainsboro;
 }

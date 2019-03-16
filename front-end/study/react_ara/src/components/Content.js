@@ -8,7 +8,8 @@ class Content extends Component {
             nickName: 'name',
             address: '',
             phone: '000-0000-0000',
-            perpose: ''
+            perpose: '',
+            imgSrc: ''
         }
     }
     state = {
@@ -20,24 +21,25 @@ class Content extends Component {
 
     render() {
         const {
-            id, title, nickName, address, phone, perpose
+            id, title, nickName, address, phone, perpose, imgSrc
         } = this.props.info;
 
         return(
             <div className="Content">
                 {/* <h2>[Content.js]</h2> */}
+
                 <div id="contentImg">
-                    <img id="contentImgSelf" src="https://github.com/ara-official/ARA/blob/master/front-end/img/seoul.jpg?raw=true"/>
+                    {/* <img id="contentImgSelf" src="https://github.com/ara-official/ARA/blob/master/front-end/img/seoul.jpg?raw=true"/> */}
+                    <img id="contentImgSelf" src={imgSrc}/>
                 </div>
                 <div id="contentInfor">
-                    <ul>
-                        <li>[id] : {id}</li>
-                        <li>[title] : {title}</li>
-                        <li>[nickName] : {nickName}</li>
-                        <li>[address] : {address}</li>
-                        <li>[phone] : {phone}</li> 
-                        <li>[perpose] : {perpose} </li>
-                    </ul>
+                        {/* <li>[id] : {id}</li> */}
+                        {nickName} · {phone}<br/>
+                        <div id="contentTitle">
+                            #{id} : {title}
+                        </div>
+                        {/* {address}<br/> */} 
+                        {perpose}<br/>
                 </div>
             </div>
         );
