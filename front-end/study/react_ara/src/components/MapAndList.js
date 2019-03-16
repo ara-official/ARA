@@ -37,16 +37,16 @@ class MapAndList extends Component {
           numOfpeople: 4,
           nickName: '권영한',
           phone: '010-3333-3333',
-          perpose: 'look around',
+          perpose: '관광',
           imgSrc: 'https://news.busan.go.kr/comm/getImage?srvcId=MEDIA&upperNo=1666&fileTy=MEDIA&fileNo=1'
         },
         {
           id: 3,
-          title: '',
+          title: '수원화성 구경',
           numOfpeople: 4,
           nickName: '민인식',
           phone: '010-4444-4444',
-          perpose: 'look around',
+          perpose: '관광, 커타',
           imgSrc: 'http://heritage.unesco.or.kr/wp-content/uploads/wh_img/hd6_394_i1.jpg'
         }
       ]
