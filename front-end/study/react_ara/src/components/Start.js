@@ -10,8 +10,9 @@ class Start extends React.Component{
         return(
             <div className="Start">
                 <div className="top">
+                    <Link to="./"><img id="logo" src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/></Link>
                     <input id="searchBar" placeholder="목적지 입력"/>
-                    <Link to="./MapAndList"><button id="search">검색</button></Link>
+                    <Link to="./MapAndList"><button id="searchButton">검색</button></Link>
                 </div>
             </div>
         );

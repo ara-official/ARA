@@ -38,19 +38,19 @@
     z-index: 2;
 }
 
-.MapAndList #logo{
+.MapAndList .top #logo{
     /* animation: App-logo-spin infinite 20s linear; */
     margin-right: 20px;
 
     height: 40px;
-    width: 80px;
+    width: 50px;
 
     border-radius: 1px;
-    box-shadow: 3px 0px 0px rgba(255, 106, 110, 1);
+    /* box-shadow: 3px 0px 0px rgba(255, 106, 110, 1); */
     /* box-shadow: 3px 0px 0px rgba(0, 0, 0, 1); */
 }
 
-.MapAndList #searchBar{
+.MapAndList .top #searchBar{
     height: 58px;
     width: 72vmin;
     padding-left: 10px;
@@ -64,6 +64,7 @@
 }
 
 .MapAndList .middle {
+    animation: test 1 0.1s linear;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -84,7 +85,16 @@
     z-index: 1;
 }
 
-.MapAndList #filter{
+@keyframes test {
+    from {
+        height: 0px
+    }
+    to {
+        height: 40px
+    }
+}
+
+.MapAndList .middle #filter{
     height: 40px;
     width: 64px;
 
@@ -92,6 +102,7 @@
     
     font-size: 18px;
 
+    background-color: white;
     border: 1px solid gainsboro;
     border-radius: 5px;
 

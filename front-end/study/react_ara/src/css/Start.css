@@ -38,17 +38,41 @@
     z-index: 2;
 }
 
-.Start .searchBar{
-    height: 58px;
-    width: 72vmin;
-    padding-left: 10px;
+.Start .top #logo{
+    margin-right: 20px;
 
-       font-size: 24px;
+    height: 40px;
+    width: 50px;
+
+    border-radius: 1px;
+}
+
+.Start .top #searchBar{
+    height: 58px;
+    width: 64vmin;
+    padding-left: 10px;
+    margin-right: 10px;
+
+    font-size: 24px;
     font-weight: bold;
 
     border-radius: 5px;
     border: 1px solid gainsboro;
     box-shadow: 0px 2px 2px gainsboro;
+}
+
+.Start .top #searchButton{
+    height: 58px;
+    width: 64px;
+
+    margin-right: 8px;
+    
+    font-size: 24px;
+
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+
+    z-index: 2;
 }
 
 .Start .middle {
@@ -70,20 +94,6 @@
     border-bottom: 1px solid gainsboro;
     background-color: white;
     z-index: 1;
-}
-
-.Start #search{
-    height: 40px;
-    width: 64px;
-
-    margin-right: 8px;
-    
-    font-size: 18px;
-
-    border: 1px solid gainsboro;
-    border-radius: 5px;
-
-    z-index: 2;
 }
 
 .Start .bottom {

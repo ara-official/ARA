@@ -16,6 +16,15 @@ class MapAndList extends Component {
       information: [
         {
           id: 0,
+          title: '강남 쉐이크쉑 같이 드실 1~2 분 구해요~',
+          numOfpeople: 0,
+          nickName: '알*고',
+          phone: '010-3223-****',
+          perpose: '점심식사',
+          imgSrc: 'http://img.seoul.co.kr/img/upload/2016/07/19/SSI_20160719141317_V.jpg'
+        },
+        {
+          id: 1,
           title: '경복궁 네 명 모아 봅니다.',
           numOfpeople: 0,
           nickName: '최*훈',
@@ -24,7 +33,7 @@ class MapAndList extends Component {
           imgSrc: 'https://github.com/ara-official/ARA/blob/master/front-end/img/seoul.jpg?raw=true'
         },
         {
-          id: 1,
+          id: 2,
           title: '첨성대 구경 후에 식사 하실 세 분 구해요',
           numOfpeople: 4,
           nickName: '손*식',
@@ -33,7 +42,7 @@ class MapAndList extends Component {
           imgSrc: 'https://image.ytn.co.kr/general/jpg/2016/0914/201609141101410773_t.jpg'
         },
         {
-          id: 2,
+          id: 3,
           title: '부산타워 구경!! 한 두 명 구해요',
           numOfpeople: 4,
           nickName: '권*한',
@@ -42,7 +51,7 @@ class MapAndList extends Component {
           imgSrc: 'https://news.busan.go.kr/comm/getImage?srvcId=MEDIA&upperNo=1666&fileTy=MEDIA&fileNo=1'
         },
         {
-          id: 3,
+          id: 4,
           title: '수원화성 구경',
           numOfpeople: 4,
           nickName: '민*식',
@@ -51,7 +60,7 @@ class MapAndList extends Component {
           imgSrc: 'http://heritage.unesco.or.kr/wp-content/uploads/wh_img/hd6_394_i1.jpg'
         },
         {
-          id: 4,
+          id: 5,
           title: '가을',
           numOfpeople: 0,
           nickName: '손*식',
@@ -95,7 +104,7 @@ class MapAndList extends Component {
         <form className="MapAndList">
           {/* <h2>[MapAndList.js]</h2> */}
           <div className="top">
-            <Link to="./"><img id="logo" src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_2.png?raw=true"/></Link>
+            <Link to="./"><img id="logo" src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/></Link>
             <input id="searchBar" placeholder="검색"/>
           </div>
 
@@ -123,7 +132,7 @@ class MapAndList extends Component {
 
             <div className="bottom_back">
               <div id="alarmMsg">
-                여행 날짜와 게스트 인원수를 입력하면 1박당 총 요금을 확인할 수 있습니다. 관광세가 추가로 부과될 수 있습니다.
+                여행 날짜와 게스트 인원수를 입력하면 관련된 모임을 확인할 수 있습니다. 모임이 금방 마감될 수 있습니다.
               </div>
               <div id="contentList">
                 <ContentList data={information}/>
