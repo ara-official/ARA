@@ -42,11 +42,12 @@
     /* animation: App-logo-spin infinite 20s linear; */
     margin-right: 20px;
 
-    height: 52px;
-    width: 78px;
+    height: 40px;
+    width: 80px;
 
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px gray;
+    border-radius: 1px;
+    box-shadow: 3px 0px 0px rgba(255, 106, 110, 1);
+    /* box-shadow: 3px 0px 0px rgba(0, 0, 0, 1); */
 }
 
 #searchBar{

@@ -36,7 +36,8 @@ class Content extends Component {
                         {/* <li>[id] : {id}</li> */}
                         {nickName} · {phone}<br/>
                         <div id="contentTitle">
-                            #{id} : {title}
+                            {/* #{id} : {title} */}
+                            {title}
                         </div>
                         {/* {address}<br/> */} 
                         {perpose}<br/>
