@@ -38,7 +38,7 @@
     z-index: 2;
 }
 
-#logo{
+.MapAndList #logo{
     /* animation: App-logo-spin infinite 20s linear; */
     margin-right: 20px;
 
@@ -50,7 +50,7 @@
     /* box-shadow: 3px 0px 0px rgba(0, 0, 0, 1); */
 }
 
-#searchBar{
+.MapAndList #searchBar{
     height: 58px;
     width: 72vmin;
     padding-left: 10px;
@@ -84,7 +84,7 @@
     z-index: 1;
 }
 
-#filter{
+.MapAndList #filter{
     height: 40px;
     width: 64px;
 
@@ -131,7 +131,7 @@
     position: relative;
 }
 
-#alarmMsg{
+.MapAndList #alarmMsg{
     margin-left: 24px;
     margin-right: 24px;
     
@@ -144,6 +144,6 @@
     /* border-bottom: 1px solid gainsboro; */
 }
 
-#contentList{
+.MapAndList #contentList{
     width: 100vw;
 }

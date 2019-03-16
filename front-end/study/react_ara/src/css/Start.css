@@ -38,17 +38,6 @@
     z-index: 2;
 }
 
-#logo{
-    /* animation: App-logo-spin infinite 20s linear; */
-    margin-right: 20px;
-
-    height: 52px;
-    width: 78px;
-
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px gray;
-}
-
 .Start .searchBar{
     height: 58px;
     width: 72vmin;
@@ -83,7 +72,7 @@
     z-index: 1;
 }
 
-#search{
+.Start #search{
     height: 40px;
     width: 64px;
 
@@ -130,7 +119,7 @@
     position: relative;
 }
 
-#alarmMsg{
+.Start #alarmMsg{
     margin-left: 24px;
     margin-right: 24px;
     
@@ -143,6 +132,6 @@
     /* border-bottom: 1px solid gainsboro; */
 }
 
-#contentList{
+.Start #contentList{
     width: 100vw;
 }

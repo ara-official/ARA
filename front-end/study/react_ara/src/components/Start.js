@@ -9,9 +9,9 @@ class Start extends React.Component{
     render(){
         return(
             <div className="Start">
-                <div className="top">         
-                <input id="searchBar" placeholder="목적지 입력"/>
-                <Link to="./MapAndList"><button id="search">검색</button></Link>
+                <div className="top">
+                    <input id="searchBar" placeholder="목적지 입력"/>
+                    <Link to="./MapAndList"><button id="search">검색</button></Link>
                 </div>
             </div>
         );
