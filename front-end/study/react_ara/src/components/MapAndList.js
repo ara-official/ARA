@@ -56,7 +56,7 @@ class MapAndList extends Component {
           nickName: '손*식',
           phone: '010-3434-****',
           perpose: '기타',
-          imgSrc: 'https://github.com/ara-official/ARA/blob/master/front-end/img/gauri.jpg?raw=true'
+          imgSrc: 'https://github.com/ara-official/ARA/blob/master/front-end/img/gauri.jpeg?raw=true'
         }
       ]
     }
