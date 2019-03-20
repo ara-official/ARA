@@ -34,13 +34,17 @@ class Content extends Component {
                 </div>
                 <div id="contentInfor">
                         {/* <li>[id] : {id}</li> */}
-                        {nickName} · {phone}<br/>
+                        <div id="contentInforFirst">
+                            {nickName} · {phone}
+                        </div>
                         <div id="contentTitle">
                             {/* #{id} : {title} */}
                             {title}
                         </div>
                         {/* {address}<br/> */} 
-                        {perpose}<br/>
+                        <div id="contentInforThird">
+                            {perpose}
+                        </div>
                 </div>
             </div>
         );
