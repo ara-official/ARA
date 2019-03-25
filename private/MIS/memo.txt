@@ -1,0 +1,2 @@
+1. DJango guide page
+https://docs.djangoproject.com/ko/2.1/
