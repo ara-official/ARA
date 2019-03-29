@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import '../css/MapAndList.css'
 import {ContentList} from '../components';
 import {FilterDate, FilterPeople, FilterEtc} from '../components';
@@ -17,6 +17,7 @@ class MapAndList extends Component {
         {
           id: 0,
           title: '강남 쉐이크쉑 같이 드실 1~2 분 구해요~',
+          destination: '강남',
           numOfpeople: 0,
           nickName: '알*고',
           phone: '010-3223-****',
@@ -26,6 +27,7 @@ class MapAndList extends Component {
         {
           id: 1,
           title: '경복궁 네 명 모아 봅니다.',
+          destination: '경복궁',
           numOfpeople: 0,
           nickName: '최*훈',
           phone: '010-3493-****',
@@ -35,6 +37,7 @@ class MapAndList extends Component {
         {
           id: 2,
           title: '첨성대 구경 후에 식사 하실 세 분 구해요',
+          destination: '첨성대',
           numOfpeople: 4,
           nickName: '손*식',
           phone: '010-9394-****',
@@ -44,6 +47,7 @@ class MapAndList extends Component {
         {
           id: 3,
           title: '부산타워 구경!! 한 두 명 구해요',
+          destination: '부산타워',
           numOfpeople: 4,
           nickName: '권*한',
           phone: '010-7557-****',
@@ -53,6 +57,7 @@ class MapAndList extends Component {
         {
           id: 4,
           title: '수원화성 구경',
+          destination: '수원화성',
           numOfpeople: 4,
           nickName: '민*식',
           phone: '010-1332-****',
@@ -62,6 +67,7 @@ class MapAndList extends Component {
         {
           id: 5,
           title: '가을',
+          destination: '기타',
           numOfpeople: 0,
           nickName: '손*식',
           phone: '010-3434-****',
@@ -100,12 +106,12 @@ class MapAndList extends Component {
     const {information} = this.state;
 
     return (
-      <div>
+      <Fragment>
         <form className="MapAndList">
           {/* <h2>[MapAndList.js]</h2> */}
           <div className="top">
             <Link to="./"><img id="logo" src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/></Link>
-            <input id="searchBar" placeholder="검색"/>
+            <input id="searchBar" placeholder={"앞에서 전달 받은 값 : " + this.props.receiveCount}/>
           </div>
 
           {/* <SearchBoxMini/> */}
@@ -143,7 +149,7 @@ class MapAndList extends Component {
 
 
         {console.log('MapAndList.js render() END')}
-      </div>
+      </Fragment>
     );
   }
 }

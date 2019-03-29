@@ -5,6 +5,7 @@ class Content extends Component {
     static defaultProps = {
         info: {
             id: 0,
+            destination: '',
             nickName: 'name',
             address: '',
             phone: '000-0000-0000',
@@ -21,7 +22,7 @@ class Content extends Component {
 
     render() {
         const {
-            id, title, nickName, address, phone, perpose, imgSrc
+            id, title, destination, nickName, address, phone, perpose, imgSrc
         } = this.props.info;
 
         return(
@@ -43,7 +44,7 @@ class Content extends Component {
                         </div>
                         {/* {address}<br/> */} 
                         <div id="contentInforThird">
-                            {perpose}
+                            {destination} · {perpose}
                         </div>
                 </div>
             </div>

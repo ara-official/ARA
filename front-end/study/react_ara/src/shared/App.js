@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 // import { Route, Switch } from 'react-router-dom';
 import { Home } from '../pages';
-import { MapAndList } from '../components';
+// import { MapAndList } from '../components';
+import MapAndListContainer from '../containers/MapAndListContainer';
 
 // css
 import '../css/App.css';
@@ -16,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path="/" component={Home} />
-        <Route exact path={`/MapAndList/`} component={MapAndList} />
+        <Route exact path={`/MapAndList/`} component={MapAndListContainer} />
         {/* <Route path="/create" component={Create}/> */}
         {/* <Switch>
           <Route path="/about/:name" component={About}/>

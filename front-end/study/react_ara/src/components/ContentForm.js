@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class ContentForm extends Component{
     state = {
         title: '',
+        destination: '',
         nickName: '',
         address: '',
         phone: '',
@@ -22,6 +23,7 @@ class ContentForm extends Component{
 
         this.setState({
             title: '',
+            destination: '',
             nickName: '',
             address: '',
             phone: '',
