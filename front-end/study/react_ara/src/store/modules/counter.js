@@ -3,15 +3,17 @@ import { createAction, handleActions } from 'redux-actions';
     // 타입
 const INCREMENT = 'counter/INCREMENT'
 
+
     // 생성 함수
-export const increment = createAction(INCREMENT);
+export const increment = createAction(INCREMENT, value => value);
 
 // 초기값
 const initialState = {
-    count: 3
+    number: ''
 }
 
 // reducer
 export default handleActions({
-    [INCREMENT]: ({count}) => ({count : count + 1})
+    // [INCREMENT]: ({number}) => ({number : number + 1})
+    [INCREMENT]: ({number}, action) => ({number : '' + action.payload})
 }, initialState);

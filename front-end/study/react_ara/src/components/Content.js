@@ -22,7 +22,8 @@ class Content extends Component {
 
     render() {
         const {
-            id, title, destination, nickName, address, phone, perpose, imgSrc
+            title, destination, nickName, phone, perpose, imgSrc
+            // id, address
         } = this.props.info;
 
         return(
@@ -31,7 +32,7 @@ class Content extends Component {
 
                 <div id="contentImg">
                     {/* <img id="contentImgSelf" src="https://github.com/ara-official/ARA/blob/master/front-end/img/seoul.jpg?raw=true"/> */}
-                    <img id="contentImgSelf" src={imgSrc}/>
+                    <img id="contentImgSelf" alt='imsi_img' src={imgSrc}/>
                 </div>
                 <div id="contentInfor">
                         {/* <li>[id] : {id}</li> */}

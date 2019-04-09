@@ -2,27 +2,25 @@ import React from 'react'
 import { connect } from 'react-redux';
 import MapAndList from '../components/MapAndList';
 
-import * as counterActions from '../store/modules/counter';
-
-
 class MapAndListContainer extends React.Component{
     render(){
         return(
             <div>
-                {console.log("CounterContainer.js : " + this.props.count)}
-                <MapAndList receiveCount={this.props.count} onIncrement={this.props.increment}/>
+                <MapAndList 
+                input={this.props.input}
+                />
             </div>
        );
     }
 }
 
-// export default MapAndListContainer;
+// [1] props 값으로 넣어 줄 state를 정의
+const mapStateToProps = ({search}) => ({
+    input: search.get('input')
+});
 
-export default connect(
-    (state) => ({
-        count: state.counter.count
-    }),
-    (dispatch) => ({
-        increment: () => dispatch(counterActions.increment())
-    })
-)(MapAndListContainer);
+// [2] props 값으로 넣어 줄 action을 정의
+const mapDispatchToProps = (dispatch) => ({
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MapAndListContainer);

@@ -1,0 +1,17 @@
+// AddTodo : button이 달린 input 필드.
+    // onAddClick(text: string)은 버튼을 누르면 불려올 callback
+
+// TodoList : 표시 중인 할일 목록
+    // todos: Array 는 {text, completed } 형태의 배열
+    // onTodoClick(index: number) 는 할일을 누르면 호출할 콜백
+// Todo : 할 일 하나
+    // text: string 은 보여줄 텍스트
+    // completed: boolean 은 할일을 완료된 것으로 표시할지 여부
+    // onClick() 은 할일을 누르면 호출할 콜백
+// Link : 콜백?
+    // onClick() ?
+// Footer 는 표시할 할일 필터를 사용자가 바꿀 수 있게끔 해주는 컴포넌트
+// App 은 모든 컴포넌트를 렌더링하는 최상단 컴포넌트
+
+// 위 컴포넌트들은 모두 외양을 담당. 데이터가 어디에서 온 것인지랑 어떻게 데이터 변경해야하는지는 모름
+// 그냥 주어진 것을 표시하기만 함

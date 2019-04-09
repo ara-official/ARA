@@ -110,8 +110,8 @@ class MapAndList extends Component {
         <form className="MapAndList">
           {/* <h2>[MapAndList.js]</h2> */}
           <div className="top">
-            <Link to="./"><img id="logo" src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/></Link>
-            <input id="searchBar" placeholder={"앞에서 전달 받은 값 : " + this.props.receiveCount}/>
+            <Link to="./"><img id="logo" alt='imsi_logo' src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/></Link>
+            <input id="searchBar" placeholder={this.props.input}/>
           </div>
 
           {/* <SearchBoxMini/> */}

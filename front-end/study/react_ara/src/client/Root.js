@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import store from '../store';
 
 class Root extends React.Component{
+    
     render(){
         return(
             <div className="Root">
