@@ -26,7 +26,7 @@ class Start extends React.Component{
                         onKeyPress={this.handleKeyPress}
                     />
                     <Link to="./MapAndList">
-                            <button id="searchButton">검색</button>
+                            <button id="searchButton" onClick={this.props.handleInsert}>검색</button>
                     </Link>
                 </div>
             </div>

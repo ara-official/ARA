@@ -37,7 +37,7 @@ class MapAndList extends Component {
         {
           id: 2,
           title: '첨성대 구경 후에 식사 하실 세 분 구해요',
-          destination: '첨성대',
+          destination: '경주',
           numOfpeople: 4,
           nickName: '손*식',
           phone: '010-9394-****',
@@ -47,7 +47,7 @@ class MapAndList extends Component {
         {
           id: 3,
           title: '부산타워 구경!! 한 두 명 구해요',
-          destination: '부산타워',
+          destination: '부산',
           numOfpeople: 4,
           nickName: '권*한',
           phone: '010-7557-****',
@@ -57,7 +57,7 @@ class MapAndList extends Component {
         {
           id: 4,
           title: '수원화성 구경',
-          destination: '수원화성',
+          destination: '수원',
           numOfpeople: 4,
           nickName: '민*식',
           phone: '010-1332-****',
@@ -67,7 +67,7 @@ class MapAndList extends Component {
         {
           id: 5,
           title: '가을',
-          destination: '기타',
+          destination: '가을',
           numOfpeople: 0,
           nickName: '손*식',
           phone: '010-3434-****',
@@ -104,19 +104,26 @@ class MapAndList extends Component {
   render() {
     console.log('MapAndList.js render() START');
     const {information} = this.state;
+    const firstMessage = '여행 날짜와 게스트 인원수를 입력하면 관련된 모임을 확인할 수 있습니다. 모임이 금방 마감될 수 있습니다.'
 
     return (
       <Fragment>
         <form className="MapAndList">
-          {/* <h2>[MapAndList.js]</h2> */}
           <div className="top">
             <Link to="./"><img id="logo" alt='imsi_logo' src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/></Link>
-            <input id="searchBar" placeholder={this.props.input}/>
+            <input 
+                id="searchBar" 
+                placeholder="목적지 입력"
+                value={this.props.input}
+                onChange={this.props.handleChange}
+            />
+            <Link to="./MapAndList">
+                    <button id="searchButton" onClick={this.props.handleInsert}>검색</button>
+            </Link>
           </div>
 
           {/* <SearchBoxMini/> */}
           <div className="middle">
-            {/* <Link to="./Start"><button id="filter">날짜</button></Link> */}
             <button id="filter" name="date" onClick={(e) => this.handleManyButtonClick(1, e)}>날짜</button>
             <button id="filter" name="number" onClick={(e) => this.handleManyButtonClick(2, e)}>인원</button>
             <button id="filter" name="etc" onClick={(e) => this.handleManyButtonClick(3, e)}>필터</button>
@@ -138,10 +145,10 @@ class MapAndList extends Component {
 
             <div className="bottom_back">
               <div id="alarmMsg">
-                여행 날짜와 게스트 인원수를 입력하면 관련된 모임을 확인할 수 있습니다. 모임이 금방 마감될 수 있습니다.
+                {firstMessage}
               </div>
               <div id="contentList">
-                <ContentList data={information}/>
+                <ContentList data={information} destination={this.props.destination}/>
               </div>
             </div>
           </div>

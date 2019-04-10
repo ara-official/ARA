@@ -53,8 +53,9 @@
 
 .MapAndList .top #searchBar{
     height: 58px;
-    width: 72vmin;
+    width: 60vmin;
     padding-left: 10px;
+    margin-right: 10px;
 
     font-size: 24px;
     font-weight: bold;
@@ -62,6 +63,22 @@
     border-radius: 5px;
     border: 1px solid gainsboro;
     box-shadow: 0px 2px 2px gainsboro;
+}
+
+
+.MapAndList .top #searchButton{
+    height: 62px;
+    width: 64px;
+
+    margin-right: 8px;
+    
+    font-size: 24px;
+
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+
+    z-index: 2;
 }
 
 .MapAndList .middle {

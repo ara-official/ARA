@@ -4,11 +4,11 @@ import { Map } from 'immutable';
 
 // type
 const CHANGE_INPUT = 'search/CHANGE_INPUT';
-// const INSERT = 'search/INSERT';
+const INSERT = 'search/INSERT';
 
 // action
 export const changeInput = createAction(CHANGE_INPUT, value => value); // 두 번째 param: payloadCreator, 세 번째 param: metaCreator
-// export const insert = createAction(INSERT, text => text);
+export const insert = createAction(INSERT, text => text);
 
 //////////////////
 // example
@@ -30,7 +30,8 @@ export const changeInput = createAction(CHANGE_INPUT, value => value); // 두 �
 //     ]
 // }
 const initialState = Map({
-    input: ''
+    input: '',
+    destination: ''
     // todos: List([
     //     Map({
     //         id: 0,
@@ -76,6 +77,6 @@ const initialState = Map({
 
 // reducer
 export default handleActions({
-    [CHANGE_INPUT]: (state/*현재 state*/, action/*action 객체*/) => state.set('input', action.payload)
-    // [INSERT]: (state, {payload: text}) => state.update('text', text )
+    [CHANGE_INPUT]: (state/*현재 state*/, action/*action 객체*/) => state.set('input', action.payload),
+    [INSERT]: (state, {payload: text}) => state.set('destination', text )
 }, initialState);

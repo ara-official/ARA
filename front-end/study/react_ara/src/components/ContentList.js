@@ -8,21 +8,38 @@ class ContentList extends Component{
     };
 
     render(){
-        const {data} = this.props;
+        const { data, destination } = this.props;
+        
+        if(destination === '')
+        {
+            const list = data.map(
+                info => (<Content
+                    key={info.id}
+                    info={info}
+                />)
+            );
+            return(
+                <div>
+                    {list}
+                </div>
+            );
+        }
+        else
+        {
+            const list = data.filter(info => info.destination === destination).map(
+                info => (<Content
+                    key={info.id}
+                    info={info}
+                />)
+            );
+            return(
+                <div>
+                    {list}
+                </div>
+            );
+        }
 
-        const list = data.map(
-            i => (<Content
-                key={i.id}
-                info={i}
-            />)
-        );
-
-        return(
-            <div>
-                {/* <h2>[ContentList.js]</h2> */}
-                {list}
-            </div>
-        );
+        
     }
 }
 
