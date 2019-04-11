@@ -20,7 +20,7 @@ class Start extends React.Component{
                         onKeyPress={this.props.handleKeyPress}
                     />
                     <Link to="./MapAndList">
-                            <button id="searchButton" onClick={this.props.handleInsert}>검색</button>
+                        <button id="searchButton" onClick={this.props.handleInsert}>검색</button>
                     </Link>
                 </div>
                 {console.log('Start.js render() END')}
