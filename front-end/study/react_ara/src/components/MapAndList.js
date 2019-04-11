@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import '../css/MapAndList.css'
 import {ContentList} from '../components';
 import {FilterDate, FilterPeople, FilterEtc} from '../components';
-// import {Link} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 class MapAndList extends Component {
@@ -122,7 +121,6 @@ class MapAndList extends Component {
             </Link>
           </div>
 
-          {/* <SearchBoxMini/> */}
           <div className="middle">
             <button id="filter" name="date" onClick={(e) => this.handleManyButtonClick(1, e)}>날짜</button>
             <button id="filter" name="number" onClick={(e) => this.handleManyButtonClick(2, e)}>인원</button>

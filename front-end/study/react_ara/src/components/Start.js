@@ -4,13 +4,6 @@ import '../css/Start.css'
 import { Link } from 'react-router-dom';
 
 class Start extends React.Component{
-    handleKeyPress = (e) => {
-        if(e.key === 'Enter')
-        {
-            console.log('Enter !');
-            
-        }
-    }
     render(){
         return(
             <div className="Start">
@@ -23,7 +16,7 @@ class Start extends React.Component{
                         placeholder="목적지 입력"
                         value={this.props.input}
                         onChange={this.props.handleChange}
-                        onKeyPress={this.handleKeyPress}
+                        onKeyPress={this.props.handleKeyPress}
                     />
                     <Link to="./MapAndList">
                             <button id="searchButton" onClick={this.props.handleInsert}>검색</button>

@@ -10,11 +10,7 @@ class Home extends React.Component{
         console.log('Home.js START');
         return (
             <div className="Home">
-                <h2>[Home.js]</h2>
-                {/* <Start/> */}
                 <StartContainer/>
-            
-                {console.log('Home.js END')}
             </div>
         );
     }

@@ -5,8 +5,13 @@ import Start from '../components/Start';
 // import * as counterActions from '../store/modules/counter';
 import * as searchActions from '../store/modules/search';
 
+import { Redirect } from 'react-router-dom';
+
 
 class StartContainer extends React.Component{
+    state = {
+        redirect: false
+    }
     
     handleChange = (e) => {
         const { changeInput } = this.props;
@@ -16,15 +21,35 @@ class StartContainer extends React.Component{
     handleInsert = (e) => {
         this.props.insert(this.props.input)
     }
+    
+    handleKeyPress = (e) => {
+        if(e.key === 'Enter')
+        {
+            this.setState({
+                redirect: true
+            })
+        }
+    }
+    handleRedirect = () => {
+        if(this.state.redirect === true)
+        {
+            console.log('Enter !' + this.props.input);
+            
+            return <Redirect to='/MapAndList' />;
+        }
+    }
+    
 
     render(){
         const {input, destination} = this.props;
-        const {handleChange, handleInsert} = this;
+        const {handleChange, handleInsert, handleKeyPress} = this;
         return(
             <div>
+                {this.handleRedirect()}
                 <Start 
-                input={input} handleChange={handleChange} 
-                destination={destination} handleInsert={handleInsert}
+                    input={input} handleChange={handleChange} 
+                    destination={destination} handleInsert={handleInsert}
+                    handleKeyPress={handleKeyPress}
                 />
             </div>
        );
