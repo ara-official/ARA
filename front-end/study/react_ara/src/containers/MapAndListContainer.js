@@ -19,7 +19,8 @@ class MapAndListContainer extends React.Component{
         const {handleChange, handleInsert} = this;
         return(
             <div>
-                {console.log("destination : " + this.props.destination)}
+                {console.log('input : ' + this.props.input)}
+                {console.log('destination : ' + this.props.destination)}
                 <MapAndList 
                     input={input} handleChange={handleChange} 
                     destination={destination} handleInsert={handleInsert}

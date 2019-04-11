@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 class Start extends React.Component{
     render(){
+        
         return(
             <div className="Start">
                 <div className="top">

@@ -19,12 +19,13 @@ class StartContainer extends React.Component{
     }
 
     handleInsert = (e) => {
-        this.props.insert(this.props.input)
+        this.props.insert(this.props.input);
     }
     
     handleKeyPress = (e) => {
         if(e.key === 'Enter')
         {
+            this.props.insert(this.props.input);
             this.setState({
                 redirect: true
             })
@@ -33,8 +34,6 @@ class StartContainer extends React.Component{
     handleRedirect = () => {
         if(this.state.redirect === true)
         {
-            console.log('Enter !' + this.props.input);
-            
             return <Redirect to='/MapAndList' />;
         }
     }
@@ -45,6 +44,8 @@ class StartContainer extends React.Component{
         const {handleChange, handleInsert, handleKeyPress} = this;
         return(
             <div>
+                {console.log('input : ' + this.props.input)}
+                {console.log('destination : ' + this.props.destination)}
                 {this.handleRedirect()}
                 <Start 
                     input={input} handleChange={handleChange} 
