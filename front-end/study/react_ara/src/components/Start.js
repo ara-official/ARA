@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 class Start extends React.Component{
     render(){
-        
+        console.log('Start.js render() START');
         return(
             <div className="Start">
                 <div className="top">
@@ -23,6 +23,7 @@ class Start extends React.Component{
                             <button id="searchButton" onClick={this.props.handleInsert}>검색</button>
                     </Link>
                 </div>
+                {console.log('Start.js render() END')}
             </div>
         );
     }
