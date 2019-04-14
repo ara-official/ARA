@@ -6,17 +6,30 @@ import * as searchActions from '../store/modules/search';
 
 class MapAndListContainer extends React.Component{
     handleChange = (e) => {
+        e.preventDefault();
         const { changeInput } = this.props;
         changeInput(e.target.value);
     }
 
     handleInsert = (e) => {
+        e.preventDefault();
         this.props.insert(this.props.input)
+    }
+
+    handleKeyPress = (e) => {
+        e.preventDefault(); // 기본 링크 동작 막음
+        if(e.key === 'Enter')
+        {
+            this.props.insert(this.props.input);
+            this.setState({
+                redirect: true
+            })
+        }
     }
 
     render(){
         const {input, destination} = this.props;
-        const {handleChange, handleInsert} = this;
+        const {handleChange, handleInsert, handleKeyPress} = this;
         return(
             <div>
                 {console.log('input : ' + this.props.input)}
@@ -24,6 +37,7 @@ class MapAndListContainer extends React.Component{
                 <MapAndList 
                     input={input} handleChange={handleChange} 
                     destination={destination} handleInsert={handleInsert}
+                    handleKeyPress={handleKeyPress}
                 />
             </div>
        );

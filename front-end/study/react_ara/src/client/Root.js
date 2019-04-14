@@ -11,8 +11,6 @@ class Root extends React.Component{
     render(){
         return(
             <div className="Root">
-            
-                    <h2>[Root.js]</h2>
                     {console.log('Root.js START')}
                     <BrowserRouter>
                     <Provider store={store}>

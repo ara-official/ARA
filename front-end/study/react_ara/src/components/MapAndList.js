@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import '../css/Global.css'
 import '../css/MapAndList.css'
 import {ContentList} from '../components';
 import {FilterDate, FilterPeople, FilterEtc} from '../components';
@@ -115,10 +116,11 @@ class MapAndList extends Component {
               placeholder="목적지 입력"
               value={this.props.input}
               onChange={this.props.handleChange}
+              onKeyPress={this.props.handleKeyPress}
             />
-            <Link to="./MapAndList">
+            {/* <Link to="./MapAndList">
                     <button id="searchButton" onClick={this.props.handleInsert}>검색</button>
-            </Link>
+            </Link> */}
           </div>
 
           <div className="middle">

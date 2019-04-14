@@ -14,15 +14,18 @@ class StartContainer extends React.Component{
     }
     
     handleChange = (e) => {
+        e.preventDefault();
         const { changeInput } = this.props;
         changeInput(e.target.value);
     }
 
     handleInsert = (e) => {
+        e.preventDefault();
         this.props.insert(this.props.input);
     }
     
     handleKeyPress = (e) => {
+        e.preventDefault();
         if(e.key === 'Enter')
         {
             this.props.insert(this.props.input);

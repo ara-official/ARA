@@ -2,6 +2,9 @@
 import { createAction, handleActions } from 'redux-actions';
 import { Map } from 'immutable';
 
+// axios
+import axios from 'axios';
+
 // type
 const CHANGE_INPUT = 'search/CHANGE_INPUT';
 const INSERT = 'search/INSERT';
@@ -77,5 +80,13 @@ const initialState = Map({
 // reducer
 export default handleActions({
     [CHANGE_INPUT]: (state/*현재 state*/, action/*action 객체*/) => state.set('input', action.payload),
-    [INSERT]: (state, {payload: text}) => state.set('destination', text )
+    [INSERT]: (state, {payload: text}) => {
+        const getNumber = () => {
+            axios.get('https://reqres.in/api/users/2')
+            .then( response => { console.log(response.data.data.id); }) // success
+            .catch( response => { console.log(response); }); // error
+        }
+        getNumber();
+        return state.set('destination', text )
+    }
 }, initialState);

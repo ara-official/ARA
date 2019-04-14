@@ -1,0 +1,131 @@
+.top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    position: fixed;
+    top: 0px;
+
+    /* width: 100vw; */
+
+    padding: 10px;
+    margin: 8px;
+
+    /* border: 1px solid black; */
+    /* border-bottom: 1px solid gainsboro; */
+
+    background-color: rgb(102, 255, 0);
+
+    z-index: 2;
+}
+
+.top #logo{
+    /* margin-left: 0px;
+    margin-right: 5px;
+    padding-top: 9px;
+    padding-bottom: 9px; */
+
+    height: 33px;
+    width: 44px;
+
+    border-radius: 1px;
+}
+
+.top #searchBar{
+    height: 40px;
+    width: 70vw;
+    padding: 6px;
+    padding-left: 10px;
+
+    position: fixed;
+    left: 70px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 1px 2px gainsboro;
+}
+
+
+.top #searchButton{
+    height: 52px;
+    width: 78px;
+
+    /* margin-right: 8px; */
+    
+    font-size: 20px;
+
+    background-color: white; /*OS : windows*/
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 1px 2px gainsboro;
+
+    z-index: 2;
+}
+
+.middle {
+    animation: test 1 0.1s linear;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    /* border: 1px solid black; */
+    padding: 10px;
+    /* padding-top: 60px; */
+    padding-left: 28px;
+    padding-right: 12px;
+
+    position: fixed;
+    top: 65px;
+
+    width: 100vw;
+
+    border-bottom: 1px solid gainsboro;
+    background-color: rgb(0, 217, 255);
+    z-index: 1;
+}
+
+@keyframes test {
+    from {
+        height: 0px
+    }
+    to {
+        height: 40px
+    }
+}
+
+.middle #filter{
+    height: 40px;
+    width: 60px;
+
+    margin-right: 8px;
+    
+    font-size: 15px;
+
+    background-color: white;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+
+    z-index: 2;
+}
+
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    /* height: 100vmin; */
+    padding: 8px;
+    padding-top: 22px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    background-color: rgb(255, 230, 0);
+
+    z-index: 0;
+}
