@@ -32,7 +32,7 @@
 }
 
 .top #searchBar{
-    height: 40px;
+    height: 38px;
     width: 70vw;
     padding: 6px;
     padding-left: 10px;
@@ -42,10 +42,11 @@
 
     font-size: 18px;
     font-weight: bold;
+    
 
     border-radius: 3px;
     border: 1px solid gainsboro;
-    box-shadow: 0px 1px 2px gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
 }
 
 

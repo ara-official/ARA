@@ -6,7 +6,7 @@ import * as searchActions from '../store/modules/search';
 
 class MapAndListContainer extends React.Component{
     handleChange = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         const { changeInput } = this.props;
         changeInput(e.target.value);
     }
@@ -17,9 +17,9 @@ class MapAndListContainer extends React.Component{
     }
 
     handleKeyPress = (e) => {
-        e.preventDefault(); // 기본 링크 동작 막음
         if(e.key === 'Enter')
         {
+            e.preventDefault(); // 기본 링크 동작 막음
             this.props.insert(this.props.input);
             this.setState({
                 redirect: true

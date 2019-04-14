@@ -25,9 +25,9 @@ class StartContainer extends React.Component{
     }
     
     handleKeyPress = (e) => {
-        e.preventDefault();
         if(e.key === 'Enter')
         {
+            e.preventDefault();
             this.props.insert(this.props.input);
             this.setState({
                 redirect: true
