@@ -74,7 +74,6 @@ const initialState = Map({
 // }
 
 // 위 예시는 아래와 같이 바꿔줄 수 있음.
-
 // reducer
 export default handleActions({
     [CHANGE_INPUT]: (state/*현재 state*/, action/*action 객체*/) => state.set('input', action.payload),

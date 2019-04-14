@@ -128,7 +128,6 @@ class MapAndList extends Component {
           </div>
 
           <div className="bottom">
-          
             {(this.state.isToggleDate || this.state.isTogglePeople || this.state.isToggleEtc) &&
             // toggle 활성화 시, button 색도 바꿀 수 있을 거다.
               <div className="bottom_front">

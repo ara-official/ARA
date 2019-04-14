@@ -7,6 +7,7 @@ class Start extends React.Component{
     render(){
         console.log('Start.js render() START');
         return(
+
             <div className="Start">
                 <div className="top">
                     <Link to="./">
