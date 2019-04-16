@@ -118,9 +118,9 @@ class MapAndList extends Component {
               onChange={this.props.handleChange}
               onKeyPress={this.props.handleKeyPress}
             />
-            {/* <Link to="./MapAndList">
-                    <button id="searchButton" onClick={this.props.handleInsert}>검색</button>
-            </Link> */}
+            <Link to="./MapAndList/CreateContent">
+                    <button id="searchButton" >검색</button>
+            </Link>
           </div>
 
           <div className="middle">

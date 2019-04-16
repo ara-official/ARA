@@ -74,19 +74,42 @@ const initialState = Map({
 // nextState = {
 //     ...state,
 //     todos: nextTodos
-// }
+// 
+
+
+// REST API 예시
+const getNumber = () => {
+    axios.get('http://172.20.10.5:8000/api/v1/contents/')
+    .then( response => { console.log(response); }) // success
+    .catch( response => { console.log(response); }); // error
+};
+getNumber();
+
+const postNumber = () => {
+    axios.post('http://172.20.10.5:8000/api/v1/contents/', {
+        title:"너 나.. 좋아하니??.",
+        meeting_date:"2019.04.16",
+        num_of_member:"3"
+
+    // axios.post('https://reqres.in/api/users', {
+    //     title: "POST",
+    //     data: {
+    //         name: "paul rudd",
+    //         movies: ["I Love You Man", "Role Models"]
+    //     }
+    })
+    .then( response => { console.log(response) } )
+    .catch( response => { console.log(response) } );
+};
+// postNumber();
 
 // 위 예시는 아래와 같이 바꿔줄 수 있음.
 // reducer
 export default handleActions({
     [CHANGE_INPUT]: (state/*현재 state*/, action/*action 객체*/) => state.set('input', action.payload),
     [INSERT]: (state, {payload: text}) => {
-        const getNumber = () => {
-            axios.get('https://reqres.in/api/users/2')
-            .then( response => { console.log(response.data.data.id); }) // success
-            .catch( response => { console.log(response); }); // error
-        }
         getNumber();
+        //postNumber();
         return state.set('destination', text )
     }
 }, initialState);
