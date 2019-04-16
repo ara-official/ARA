@@ -11,7 +11,7 @@ class Start extends React.Component{
 
             <div className="Start">
                 <div className="top">
-                    <Link to="./">
+                    <Link to="/">
                         <img id="logo" alt='imsi_logo' src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/>
                     </Link>
                     <input 

@@ -110,7 +110,7 @@ class MapAndList extends Component {
       <Fragment>
         <form className="MapAndList">
           <div className="top">
-            <Link to="./"><img id="logo" alt='imsi_logo' src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/></Link>
+            <Link to="/"><img id="logo" alt='imsi_logo' src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/></Link>
             <input 
               id="searchBar" 
               placeholder="목적지 입력"
@@ -119,7 +119,7 @@ class MapAndList extends Component {
               onKeyPress={this.props.handleKeyPress}
             />
             <Link to="./MapAndList/CreateContent">
-                    <button id="searchButton" >검색</button>
+              <button id="searchButton" >방생성</button>
             </Link>
           </div>
 
@@ -149,8 +149,10 @@ class MapAndList extends Component {
               <div id="contentList">
                 <ContentList data={information} destination={this.props.destination}/>
               </div>
+
             </div>
           </div>
+
         </form>
 
 

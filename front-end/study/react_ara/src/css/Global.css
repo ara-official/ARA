@@ -19,7 +19,7 @@
     z-index: 2;
 }
 
-.top #logo{
+#logo{
     /* margin-left: 0px;
     margin-right: 5px;
     padding-top: 9px;
@@ -33,7 +33,7 @@
 
 .top #searchBar{
     height: 38px;
-    width: 70vw;
+    width: 65vw;
     padding: 6px;
     padding-left: 10px;
 
@@ -57,6 +57,7 @@
     /* margin-right: 8px; */
 
     position: fixed;
+    top: 10px;
     right: 0px;
     
     font-size: 20px;
@@ -122,7 +123,6 @@
     flex-direction: column;
     align-items: center;
 
-
     /* height: 100vmin; */
     padding: 8px;
     padding-top: 22px;
@@ -132,4 +132,8 @@
     background-color: rgb(255, 230, 0);
 
     z-index: 0;
+}
+
+#defaultStyle {
+    font-size: 24px;
 }
