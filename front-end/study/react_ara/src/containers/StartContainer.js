@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import Start from '../components/Start';
+import { Start } from '../pages';
 
 // import * as counterActions from '../store/modules/counter';
 import * as searchActions from '../store/modules/search';

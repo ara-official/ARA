@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import MapAndList from '../components/MapAndList';
+import { MapAndList } from '../pages';
 
 import * as searchActions from '../store/modules/search';
 
