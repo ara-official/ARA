@@ -1,0 +1,87 @@
+.PageContent {
+    width: 100vw;
+}
+
+/* .PageContent .bottom {
+    position: fixed;
+    top: 140px;
+} */
+
+.PageContent .bottom #contentImg{
+    width: 100vmin;
+
+    position: fixed;
+    top: 100px;
+    left: 0px;
+}
+.PageContent .bottom #contentInforFirst {
+    height: 38px;
+    width: 100vw;
+    padding: 6px;
+    padding-left: 10px;
+
+    position: fixed;
+    top: 500px;
+    left: 0px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
+
+.PageContent .bottom #contentTitle {
+    height: 38px;
+    width: 100vw;
+    padding: 6px;
+    padding-left: 10px;
+
+    position: fixed;
+    top: 560px;
+    left: 0px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
+
+.PageContent .bottom #contentInforThird {
+    height: 38px;
+    width: 100vw;
+    padding: 6px;
+    padding-left: 10px;
+
+    position: fixed;
+    top: 620px;
+    left: 0px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
+
+.PageContent .bottom #button {
+    height: 38px;
+    width: 100vw;
+    padding: 6px;
+    padding-left: 10px;
+
+    position: fixed;
+    top: 680px;
+    left: 0px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
