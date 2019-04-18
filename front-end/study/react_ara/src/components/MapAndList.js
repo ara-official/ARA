@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import '../css/Global.css'
-import '../css/MapAndList.css'
+
+import '../css/Global.css';
+import '../css/MapAndList.css';
+
 import {ContentList} from '../components';
 import {FilterDate, FilterPeople, FilterEtc} from '../components';
 import {Link} from 'react-router-dom';

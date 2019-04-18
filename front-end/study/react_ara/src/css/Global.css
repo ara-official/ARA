@@ -77,14 +77,15 @@
     flex-direction: row;
     align-items: center;
 
+    position: fixed;
+    top: 65px;
+
     /* border: 1px solid black; */
     padding: 10px;
     /* padding-top: 60px; */
     padding-left: 28px;
     padding-right: 12px;
 
-    position: fixed;
-    top: 65px;
 
     width: 100vw;
 
@@ -117,7 +118,6 @@
     z-index: 2;
 }
 
-
 .bottom {
     display: flex;
     flex-direction: column;
@@ -130,7 +130,6 @@
     padding-right: 12px;
 
     background-color: rgb(255, 230, 0);
-
     z-index: 0;
 }
 

@@ -9,6 +9,10 @@
     /* background-color: white */
     width: 100vw;
 }
+.CreateContent .bottom {
+    height: 100vmax;
+    background-color: rgb(255, 230, 0);
+}
 
 .CreateContent .bottom #title {
     height: 38px;
@@ -77,6 +81,4 @@
     border-radius: 3px;
     border: 1px solid gainsboro;
     box-shadow: 0px 1px 2px gainsboro;
-
-    z-index: 2;
 }

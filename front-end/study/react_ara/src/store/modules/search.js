@@ -85,11 +85,11 @@ const getNumber = () => {
 };
 getNumber();
 
-const postNumber = () => {
+const postNumber = (title, meeting_date, num_of_member) => {
     axios.post('http://172.20.10.5:8000/api/v1/contents/', {
-        title:"너 나.. 좋아하니??.",
-        meeting_date:"2019.04.16",
-        num_of_member:"3"
+        title: title,
+        meeting_date: meeting_date,
+        num_of_member: num_of_member
 
     // axios.post('https://reqres.in/api/users', {
     //     title: "POST",
@@ -108,8 +108,9 @@ const postNumber = () => {
 export default handleActions({
     [CHANGE_INPUT]: (state/*현재 state*/, action/*action 객체*/) => state.set('input', action.payload),
     [INSERT]: (state, {payload: text}) => {
-        getNumber();
-        //postNumber();
+        {console.log('handleActions [INSERT]')}
+        // getNumber();
+        postNumber("나 너.. 좋아하니?", "2019-04-29", "3명");
         return state.set('destination', text )
     }
 }, initialState);

@@ -43,10 +43,10 @@ class CreateContent extends React.Component{
                         onKeyPress={this.props.handleKeyPress}
                     />
                     <Link to="/MapAndList">
-                            <button id="searchButton" onClick={this.props.handleInsert}>등록</button>
+                        <button id="searchButton">등록</button>
                     </Link>
                 </div>
-                {console.log('Start.js render() END')}
+                {console.log('CreateContent.js render() END')}
             </div>
         );
     }
