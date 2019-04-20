@@ -1,5 +1,19 @@
 # ARA
-ARA Project
+### Run [front-end] server (mac)
+* build
+
+`$ cd ara/front-end/study/react_ara`
+
+`$ ./0_install.sh`
+
+`$ ./0_1_add_redux.sh`
+
+* run
+
+`$ ./1_start.sh`
+
+
+### ARA Project
 <div>
   <img src="https://github.com/ara-official/ARA/blob/master/documents/meeting/20190303__0__meeting.jpeg" width="100%"/>
   <table>
