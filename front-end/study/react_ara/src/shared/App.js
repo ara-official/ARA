@@ -5,6 +5,7 @@ import {Home, CreateContent, PageContent} from '../pages';
 // import { MapAndList } from '../components';
 // import StartContainer from '../containers/StartContainer';
 import MapAndListContainer from '../containers/MapAndListContainer';
+import PageContentContainer from '../containers/PageContentContainer';
 
 // css
 import '../css/App.css';
@@ -21,8 +22,8 @@ class App extends Component {
         {/* <Route exact path="/" render={() => <StartContainer props={this.props} />} /> */}
         <Route exact path={`/MapAndList/`} component={MapAndListContainer} />
         <Route exact path="/MapAndList/CreateContent" component={CreateContent} />
-        <Route exact path="/MapAndList/PageContent" component={PageContent} />
-         {/* <Route exact path={`/MapAndList/`} render={() => <MapAndListContainer props={this.props} />} /> */}
+        <Route exact path="/MapAndList/PageContent" component={PageContentContainer} />
+        {/* <Route exact path={`/MapAndList/`} render={() => <MapAndListContainer props={this.props} />} /> */}
         {/* <Route path="/create" component={Create}/> */}
         {/* <Switch>
           <Route path="/about/:name" component={About}/>

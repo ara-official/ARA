@@ -83,7 +83,7 @@ const getNumber = () => {
     .then( response => { console.log(response); }) // success
     .catch( response => { console.log(response); }); // error
 };
-getNumber();
+// getNumber();
 
 const postNumber = (title, meeting_date, num_of_member) => {
     axios.post('http://172.20.10.5:8000/api/v1/contents/', {
@@ -110,7 +110,7 @@ export default handleActions({
     [INSERT]: (state, {payload: text}) => {
         {console.log('handleActions [INSERT]')}
         // getNumber();
-        postNumber("나 너.. 좋아하니?", "2019-04-29", "3명");
+        // postNumber("나 너.. 좋아하니?", "2019-04-29", "3명");
         return state.set('destination', text )
     }
 }, initialState);

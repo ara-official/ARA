@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Content } from '../components';
+import ContentContainer from '../containers/ContentContainer';
 import '../css/ContentList.css';
 
 class ContentList extends Component{
@@ -13,7 +13,7 @@ class ContentList extends Component{
         if(destination === '')
         {
             const list = data.map(
-                info => (<Content
+                info => (<ContentContainer
                     key={info.id}
                     info={info}
                 />)
@@ -27,7 +27,7 @@ class ContentList extends Component{
         else
         {
             const list = data.filter(info => info.destination === destination).map(
-                info => (<Content
+                info => (<ContentContainer
                     key={info.id}
                     info={info}
                 />)

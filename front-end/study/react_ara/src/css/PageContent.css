@@ -1,5 +1,5 @@
 .PageContent {
-    width: 100vw;
+    width: 100vmin;
 }
 
 /* .PageContent .bottom {
@@ -8,9 +8,8 @@
 } */
 
 .PageContent .bottom #contentImg{
-    width: 100vmin;
-
     position: fixed;
+    width: 100vmin;
     top: 100px;
     left: 0px;
 }

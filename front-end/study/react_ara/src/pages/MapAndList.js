@@ -64,7 +64,7 @@ class MapAndList extends Component {
           nickName: '민*식',
           phone: '010-1332-****',
           perpose: '관광, 커타',
-          imgSrc: 'http://heritage.unesco.or.kr/wp-content/uploads/wh_img/hd6_394_i1.jpg'
+          imgSrc: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Bifyu_8.jpg'
         },
         {
           id: 5,
