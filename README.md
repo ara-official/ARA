@@ -1,17 +1,16 @@
 # ARA
 ### Run [front-end] server (mac)
-* build
+1. build
+<pre><code>
+$ cd ara/front-end/study/react_ara
+$ ./0_install.sh
+$ ./0_1_add_redux.sh
+</code></pre>
 
-`$ cd ara/front-end/study/react_ara`
-
-`$ ./0_install.sh`
-
-`$ ./0_1_add_redux.sh`
-
-* run
-
-`$ ./1_start.sh`
-
+2. run
+<pre><code>
+$ ./1_start.sh
+</code></pre>
 
 ### ARA Project
 <div>
