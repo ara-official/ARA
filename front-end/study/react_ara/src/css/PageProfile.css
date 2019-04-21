@@ -1,0 +1,20 @@
+.PageProfile .top{
+    width: 100vmin;
+
+    font-size: 24px;
+}
+.PageProfile .bottom {
+    margin-top: 65px;
+}
+.PageProfile .bottom #id_1 {
+    font-size: 24px;
+}
+.PageProfile .bottom #id_2 {
+    font-size: 24px;
+}
+.PageProfile .bottom #id_3 {
+    font-size: 24px;
+}
+.PageProfile .bottom #id_4 {
+    font-size: 24px;
+}

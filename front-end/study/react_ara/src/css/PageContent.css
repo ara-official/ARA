@@ -1,27 +1,19 @@
 .PageContent {
-    width: 100vmin;
 }
 
-/* .PageContent .bottom {
-    position: fixed;
-    top: 140px;
-} */
+.PageContent .bottom {
+    margin-top: 65px;
+}
 
-.PageContent .bottom #contentImg{
-    position: fixed;
-    width: 100vmin;
-    top: 100px;
-    left: 0px;
+.PageContent .bottom #contentImgSelf{
+    margin-top: 20px;
+    width: 100vw;
 }
 .PageContent .bottom #contentInforFirst {
     height: 38px;
     width: 100vw;
     padding: 6px;
     padding-left: 10px;
-
-    position: fixed;
-    top: 500px;
-    left: 0px;
 
     font-size: 18px;
     font-weight: bold;
@@ -37,10 +29,6 @@
     padding: 6px;
     padding-left: 10px;
 
-    position: fixed;
-    top: 560px;
-    left: 0px;
-
     font-size: 18px;
     font-weight: bold;
 
@@ -55,10 +43,6 @@
     padding: 6px;
     padding-left: 10px;
 
-    position: fixed;
-    top: 620px;
-    left: 0px;
-
     font-size: 18px;
     font-weight: bold;
 
@@ -72,10 +56,6 @@
     width: 100vw;
     padding: 6px;
     padding-left: 10px;
-
-    position: fixed;
-    top: 680px;
-    left: 0px;
 
     font-size: 18px;
     font-weight: bold;

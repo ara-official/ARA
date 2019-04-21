@@ -5,6 +5,9 @@ import '../css/Start.css'
 import { Link } from 'react-router-dom';
 
 class Start extends React.Component{
+    state = {
+        
+    }
     render(){
         console.log('Start.js render() START');
         return(
@@ -21,9 +24,9 @@ class Start extends React.Component{
                         onChange={this.props.handleChange}
                         onKeyPress={this.props.handleKeyPress}
                     />
-                    {/* <Link to="./MapAndList">
-                        <button id="searchButton" onClick={this.props.handleInsert}>검색</button>
-                    </Link> */}
+                    <Link to="./Profile">
+                        <button id="searchButton">사용자 정보</button>
+                    </Link>
                 </div>
                 {console.log('Start.js render() END')}
             </div>

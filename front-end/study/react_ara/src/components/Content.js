@@ -18,7 +18,7 @@ class Content extends Component {
         } = this.props.info;
 
         return(
-            <Link to="/MapAndList/PageContent" 
+            <Link to="/MapAndList/Content" 
                 style={{textDecoration : 'none', color: 'black'}} 
                 onClick={this.handleOnClick}
             >

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import ContentContainer from '../containers/ContentContainer';
-import '../css/ContentList.css';
 
 class ContentList extends Component{
     static defaultProps = {
