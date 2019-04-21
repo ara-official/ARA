@@ -71,14 +71,31 @@ class CreateContent extends React.Component{
                         dateFormat="MMMM d, yyyy h:mm aa"
                         timeCaption="time"
                     />
-
+                    
                     <input 
-                        id="num_of_member" 
-                        placeholder="참여명수 입력"
+                    
+                        id="min_num_of_member"
+                        type='number'
+                        placeholder="최소 참여명수 입력"
                         value={this.props.input}
                         onChange={this.props.handleChange}
                         onKeyPress={this.props.handleKeyPress}
                     />
+                    <input 
+                        id="max_num_of_member"
+                        type='number'
+                        placeholder="최대 참여명수 입력"
+                        value={this.props.input}
+                        onChange={this.props.handleChange}
+                        onKeyPress={this.props.handleKeyPress}
+                    />
+                
+                    <textarea 
+                        id="content" 
+                        type='text'
+                        placeholder="글 내용"
+                    />
+                    
                     <Link to="/MapAndList">
                         <button id="searchButton">등록</button>
                     </Link>

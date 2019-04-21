@@ -11,6 +11,7 @@
 }
 .CreateContent .bottom {
     height: 100vmax;
+    margin-top: 80px;
     background-color: rgb(255, 230, 0);
 }
 
@@ -19,9 +20,6 @@
     width: 65vw;
     padding: 6px;
     padding-left: 10px;
-
-    position: fixed;
-    top: 120px;
 
     font-size: 18px;
     font-weight: bold;
@@ -33,12 +31,24 @@
 
 .CreateContent .bottom #meeting_date {
     height: 38px;
-    width: 65vw;
+    width: 30vw;
     padding: 6px;
     padding-left: 10px;
 
-    position: fixed;
-    top: 180px;
+    
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
+.CreateContent .bottom #min_num_of_member {
+    height: 38px;
+    width: 30vw;
+    padding: 6px;
+    padding-left: 10px;
+
 
     font-size: 18px;
     font-weight: bold;
@@ -47,16 +57,40 @@
     border: 1px solid gainsboro;
     box-shadow: 0px 2px 2px gainsboro;
 }
-
-.CreateContent .bottom #num_of_member {
+.CreateContent .bottom #max_num_of_member {
     height: 38px;
+    width: 30vw;
+    padding: 6px;
+    padding-left: 10px;
+
+
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
+.CreateContent .bottom #content {
+    height: 80px;
     width: 65vw;
     padding: 6px;
     padding-left: 10px;
 
-    position: fixed;
-    top: 240px;
 
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
+.CreateContent .bottom #sns_connect {
+    height: 38px;
+    width: 65vw;
+    padding: 6px;
+    padding-left: 10px;
     font-size: 18px;
     font-weight: bold;
 
@@ -70,9 +104,6 @@
     width: 78px;
 
     /* margin-right: 8px; */
-
-    position: fixed;
-    top: 300px;
     
     font-size: 20px;
 
