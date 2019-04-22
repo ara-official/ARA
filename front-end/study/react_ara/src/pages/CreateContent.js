@@ -3,29 +3,47 @@ import { Link } from 'react-router-dom';
 
 import '../css/Global.css';
 import '../css/CreateContent.css';
+
 import DatePicker, { registerLocale } from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import enGB from 'date-fns/locale/en-GB';
 registerLocale('en-GB', enGB);
 
 class CreateContent extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-          startDate: new Date()
-        };
-        this.handleChange = this.handleChange.bind(this);
-      }
+    state = {
+        startDate: new Date(),
+        title: '',
+        meeting_date: '',
+        min_num_of_member: 0,
+        max_num_of_member: 0,
+        content: ''
+    }
      
-      handleChange(date) {
+    handleDateChange(date) {
         this.setState({
-          startDate: date
+            startDate: date
         });
         console.log('Date is' + date);
-        
-      }
+    }
+
+    handleChange = (e) => {
+        e.preventDefault();
+        console.log('name : value = ' + e.target.name + ' : ' +e.target.value);
+        this.setState({
+            [e.target.name] : e.target.value
+        });
+        console.log(this.state);
+    }
+
+    handleInsert = (e) => {
+        e.preventDefault();
+        console.log('this.state.title : ' + this.state.title);
+        this.props.insert(this.state.title);
+    }
+
     render(){
         const pageName = "CreateContent Page";
+        const { handleChange } = this;
         console.log('CreateContent.js START');
         return (
             <div className="CreateContent">
@@ -42,17 +60,17 @@ class CreateContent extends React.Component{
                 <div className="bottom">
                     <input 
                         id="title" 
+                        name='title'
                         placeholder="제목 입력"
-                        value={this.props.input}
-                        onChange={this.props.handleChange}
-                        oanKeyPress={this.props.handleKeyPress}
+                        value={this.state.title}
+                        onChange={handleChange}
                     />
 
                     <DatePicker
                         id="meeting_date"
                         placeholder="날짜 입력"
                         selected={this.state.startDate}
-                        onChange={this.handleChange}
+                        onChange={this.handleDateChange}
                         popperPlacement="bottom-end"
                         popperModifiers={{
                             offset: {
@@ -73,31 +91,33 @@ class CreateContent extends React.Component{
                     />
                     
                     <input 
-                    
                         id="min_num_of_member"
+                        name='min_num_of_member'
                         type='number'
                         placeholder="최소 참여명수 입력"
-                        value={this.props.input}
-                        onChange={this.props.handleChange}
-                        onKeyPress={this.props.handleKeyPress}
+                        value={this.state.min_num_of_member}
+                        onChange={handleChange}
                     />
                     <input 
                         id="max_num_of_member"
+                        name='max_num_of_member'
                         type='number'
                         placeholder="최대 참여명수 입력"
-                        value={this.props.input}
-                        onChange={this.props.handleChange}
-                        onKeyPress={this.props.handleKeyPress}
+                        value={this.state.max_num_of_member}
+                        onChange={handleChange}
                     />
                 
                     <textarea 
                         id="content" 
+                        name='content'
                         type='text'
                         placeholder="글 내용"
+                        value={this.state.content}
+                        onChange={handleChange}
                     />
                     
                     <Link to="/MapAndList">
-                        <button id="searchButton">등록</button>
+                        <button id="searchButton" onClick={this.handleInsert}>등록</button>
                     </Link>
                 </div>
                 {console.log('CreateContent.js render() END')}

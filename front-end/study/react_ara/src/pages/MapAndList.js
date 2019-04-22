@@ -87,7 +87,7 @@ class MapAndList extends Component {
               </div>
               <div id="contentList">
                 <ContentList 
-                  data={this.props.information} 
+                  information={this.props.information} 
                   destination={this.props.destination}
                 />
               </div>

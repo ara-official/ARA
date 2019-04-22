@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 // import { Route, Switch } from 'react-router-dom';
-import {Home, CreateContent, PageProfile} from '../pages';
+import {Home, PageProfile} from '../pages';
 // import { MapAndList } from '../components';
 // import StartContainer from '../containers/StartContainer';
 import MapAndListContainer from '../containers/MapAndListContainer';
 import PageContentContainer from '../containers/PageContentContainer';
+import CreateContentContainer from '../containers/CreateContentContainer';
 
 // css
 import '../css/App.css';
@@ -22,7 +23,7 @@ class App extends Component {
         <Route exact path="/Profile" component={PageProfile} />
         {/* <Route exact path="/" render={() => <StartContainer props={this.props} />} /> */}
         <Route exact path={`/MapAndList/`} component={MapAndListContainer} />
-        <Route exact path="/MapAndList/CreateContent" component={CreateContent} />
+        <Route exact path="/MapAndList/CreateContent" component={CreateContentContainer} />
         <Route exact path="/MapAndList/Content" component={PageContentContainer} />
         {/* <Route exact path={`/MapAndList/`} render={() => <MapAndListContainer props={this.props} />} /> */}
         {/* <Route path="/create" component={Create}/> */}

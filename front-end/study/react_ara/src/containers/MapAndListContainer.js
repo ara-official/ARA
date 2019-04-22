@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { MapAndList } from '../pages';
 
 import * as searchActions from '../store/modules/search';
-import * as contentActions from '../store/modules/content';
+// import * as contentActions from '../store/modules/content';
 
 class MapAndListContainer extends React.Component{
     handleChange = (e) => {

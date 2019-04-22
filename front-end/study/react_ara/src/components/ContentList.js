@@ -1,21 +1,31 @@
 import React, {Component} from 'react';
 import ContentContainer from '../containers/ContentContainer';
+import { Map, List } from 'immutable';
+
 
 class ContentList extends Component{
-    static defaultProps = {
-        data: []
-    };
+
 
     render(){
-        const { data, destination } = this.props;
-        
+        const { information, destination } = this.props;
+        console.log('information : ' + information);
         if(destination === '')
         {
-            const list = data.map(
-                info => (<ContentContainer
-                    key={info.id}
+            // const list = information.map(
+            //     info => (<ContentContainer
+            //         key={info.id}
+            //         info={info}
+            //     />)
+            // );
+            const list = information.map(
+                info => {
+                    const { id } = info.toJS();
+                    console.log('id : ' + id);
+                    return (<ContentContainer
+                    key={id}
                     info={info}
-                />)
+                    />);
+            }
             );
             return(
                 <div>
@@ -25,7 +35,7 @@ class ContentList extends Component{
         }
         else
         {
-            const list = data.filter(info => info.destination === destination).map(
+            const list = information.filter(info => info.destination === destination).map(
                 info => (<ContentContainer
                     key={info.id}
                     info={info}

@@ -15,8 +15,7 @@ class Content extends Component {
         const {
             title, destination, nickName, phone, perpose, imgSrc
             // id, address
-        } = this.props.info;
-
+        } = this.props.info.toJS();
         return(
             <Link to="/MapAndList/Content" 
                 style={{textDecoration : 'none', color: 'black'}} 
