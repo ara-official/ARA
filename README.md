@@ -13,8 +13,16 @@ $ ./1_start.sh
 </code></pre>
 
 ### Run [back-end] server (?)
-1. build
-2. 
+1. django 및 필요 패키지 설치
+<pre><code>
+$ pip install django
+$ pip install djangorestframework
+$ pip install django-rest-swagger
+</code></pre>
+2. Run back-end
+<pre><code>
+$ python manage.py runserver [ip:port]
+</code></pre>
 
 ### ARA Project
 <div>
