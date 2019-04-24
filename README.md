@@ -12,6 +12,10 @@ $ ./0_1_add_redux.sh
 $ ./1_start.sh
 </code></pre>
 
+### Run [back-end] server (?)
+1. build
+2. 
+
 ### ARA Project
 <div>
   <img src="https://github.com/ara-official/ARA/blob/master/documents/meeting/20190303__0__meeting.jpeg" width="100%"/>
