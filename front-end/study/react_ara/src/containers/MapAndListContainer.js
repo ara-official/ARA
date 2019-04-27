@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import { MapAndList } from '../pages';
 
 import * as searchActions from '../store/modules/search';
-// import * as contentActions from '../store/modules/content';
+import * as contentActions from '../store/modules/content';
+
+// axios
+import axios from 'axios';
 
 class MapAndListContainer extends React.Component{
     handleChange = (e) => {
@@ -12,19 +15,51 @@ class MapAndListContainer extends React.Component{
         changeInput(e.target.value);
     }
 
-    handleInsert = (e) => {
-        e.preventDefault();
-        this.props.insert(this.props.input)
+    getListFromServer = (region) => {
+        return axios.get('http://172.20.10.5:8000/api/v1/contents/' + region)
+        .then( response => { console.log(response); }) // success
+        .catch( response => { console.log(response); }); // error
+    };
+
+    handleInsert = (input) => {
+        console.log('MapAndListContainer - handleInsert START');
+        // e.preventDefault();
+        // module search
+        this.props.insertSearch(input);
+        // module search
+        console.log('region : ' + this.props.region);
+        // REST
+        const { response } = this.getListFromServer(this.props.region);
+        console.log('response : ' + response);
+        // module content
+        // this.props.clear();
+
+        // dummy data
+        const info = {
+            title: 'dummy data',
+            meeting_date: '2019-05-25',
+            region: '안드로메다',
+            num_of_people: 4,
+            nick_name: '가을이',
+            phone_number: '0103493****',
+            perpose: '관광, 기타',
+            image_path: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Andromeda_Galaxy_%28with_h-alpha%29.jpg/1920px-Andromeda_Galaxy_%28with_h-alpha%29.jpg',
+            closed: false
+        };
+        console.log('dummy info : ' + info);
+        // module content
+        this.props.insertContent(info);
+        console.log('MapAndListContainer - handleInsert END');
     }
 
     handleKeyPress = (e) => {
         if(e.key === 'Enter')
         {
             e.preventDefault(); // 기본 링크 동작 막음
-            this.props.insert(this.props.input);
-            this.setState({
-                redirect: true
-            })
+            this.handleInsert(this.props.input);
+            // this.setState({
+            //     redirect: true
+            // })
         }
     }
 
@@ -42,7 +77,6 @@ class MapAndListContainer extends React.Component{
 
                     handleChange={handleChange} 
 
-                    handleInsert={handleInsert}
                     handleKeyPress={handleKeyPress}
 
                 />
@@ -62,7 +96,11 @@ const mapStateToProps = ({search, content}) => ({
 // [2] props 값으로 넣어 줄 action을 정의
 const mapDispatchToProps = (dispatch) => ({
     changeInput: (value) => dispatch(searchActions.changeInput(value)),
-    insert: (text) => dispatch(searchActions.insert(text))
+
+    insertSearch: (text) => dispatch(searchActions.insert(text)),
+
+    clear: () => dispatch(contentActions.clear()),
+    insertContent: (info) => dispatch(contentActions.insert(info))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MapAndListContainer);

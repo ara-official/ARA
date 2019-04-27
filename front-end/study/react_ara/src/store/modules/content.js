@@ -9,6 +9,7 @@ import { Map, List } from 'immutable';
 const SET_CONTENT_DATA = 'content/SET_CONTENT_DATA';
 const INSERT = 'content/INSERT';
 const UPDATE = 'content/UPDATE';
+const CLEAR = 'content/CLEAR';
 
 // action
 export const setContentData = createAction(SET_CONTENT_DATA, inputInfo => inputInfo); // 두 번째 param: payloadCreator, 세 번째 param: metaCreator
@@ -16,7 +17,10 @@ export const setContentData = createAction(SET_CONTENT_DATA, inputInfo => inputI
 export const insert = createAction(INSERT, inputInfo => inputInfo);
 export const update = createAction(UPDATE, id => id);
 
+export const clear = createAction(CLEAR);
+
 let count = 2;
+const empty = List();
 const initialState = Map({
     info: {
         input__id: 0,
@@ -98,31 +102,51 @@ const initialState = Map({
       ])
 });
 
+const handleInputInfo = () => {
+    // console.log('handleActions [SET_CONTENT_DATA]');
+    // const list = information.map(
+    //     info => {
+    //         const { id } = info.toJS();
+    //         return (<ContentContainer
+    //         key={id}
+    //         info={info}
+    //         />);
+    // }
+
+}
+
 // reducer
 export default handleActions({
     [SET_CONTENT_DATA]: (state, {payload: inputInfo}) => {
-        console.log('handleActions [SET_CONTENT_DATA]');
         return state.set('info', inputInfo.toJS());
     }
     ,
     [INSERT]: (state, { payload: inputInfo }) => {
-        console.log('handleActions [INSERT] - count : ' + count);
+        console.log('reducer - content [INSERT] - count : ' + count);
         // const input__title = inputInfo.toJS().title;
         const item = Map({ 
             id: count++,
-            title: inputInfo, 
-            // destination: info.destination, 
-            // numOfpeople: info.numOfpeople, nickName: info.nickName, 
-            // phone: info.phone, perpose: info.perpose, 
-            // imgSrc: info.imgSrc
-            image_path: 'https://avatars1.githubusercontent.com/u/47748609?s=200&v=4',
+            title: inputInfo.title,
+            // meeting_date: '??'
+            region: inputInfo.region,
+            num_of_people: inputInfo.num_of_people,
+            nick_name: inputInfo.nick_name,
+            phone_number: inputInfo.phone_number,
+            perpose: inputInfo.perpose, 
+            image_path: inputInfo.image_path,
+            // image_path: 'https://avatars1.githubusercontent.com/u/47748609?s=200&v=4',
             closed: false
         });
         return state.update('information', information => information.push(item));
     }
     ,
     [UPDATE]: (state, {payload: id}) => {
-        console.log('handleActions [UPDATE]');
+        console.log('reducer - content [UPDATE]');
         return state.updateIn(['information', id, 'closed'], closed => !closed);
+    }
+    ,
+    [CLEAR]: (state) => {
+        console.log('reducer - content [CLEAR]')
+        return state.set('information', empty);
     }
 }, initialState);

@@ -7,9 +7,10 @@ class ContentList extends Component{
     render(){
         console.log('ⓙⓢ START render() - ContentList.js ');
         const { information, region } = this.props;
-        console.log('region : ' + region);
+        console.log('search keyword(region) : ' + region);
         if(region === '')
         {
+            console.log('search keyword(region) x');
             // const list = information.map(
             //     info => (<ContentContainer
             //         key={info.id}
@@ -34,7 +35,7 @@ class ContentList extends Component{
         }
         else
         {
-            console.log('filter');
+            console.log('search keyword(region) o');
             const list = information.filter(info => info.toJS().region === region).map(
                 info => 
                 {
