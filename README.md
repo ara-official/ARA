@@ -13,6 +13,10 @@ $ ./1_start.sh
 </code></pre>
 
 ### Run [back-end] server (?)
+0. 폴더로 이동
+<pre><code>
+$ cd ARA/back-end/django_test/rest_server
+</code></pre>
 1. django 및 필요 패키지 설치
 <pre><code>
 $ pip install django
