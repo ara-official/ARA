@@ -12,7 +12,9 @@ $ ./0_1_add_redux.sh
 $ ./1_start.sh
 </code></pre>
 
-### Run [back-end] server (?)
+### Run [back-end] server
+> 맥북에서는 안됨~~
+
 0. 폴더로 이동
 <pre><code>
 $ cd ARA/back-end/django_test/rest_server
