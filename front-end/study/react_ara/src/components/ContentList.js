@@ -11,6 +11,7 @@ class ContentList extends Component{
         if(region === '')
         {
             console.log('search keyword(region) x');
+            console.log('information : ' + information);
             // const list = information.map(
             //     info => (<ContentContainer
             //         key={info.id}
@@ -36,6 +37,7 @@ class ContentList extends Component{
         else
         {
             console.log('search keyword(region) o');
+            console.log('information : ' + information);
             const list = information.filter(info => info.toJS().region === region).map(
                 info => 
                 {

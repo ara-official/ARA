@@ -146,7 +146,10 @@ export default handleActions({
     }
     ,
     [CLEAR]: (state) => {
-        console.log('reducer - content [CLEAR]')
+        console.log('reducer - content [CLEAR]');
+        console.log('count before : ' + count);
+        count = 0; // count 같은 경우는, 그냥 일반 변수..
+        console.log('count after : ' + count);
         return state.set('information', empty);
     }
 }, initialState);

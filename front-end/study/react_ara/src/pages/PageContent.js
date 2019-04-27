@@ -33,7 +33,7 @@ class PageContent extends React.Component{
                             {/* <img id="contentImgSelf" alt='imsi_img' src={imgSrc}/> */}
                         </div>
                         <div id="contentInfor">
-                            {/* <li>[id] : {id}</li> */}
+                            <li>[id] : {this.props.storeInfo.id}</li>
                             <div id="contentInforFirst">
                                 {/* {nickName} · {phone} */}
                                 {this.props.storeInfo.nick_name + ' · ' + this.props.storeInfo.phone_number}

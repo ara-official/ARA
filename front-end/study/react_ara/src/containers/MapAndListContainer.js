@@ -17,8 +17,32 @@ class MapAndListContainer extends React.Component{
 
     getListFromServer = (region) => {
         return axios.get('http://172.20.10.5:8000/api/v1/contents/' + region)
-        .then( response => { console.log(response); }) // success
-        .catch( response => { console.log(response); }); // error
+        .then( response => {
+                console.log(response); 
+
+            }) // success
+        .catch( response => {
+                console.log(response); 
+
+                // module content
+                this.props.clear();
+                // dummy data
+                const info = {
+                    title: 'dummy data',
+                    meeting_date: '2019-05-25',
+                    region: '안드로메다',
+                    num_of_people: 4,
+                    nick_name: '가을이',
+                    phone_number: '0103493****',
+                    perpose: '관광, 기타',
+                    image_path: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Andromeda_Galaxy_%28with_h-alpha%29.jpg/1920px-Andromeda_Galaxy_%28with_h-alpha%29.jpg',
+                    closed: false
+                };
+                console.log('dummy info : ' + info);
+                // module content
+                this.props.insertContent(info);
+                console.log('MapAndListContainer - handleInsert END');
+            }); // error : 실패일 경우 그냥 dummy 채워보자
     };
 
     handleInsert = (input) => {
@@ -30,32 +54,13 @@ class MapAndListContainer extends React.Component{
         console.log('region : ' + this.props.region);
         // REST
         const { response } = this.getListFromServer(this.props.region);
-        console.log('response : ' + response);
-        // module content
-        // this.props.clear();
-
-        // dummy data
-        const info = {
-            title: 'dummy data',
-            meeting_date: '2019-05-25',
-            region: '안드로메다',
-            num_of_people: 4,
-            nick_name: '가을이',
-            phone_number: '0103493****',
-            perpose: '관광, 기타',
-            image_path: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Andromeda_Galaxy_%28with_h-alpha%29.jpg/1920px-Andromeda_Galaxy_%28with_h-alpha%29.jpg',
-            closed: false
-        };
-        console.log('dummy info : ' + info);
-        // module content
-        this.props.insertContent(info);
-        console.log('MapAndListContainer - handleInsert END');
+        // response success 일 경우, 아래 command 동작하도록!
     }
 
     handleKeyPress = (e) => {
         if(e.key === 'Enter')
         {
-            e.preventDefault(); // 기본 링크 동작 막음
+            e.preventDefault(); // 기본 링크 동작 막음 -> 안할 경우, 다음에 위치한 Button이 눌려짐
             this.handleInsert(this.props.input);
             // this.setState({
             //     redirect: true
