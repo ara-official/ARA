@@ -8,46 +8,51 @@ import { Map, List } from 'immutable';
 // type
 const SET_CONTENT_DATA = 'content/SET_CONTENT_DATA';
 const INSERT = 'content/INSERT';
-// const UPDATE = 'content/UPDATE';
+const UPDATE = 'content/UPDATE';
 
 // action
-export const setContentData = createAction(SET_CONTENT_DATA, info => info); // 두 번째 param: payloadCreator, 세 번째 param: metaCreator
-export const insert = createAction(INSERT, value => value);
-// export const update = createAction(UPDATE, value => value);
+export const setContentData = createAction(SET_CONTENT_DATA, inputInfo => inputInfo); // 두 번째 param: payloadCreator, 세 번째 param: metaCreator
+    // CreateContent 에서 사용
+export const insert = createAction(INSERT, inputInfo => inputInfo);
+export const update = createAction(UPDATE, id => id);
 
 let count = 2;
 const initialState = Map({
     info: {
-        id: 0,
-        title: '',
-        destination: '',
-        numOfpeople: 0,
-        nickName: '',
-        phone: '',
-        perpose: '',
-        imgSrc: ''
+        input__id: 0,
+        input__title: 'info 의 title',
+        input__meeting_date: '',
+        input__region: '',
+        input__num_of_people: 0,
+        input__nick_name: '',
+        input__phone_number: '',
+        input__perpose: '',
+        input__image_path: ''
     },
-    // information: List()
     information: List([
         Map({
           id: 0,
           title: '강남 쉐이크쉑 같이 드실 1~2 분 구해요~',
-          destination: '강남',
-          numOfpeople: 0,
-          nickName: '알*고',
-          phone: '010-3223-****',
+          meeting_date: '10/10',
+          region: '강남',
+          num_of_people: 0,
+          nick_name: '알*고',
+          phone_number: '0103223****',
           perpose: '점심식사',
-          imgSrc: 'http://img.seoul.co.kr/img/upload/2016/07/19/SSI_20160719141317_V.jpg'
+          image_path: 'http://img.seoul.co.kr/img/upload/2016/07/19/SSI_20160719141317_V.jpg',
+          closed: false
         }),
         Map({
           id: 1,
           title: '경복궁 네 명 모아 봅니다.',
-          destination: '경복궁',
-          numOfpeople: 0,
-          nickName: '최*훈',
-          phone: '010-3493-****',
+          meeting_date: '10/10',
+          region: '경복궁',
+          num_of_people: 0,
+          nick_name: '최*훈',
+          phone_number: '0103493****',
           perpose: '관광, 기타',
-          imgSrc: 'https://github.com/ara-official/ARA/blob/master/front-end/img/seoul.jpg?raw=true'
+          image_path: 'https://github.com/ara-official/ARA/blob/master/front-end/img/seoul.jpg?raw=true',
+          closed: false
         })
         // ,
         // {
@@ -95,25 +100,29 @@ const initialState = Map({
 
 // reducer
 export default handleActions({
-    [SET_CONTENT_DATA]: (state, {payload: info}) => {
-        {console.log('handleActions [SET_CONTENT_DATA]')}
-        {console.log(info)}
-
-        return state.set('info', info )
-    },
-    [INSERT]: (state, { payload: value }) => {
-        console.log('handleActions - info : ' + value);
-        console.log('handleActions - count : ' + count);
+    [SET_CONTENT_DATA]: (state, {payload: inputInfo}) => {
+        console.log('handleActions [SET_CONTENT_DATA]');
+        return state.set('info', inputInfo.toJS());
+    }
+    ,
+    [INSERT]: (state, { payload: inputInfo }) => {
+        console.log('handleActions [INSERT] - count : ' + count);
+        // const input__title = inputInfo.toJS().title;
         const item = Map({ 
             id: count++,
-            title: value, 
+            title: inputInfo, 
             // destination: info.destination, 
             // numOfpeople: info.numOfpeople, nickName: info.nickName, 
             // phone: info.phone, perpose: info.perpose, 
             // imgSrc: info.imgSrc
-            imgSrc: 'http://img.seoul.co.kr/img/upload/2016/07/19/SSI_20160719141317_V.jpg'
+            image_path: 'https://avatars1.githubusercontent.com/u/47748609?s=200&v=4',
+            closed: false
         });
         return state.update('information', information => information.push(item));
     }
-    // [UPDATE]: () => {}
+    ,
+    [UPDATE]: (state, {payload: id}) => {
+        console.log('handleActions [UPDATE]');
+        return state.updateIn(['information', id, 'closed'], closed => !closed);
+    }
 }, initialState);

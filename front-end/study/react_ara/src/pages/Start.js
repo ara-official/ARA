@@ -25,7 +25,7 @@ class Start extends React.Component{
                         onKeyPress={this.props.handleKeyPress}
                     />
                     <Link to="./Profile">
-                        <button id="searchButton">사용자 정보</button>
+                        <button id="searchButton">계정</button>
                     </Link>
                 </div>
                 {console.log('Start.js render() END')}

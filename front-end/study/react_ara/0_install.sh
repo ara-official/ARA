@@ -7,3 +7,6 @@ npm install react-datepicker
 # react router
 yarn add react-router-dom
 yarn add cross-env --dev
+
+#[react-scrollbar](https://www.npmjs.com/package/react-scrollbar)
+npm install react-scrollbar

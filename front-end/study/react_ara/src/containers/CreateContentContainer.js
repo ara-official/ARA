@@ -26,7 +26,7 @@ const mapStateToProps = ({content}) => ({
 
 // [2] props 값으로 넣어 줄 action을 정의
 const mapDispatchToProps = (dispatch) => ({
-    insert: (title) => dispatch(contentActions.insert(title)),
+    insert: (inputInfo) => dispatch(contentActions.insert(inputInfo)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateContentContainer);

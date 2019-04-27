@@ -11,13 +11,13 @@ class Root extends React.Component{
     render(){
         return(
             <div className="Root">
-                    {console.log('Root.js START')}
+                    {console.log('ⓙⓢ Root.js START')}
                     <BrowserRouter>
                     <Provider store={store}>
                     <App/>
                     </Provider>
                     </BrowserRouter>
-                    {console.log('Root.js END')}
+                    {console.log('ⓙⓢ Root.js END')}
             </div>
         );
     }

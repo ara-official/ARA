@@ -7,6 +7,9 @@ import {ContentList} from '../components';
 import {FilterDate, FilterPeople, FilterEtc} from '../components';
 import {Link} from 'react-router-dom';
 
+// react-scrollbar
+import { ScrollArea } from 'react-scrollbar';
+
 class MapAndList extends Component {
   constructor(props) {
     super(props)
@@ -41,8 +44,7 @@ class MapAndList extends Component {
   }
 
   render() {
-    console.log('MapAndList.js render() START');
-    const {information} = this.state;
+    console.log('ⓙⓢ MapAndList.js render() START');
     const firstMessage = '여행 날짜와 게스트 인원수를 입력하면 관련된 모임을 확인할 수 있습니다. 모임이 금방 마감될 수 있습니다.'
 
     return (
@@ -57,7 +59,7 @@ class MapAndList extends Component {
               onChange={this.props.handleChange}
               onKeyPress={this.props.handleKeyPress}
             />
-            <Link to="./MapAndList/CreateContent">
+            <Link to="/MapAndList/CreateContent">
               <button id="searchButton" >방생성</button>
             </Link>
           </div>
@@ -88,7 +90,7 @@ class MapAndList extends Component {
               <div id="contentList">
                 <ContentList 
                   information={this.props.information} 
-                  destination={this.props.destination}
+                  region={this.props.region}
                 />
               </div>
 
@@ -98,7 +100,7 @@ class MapAndList extends Component {
         </form>
 
 
-        {console.log('MapAndList.js render() END')}
+        {console.log('ⓙⓢ MapAndList.js render() END')}
       </Fragment>
     );
   }

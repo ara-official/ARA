@@ -34,7 +34,7 @@ export const insert = createAction(INSERT, text => text);
 // }
 const initialState = Map({
     input: '',
-    destination: 'empty'
+    region: 'empty'
     // todos: List([
     //     Map({
     //         id: 0,
@@ -78,19 +78,30 @@ const initialState = Map({
 
 
 // REST API 예시
-const getNumber = () => {
-    axios.get('http://172.20.10.5:8000/api/v1/contents/')
+const getNumberAll = () => {
+    return axios.get('http://172.20.10.5:8000/api/v1/contents/')
+    .then( response => { console.log(response); }) // success
+    .catch( response => { console.log(response); }); // error
+};
+
+const getNumber = (region) => {
+    return axios.get('http://172.20.10.5:8000/api/v1/contents/1')
     .then( response => { console.log(response); }) // success
     .catch( response => { console.log(response); }); // error
 };
 // getNumber();
 
-const postNumber = (title, meeting_date, num_of_member) => {
+// const postNumber = (title, meeting_date, num_of_member) => {
+const postNumber = (title, meeting_date, region, num_of_people, nick_name, phone_number, perpose, image_path) => {
     axios.post('http://172.20.10.5:8000/api/v1/contents/', {
-        title: title,
-        meeting_date: meeting_date,
-        num_of_member: num_of_member
-
+        title: '경복궁 네 명 모아 봅니다.',
+        meeting_date: '10/10',
+        region: '경복궁',
+        num_of_people: 0,
+        nick_name: '최*훈',
+        phone_number: '0103493****',
+        perpose: '관광, 기타',
+        image_path: 'https://github.com/ara-official/ARA/blob/master/front-end/img/seoul.jpg?raw=true'
     // axios.post('https://reqres.in/api/users', {
     //     title: "POST",
     //     data: {
@@ -109,8 +120,11 @@ export default handleActions({
     [CHANGE_INPUT]: (state/*현재 state*/, action/*action 객체*/) => state.set('input', action.payload),
     [INSERT]: (state, {payload: text}) => {
         {console.log('handleActions [INSERT]')}
-        // getNumber();
+        // getNumberAll();
+        // const test = getNumber('1');
+        // console.log('test : ' + test);
+        // postNumber();
         // postNumber("나 너.. 좋아하니?", "2019-04-29", "3명");
-        return state.set('destination', text )
+        return state.set('region', text )
     }
 }, initialState);

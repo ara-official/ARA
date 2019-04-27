@@ -29,20 +29,22 @@ class MapAndListContainer extends React.Component{
     }
 
     render(){
-        const {input, destination, information} = this.props;
+        const {input, region, information} = this.props;
         const {handleChange, handleInsert, handleKeyPress} = this;
         return(
             <div>
                 {console.log('input : ' + this.props.input)}
-                {console.log('destination : ' + this.props.destination)}
+                {console.log('region : ' + this.props.region)}
                 <MapAndList 
                     input={input} 
+                    region={region} 
+                    information={information}
+
                     handleChange={handleChange} 
-                    destination={destination} 
+
                     handleInsert={handleInsert}
                     handleKeyPress={handleKeyPress}
 
-                    information={information}
                 />
             </div>
        );
@@ -52,7 +54,8 @@ class MapAndListContainer extends React.Component{
 // [1] props 값으로 넣어 줄 state를 정의
 const mapStateToProps = ({search, content}) => ({
     input: search.get('input'),
-    destination: search.get('destination'),
+    region: search.get('region'),
+
     information: content.get('information')
 });
 

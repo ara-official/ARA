@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import ContentContainer from '../containers/ContentContainer';
-import { Map, List } from 'immutable';
-
 
 class ContentList extends Component{
 
 
     render(){
-        const { information, destination } = this.props;
-        console.log('information : ' + information);
-        if(destination === '')
+        console.log('ⓙⓢ START render() - ContentList.js ');
+        const { information, region } = this.props;
+        console.log('region : ' + region);
+        if(region === '')
         {
             // const list = information.map(
             //     info => (<ContentContainer
@@ -20,7 +19,6 @@ class ContentList extends Component{
             const list = information.map(
                 info => {
                     const { id } = info.toJS();
-                    console.log('id : ' + id);
                     return (<ContentContainer
                     key={id}
                     info={info}
@@ -30,25 +28,32 @@ class ContentList extends Component{
             return(
                 <div>
                     {list}
+                    {console.log('ⓙⓢ END render() - ContentList.js ')}
                 </div>
             );
         }
         else
         {
-            const list = information.filter(info => info.destination === destination).map(
-                info => (<ContentContainer
-                    key={info.id}
+            console.log('filter');
+            const list = information.filter(info => info.toJS().region === region).map(
+                info => 
+                {
+                    const { id } = info.toJS();
+                    return (<ContentContainer
+                    key={id}
                     info={info}
-                />)
+                    />);
+            }
             );
             return(
                 <div>
                     {list}
+                    {console.log('ⓙⓢ END render() - ContentList.js ')}
                 </div>
             );
         }
 
-        
+
     }
 }
 

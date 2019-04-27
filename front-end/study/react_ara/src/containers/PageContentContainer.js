@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import { PageContent } from '../pages';
 
 
-import * as searchActions from '../store/modules/content';
+import * as contentActions from '../store/modules/content';
 
 class PageContentContainer extends React.Component{
     render(){
-        const {storeInfo, destination, setContentData} = this.props;
+        const {storeInfo, setContentData, update} = this.props;
         return(
             <div>
                 <PageContent 
@@ -15,7 +15,7 @@ class PageContentContainer extends React.Component{
                     storeInfo={storeInfo}
 
                     // function
-                    setContentData={setContentData}
+                    update={update}
                 />
             </div>
         );
@@ -29,7 +29,8 @@ const mapStateToProps = ({content}) => ({
 
 // [2] props 값으로 넣어 줄 action을 정의
 const mapDispatchToProps = (dispatch) => ({
-    setContentData: (info) => dispatch(searchActions.setContentData(info))
+    setContentData: (info) => dispatch(contentActions.setContentData(info)),
+    update: (id) => dispatch(contentActions.update(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PageContentContainer);

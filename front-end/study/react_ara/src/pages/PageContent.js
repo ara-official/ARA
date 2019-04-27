@@ -5,8 +5,12 @@ import '../css/Global.css';
 import '../css/PageContent.css';
 
 class PageContent extends React.Component{
+    handleUpdate = (e) => {
+        // e.preventDefault();
+        this.props.update(this.props.storeInfo.id);
+    }
     render(){
-        console.log(this.props.title);
+        console.log('ⓙⓢ PageContent render() START');
         return(
             <div className="PageContent">
                 <div className="top">
@@ -21,19 +25,18 @@ class PageContent extends React.Component{
                 </div>
 
                 <div className="middle">
-                {'middle'}
+                {/* {'middle'} */}
                 </div>
-
                 <div className="bottom">
                         <div id="contentImg">
-                            <img id="contentImgSelf" alt='imsi_logo' src={this.props.storeInfo.imgSrc}/>
+                            <img id="contentImgSelf" alt='imsi_logo' src={this.props.storeInfo.image_path}/>
                             {/* <img id="contentImgSelf" alt='imsi_img' src={imgSrc}/> */}
                         </div>
                         <div id="contentInfor">
                             {/* <li>[id] : {id}</li> */}
                             <div id="contentInforFirst">
                                 {/* {nickName} · {phone} */}
-                                {this.props.storeInfo.nickName + ' · ' + this.props.storeInfo.phone}
+                                {this.props.storeInfo.nick_name + ' · ' + this.props.storeInfo.phone_number}
                             </div>
                             <div id="contentTitle">
                                 {/* #{id} : {title} */}
@@ -43,13 +46,16 @@ class PageContent extends React.Component{
                             {/* {address}<br/> */} 
                             <div id="contentInforThird">
                                 {/* {destination} · {perpose} */}
-                                {this.props.storeInfo.destination + ' · ' +this.props.storeInfo.perpose}
+                                {this.props.storeInfo.region + ' · ' +this.props.storeInfo.perpose}
                             </div>
-                            <button id="button">
-                                확정하기
-                            </button>
+                            <Link to="/MapAndList">
+                                <button id="button" onClick={this.handleUpdate}>
+                                    확정하기
+                                </button>
+                            </Link>
                         </div>
                 </div>
+                {console.log('ⓙⓢ PageContent render() END')}
             </div>
         );
     }

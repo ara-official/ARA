@@ -16,7 +16,7 @@ import '../css/App.css';
 
 class App extends Component {
   render() {
-    console.log('App.js render() START');
+    console.log('ⓙⓢ App.js render() START');
     return (
       <div className="App">
         <Route exact path="/" component={Home} />
@@ -31,7 +31,7 @@ class App extends Component {
           <Route path="/about/:name" component={About}/>
           <Route path="/about" component={About}/>
         </Switch> */}
-        {console.log('App.js render() END')}
+        {console.log('ⓙⓢ App.js render() END')}
       </div>
     );
   }
