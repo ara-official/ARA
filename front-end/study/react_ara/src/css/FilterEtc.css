@@ -1,15 +1,27 @@
-.FilterEtc{
+.FilterEtc {
 
 }
 
 .FilterEtc .InnerBox{
-    margin-top: 4px;
-    margin-left: 168px;
-    width: 450px;
-    height: 500px;
+    /* margin-top: 4px; */
+    /* margin-left: 24px; */
+
+    /* width: 450px; */
+    /* height: 500px; */
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+
     background-color: white;
 
     border-radius: 5px;
     border: 1px solid gainsboro;
     box-shadow: 0px 2px 6px gainsboro;
+}
+
+.FilterEtc .InnerBox #closeButton{
+    width: 50px;
+    height: 50px;
+    margin-top: 300px;
 }

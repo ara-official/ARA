@@ -7,13 +7,24 @@ import { CreateContent } from '../pages';
 import * as contentActions from '../store/modules/content';
 
 class CreateContentContainer extends React.Component{
-
+    
+    handleInsert = (input) => {
+        console.log('MapAndListContainer - handleInsert START');
+        // e.preventDefault();
+        // module search
+        this.props.insertContent(input);
+        // module search
+        console.log('region : ' + this.props.region);
+        // REST
+        // this.getListFromServer(this.props.region);
+        // response success 일 경우, 아래 command 동작하도록!
+    }
 
     render(){
         return(
             <div>
                 <CreateContent 
-                    insert={this.props.insert}
+                    insert={this.handleInsert}
                 />
             </div>
         );
@@ -26,7 +37,7 @@ const mapStateToProps = ({content}) => ({
 
 // [2] props 값으로 넣어 줄 action을 정의
 const mapDispatchToProps = (dispatch) => ({
-    insert: (inputInfo) => dispatch(contentActions.insert(inputInfo)),
+    insertContent: (inputInfo) => dispatch(contentActions.insert(inputInfo)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateContentContainer);

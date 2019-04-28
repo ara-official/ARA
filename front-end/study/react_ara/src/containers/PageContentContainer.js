@@ -7,7 +7,7 @@ import * as contentActions from '../store/modules/content';
 
 class PageContentContainer extends React.Component{
     render(){
-        const {storeInfo, setContentData, update} = this.props;
+        const {storeInfo, update} = this.props;
         return(
             <div>
                 <PageContent 
@@ -29,7 +29,7 @@ const mapStateToProps = ({content}) => ({
 
 // [2] props 값으로 넣어 줄 action을 정의
 const mapDispatchToProps = (dispatch) => ({
-    setContentData: (info) => dispatch(contentActions.setContentData(info)),
+    // setContentData: (info) => dispatch(contentActions.setContentData(info)),
     update: (id) => dispatch(contentActions.update(id))
 });
 

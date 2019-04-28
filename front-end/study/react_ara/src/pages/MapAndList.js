@@ -8,7 +8,7 @@ import {FilterDate, FilterPeople, FilterEtc} from '../components';
 import {Link} from 'react-router-dom';
 
 // react-scrollbar
-import { ScrollArea } from 'react-scrollbar';
+// import { ScrollArea } from 'react-scrollbar';
 
 class MapAndList extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class MapAndList extends Component {
   }
 
   render() {
-    console.log('ⓙⓢ MapAndList.js render() START');
+    console.log('ⓙⓢ MapAndList.js | render() | START');
     const firstMessage = '여행 날짜와 게스트 인원수를 입력하면 관련된 모임을 확인할 수 있습니다. 모임이 금방 마감될 수 있습니다.'
 
     return (
@@ -77,9 +77,9 @@ class MapAndList extends Component {
                 {console.log('isToggleDate   : ' + this.state.isToggleDate)}
                 {console.log('isTogglePeople : ' + this.state.isTogglePeople)}
                 {console.log('isToggleEtc    : ' + this.state.isToggleEtc)}
-                {this.state.isToggleDate && <FilterDate/>}
-                {this.state.isTogglePeople && <FilterPeople/>}
-                {this.state.isToggleEtc && <FilterEtc/>}
+                {this.state.isToggleDate && <FilterDate handleManyButtonClick={(e) => this.handleManyButtonClick(1, e)}/>}
+                {this.state.isTogglePeople && <FilterPeople handleManyButtonClick={(e) => this.handleManyButtonClick(2, e)}/>}
+                {this.state.isToggleEtc && <FilterEtc handleManyButtonClick={(e) => this.handleManyButtonClick(3, e)}/>}
               </div>
             }
 
@@ -100,7 +100,7 @@ class MapAndList extends Component {
         </form>
 
 
-        {console.log('ⓙⓢ MapAndList.js render() END')}
+        {console.log('ⓙⓢ MapAndList.js | render() | END')}
       </Fragment>
     );
   }

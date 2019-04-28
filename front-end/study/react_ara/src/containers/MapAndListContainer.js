@@ -19,7 +19,7 @@ class MapAndListContainer extends React.Component{
         return axios.get('http://172.20.10.5:8000/api/v1/contents/' + region)
         .then( response => {
                 console.log(response); 
-
+                // 내일 작성해야 하는 부분!!!!
             }) // success
         .catch( response => {
                 console.log(response); 
@@ -38,7 +38,7 @@ class MapAndListContainer extends React.Component{
                     image_path: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Andromeda_Galaxy_%28with_h-alpha%29.jpg/1920px-Andromeda_Galaxy_%28with_h-alpha%29.jpg',
                     closed: false
                 };
-                console.log('dummy info : ' + info);
+                // console.log('dummy info : ' + info);
                 // module content
                 this.props.insertContent(info);
                 console.log('MapAndListContainer - handleInsert END');
@@ -53,7 +53,7 @@ class MapAndListContainer extends React.Component{
         // module search
         console.log('region : ' + this.props.region);
         // REST
-        const { response } = this.getListFromServer(this.props.region);
+        this.getListFromServer(this.props.region);
         // response success 일 경우, 아래 command 동작하도록!
     }
 
@@ -70,7 +70,7 @@ class MapAndListContainer extends React.Component{
 
     render(){
         const {input, region, information} = this.props;
-        const {handleChange, handleInsert, handleKeyPress} = this;
+        const {handleChange, handleKeyPress} = this;
         return(
             <div>
                 {console.log('input : ' + this.props.input)}

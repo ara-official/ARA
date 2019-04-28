@@ -61,7 +61,7 @@ class Content extends Component {
         else{
             return(
                 <div 
-                    style={{textDecoration : 'none', color: 'black', textDecoration: 'line-through'}} 
+                    style={{textDecoration: 'line-through', color: 'black'}} 
                 >
                     {console.log('closed === true')}
                     <div className="Content" >

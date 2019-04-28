@@ -102,19 +102,6 @@ const initialState = Map({
       ])
 });
 
-const handleInputInfo = () => {
-    // console.log('handleActions [SET_CONTENT_DATA]');
-    // const list = information.map(
-    //     info => {
-    //         const { id } = info.toJS();
-    //         return (<ContentContainer
-    //         key={id}
-    //         info={info}
-    //         />);
-    // }
-
-}
-
 // reducer
 export default handleActions({
     [SET_CONTENT_DATA]: (state, {payload: inputInfo}) => {
@@ -134,7 +121,6 @@ export default handleActions({
             phone_number: inputInfo.phone_number,
             perpose: inputInfo.perpose, 
             image_path: inputInfo.image_path,
-            // image_path: 'https://avatars1.githubusercontent.com/u/47748609?s=200&v=4',
             closed: false
         });
         return state.update('information', information => information.push(item));

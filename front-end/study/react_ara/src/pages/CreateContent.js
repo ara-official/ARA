@@ -36,9 +36,20 @@ class CreateContent extends React.Component{
     }
 
     handleInsert = (e) => {
-        e.preventDefault();
-        console.log('this.state.title : ' + this.state.title);
-        this.props.insert(this.state.title);
+        // e.preventDefault();
+        const info = {
+            title: this.state.title,
+            meeting_date: this.state.meeting_date,
+            region: '꾸꾸집',
+            num_of_people: 4,
+            nick_name: '꾸꾸',
+            phone_number: '0103493****',
+            perpose: this.state.content,
+            image_path: 'https://avatars1.githubusercontent.com/u/47748609?s=200&v=4',
+            closed: false
+        };
+        console.log('info : ' + info);
+        this.props.insert(info);
     }
 
     render(){
