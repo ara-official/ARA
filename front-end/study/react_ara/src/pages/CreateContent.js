@@ -1,4 +1,7 @@
 import React from 'react';
+
+import logoImage from '../img/ara_logo_3.png';
+
 import { Link } from 'react-router-dom';
 
 import '../css/Global.css';
@@ -60,14 +63,14 @@ class CreateContent extends React.Component{
             <div className="CreateContent">
                 <div className="top">
                     <Link to="/">
-                        <img id="logo" alt='imsi_logo' src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/>
+                        <img id="logo" alt='imsi_logo' src={logoImage}/>
                     </Link>
                     <div id="defaultStyle">
                         {pageName}
                     </div>
                 </div>
-                <div className="middle">
-                </div>
+                {/* <div className="middle">
+                </div> */}
                 <div className="bottom">
                     <input 
                         id="title" 

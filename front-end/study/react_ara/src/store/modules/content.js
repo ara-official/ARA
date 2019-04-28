@@ -19,7 +19,7 @@ export const update = createAction(UPDATE, id => id);
 
 export const clear = createAction(CLEAR);
 
-let count = 2;
+let count = 4;
 const empty = List();
 const initialState = Map({
     info: {
@@ -58,27 +58,34 @@ const initialState = Map({
           image_path: 'https://github.com/ara-official/ARA/blob/master/front-end/img/seoul.jpg?raw=true',
           closed: false
         })
-        // ,
-        // {
-        //   id: 2,
-        //   title: '첨성대 구경 후에 식사 하실 세 분 구해요',
-        //   destination: '경주',
-        //   numOfpeople: 4,
-        //   nickName: '손*식',
-        //   phone: '010-9394-****',
-        //   perpose: '관광, 식사',
-        //   imgSrc: 'https://image.ytn.co.kr/general/jpg/2016/0914/201609141101410773_t.jpg'
-        // },
-        // {
-        //   id: 3,
-        //   title: '부산타워 구경!! 한 두 명 구해요',
-        //   destination: '부산',
-        //   numOfpeople: 4,
-        //   nickName: '권*한',
-        //   phone: '010-7557-****',
-        //   perpose: '관광',
-        //   imgSrc: 'https://news.busan.go.kr/comm/getImage?srvcId=MEDIA&upperNo=1666&fileTy=MEDIA&fileNo=1'
-        // },
+        ,
+        Map({
+          id: 2,
+          title: '첨성대 구경 후에 식사 하실 세 분 구해요',
+          meeting_date: '10/10',
+          region: '경주',
+          num_of_people: 4,
+          nick_name: '손*식',
+          phone_number: '0109394****',
+          perpose: '관광, 식사',
+          image_path: 'https://image.ytn.co.kr/general/jpg/2016/0914/201609141101410773_t.jpg',
+          closed: false
+        })
+        ,
+        Map({
+          id: 3,
+          title: '부산타워 구경!! 한 두 명 구해요',
+          meeting_date: '10/10',
+          region: '부산',
+          num_of_people: 4,
+          numOfpeople: 4,
+          nick_name: '권*한',
+          phone: '010-7557-****',
+          perpose: '관광',
+          image_path: 'https://news.busan.go.kr/comm/getImage?srvcId=MEDIA&upperNo=1666&fileTy=MEDIA&fileNo=1',
+          closed: false
+        })
+        ,
         // {
         //   id: 4,
         //   title: '수원화성 구경',

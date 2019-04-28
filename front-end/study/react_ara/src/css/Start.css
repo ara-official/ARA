@@ -13,3 +13,7 @@
     /* flex-direction: row; */
     width: 100vw;
 }
+
+.Start .bottom {
+    margin-top: 200px;
+}

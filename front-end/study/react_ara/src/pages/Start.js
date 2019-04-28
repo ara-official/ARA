@@ -1,8 +1,12 @@
 
 import React from 'react'
+
+import logoImage from '../img/ara_logo_3.png';
+
 import '../css/Global.css'
 import '../css/Start.css'
 import { Link } from 'react-router-dom';
+
 
 class Start extends React.Component{
     state = {
@@ -15,7 +19,8 @@ class Start extends React.Component{
             <div className="Start">
                 <div className="top">
                     <Link to="/">
-                        <img id="logo" alt='imsi_logo' src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/>
+                        {/* <img id="logo" alt='imsi_logo' src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/> */}
+                        <img id="logo" alt='imsi_logo' src={logoImage}/>
                     </Link>
                     <input 
                         id="searchBar" 

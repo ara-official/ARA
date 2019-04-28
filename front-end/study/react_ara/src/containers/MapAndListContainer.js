@@ -9,6 +9,19 @@ import * as contentActions from '../store/modules/content';
 import axios from 'axios';
 
 class MapAndListContainer extends React.Component{
+    componentDidMount() {
+        console.log('MapAndListContainer - componentDidMount START');
+        axios.get('http://172.20.10.5:8000/api/v1/contents/')
+        .then( response => {
+            console.log(response); 
+            // 내일 작성해야 하는 부분!!!!
+        }) // success
+        .catch( response => {
+                console.log(response); 
+        }); // error : 실패일 경우 그냥 dummy 채워보자
+        console.log('MapAndListContainer - componentDidMount END');
+    }
+
     handleChange = (e) => {
         // e.preventDefault();
         const { changeInput } = this.props;
@@ -25,7 +38,7 @@ class MapAndListContainer extends React.Component{
                 console.log(response); 
 
                 // module content
-                this.props.clear();
+                // this.props.clear();
                 // dummy data
                 const info = {
                     title: 'dummy data',

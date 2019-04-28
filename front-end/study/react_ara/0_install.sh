@@ -9,4 +9,7 @@ yarn add react-router-dom
 yarn add cross-env --dev
 
 #[react-scrollbar](https://www.npmjs.com/package/react-scrollbar)
-npm install react-scrollbar
+#npm install react-scrollbar
+
+#[animate-on-scroll]()
+npm install react-animate-on-scroll

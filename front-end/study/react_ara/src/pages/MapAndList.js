@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
+import logoImage from '../img/ara_logo_3.png';
+
 import '../css/Global.css';
 import '../css/MapAndList.css';
 
@@ -7,8 +9,8 @@ import {ContentList} from '../components';
 import {FilterDate, FilterPeople, FilterEtc} from '../components';
 import {Link} from 'react-router-dom';
 
-// react-scrollbar
-// import { ScrollArea } from 'react-scrollbar';
+// animate on scroll
+// import ScrollAnimation from 'react-animate-on-scroll';
 
 class MapAndList extends Component {
   constructor(props) {
@@ -43,6 +45,16 @@ class MapAndList extends Component {
     }
   }
 
+  handleScroll = (e) => {
+    e.preventDefault();
+    console.log('handleScroll START');
+    let element = e.target;
+    if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+      console.log('handleScroll');
+    }
+    console.log('handleScroll END');
+  }
+
   render() {
     console.log('ⓙⓢ MapAndList.js | render() | START');
     const firstMessage = '여행 날짜와 게스트 인원수를 입력하면 관련된 모임을 확인할 수 있습니다. 모임이 금방 마감될 수 있습니다.'
@@ -51,7 +63,7 @@ class MapAndList extends Component {
       <Fragment>
         <form className="MapAndList">
           <div className="top">
-            <Link to="/"><img id="logo" alt='imsi_logo' src="https://github.com/ara-official/ARA/blob/master/front-end/img/ara_logo_3.png?raw=true"/></Link>
+            <Link to="/"><img id="logo" alt='imsi_logo' src={logoImage}/></Link>
             <input 
               id="searchBar" 
               placeholder="목적지 입력"
@@ -64,11 +76,20 @@ class MapAndList extends Component {
             </Link>
           </div>
 
-          <div className="middle">
-            <button id="filter" name="date" onClick={(e) => this.handleManyButtonClick(1, e)}>날짜</button>
-            <button id="filter" name="number" onClick={(e) => this.handleManyButtonClick(2, e)}>인원</button>
-            <button id="filter" name="etc" onClick={(e) => this.handleManyButtonClick(3, e)}>필터</button>
+          {/* <ScrollAnimation className="middle" animateIn='fadeIn' animateOut='fadeOut' initiallyVisible={true} duration={1} 
+          // afterAnimatedIn={function afterAnimatedIn(v) {
+          //   var t = "Animate In finished.\n";
+          //   t += 'v.onScreen: ' + v.onScreen + '\n';
+          //   t += 'v.inViewport: ' + v.inViewPort;
+          //   alert(t);
+          // }}
+          > */}
+          <div className="middle" onScroll={this.handleScroll.bind(this)}>
+              <button id="filter" name="date" onClick={(e) => this.handleManyButtonClick(1, e)}>날짜</button>
+              <button id="filter" name="number" onClick={(e) => this.handleManyButtonClick(2, e)}>인원</button>
+              <button id="filter" name="etc" onClick={(e) => this.handleManyButtonClick(3, e)}>필터</button>
           </div>
+          {/* </ScrollAnimation> */}
 
           <div className="bottom">
             {(this.state.isToggleDate || this.state.isTogglePeople || this.state.isToggleEtc) &&
