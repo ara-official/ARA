@@ -12,6 +12,7 @@
 
 .CreateContent .top #pageName {
     position: fixed;
+    top: 25px;
     left: 50px;
     
     font-size: 14px;

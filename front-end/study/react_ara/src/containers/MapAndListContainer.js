@@ -11,7 +11,7 @@ import axios from 'axios';
 class MapAndListContainer extends React.Component{
     componentDidMount() {
         console.log('MapAndListContainer - componentDidMount START');
-        axios.get('http://172.20.10.5:8000/api/v1/contents/')
+        axios.get('http://172.20.10.3:3005/api/v1/contents/')
         .then( response => {
             console.log(response); 
             // 내일 작성해야 하는 부분!!!!
@@ -29,16 +29,39 @@ class MapAndListContainer extends React.Component{
     }
 
     getListFromServer = (region) => {
-        return axios.get('http://172.20.10.5:8000/api/v1/contents/' + region)
+        return axios.get('http://172.20.10.3:3005/api/v1/contents/' + region)
         .then( response => {
                 console.log(response); 
-                // 내일 작성해야 하는 부분!!!!
+                // module content
+                this.props.clear();
+                
+                console.log('response.data.length : ' + response.data.length);
+                // module content
+                for (const {title, meeting_date, num_of_member} of response.data)
+                {
+                    let info = {
+                        title: title,
+                        meeting_date: meeting_date,
+                        region: '안드로메다',
+                        num_of_people: num_of_member,
+                        nick_name: 'N/A',
+                        phone_number: 'N/A',
+                        perpose: 'N/A',
+                        image_path: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Andromeda_Galaxy_%28with_h-alpha%29.jpg/1920px-Andromeda_Galaxy_%28with_h-alpha%29.jpg',
+                        closed: false
+                    };
+                    console.log('info : ' + info);
+                    console.log('title /  : ' + title + ' / ' + meeting_date + ' / ' + num_of_member);
+                    this.props.insertContent(info);
+                }
+
+                console.log('MapAndListContainer - handleInsert END (success)');
             }) // success
         .catch( response => {
                 console.log(response); 
 
                 // module content
-                // this.props.clear();
+                this.props.clear();
                 // dummy data
                 const info = {
                     title: 'dummy data',
@@ -54,7 +77,7 @@ class MapAndListContainer extends React.Component{
                 // console.log('dummy info : ' + info);
                 // module content
                 this.props.insertContent(info);
-                console.log('MapAndListContainer - handleInsert END');
+                console.log('MapAndListContainer - handleInsert END (error)');
             }); // error : 실패일 경우 그냥 dummy 채워보자
     };
 

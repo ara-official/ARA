@@ -34,7 +34,7 @@ export const insert = createAction(INSERT, text => text);
 // }
 const initialState = Map({
     input: '',
-    region: 'empty'
+    region: ''
     // todos: List([
     //     Map({
     //         id: 0,

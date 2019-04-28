@@ -34,13 +34,13 @@
     margin-left: 24px;
     margin-right: 24px;
     
-    font-size: 18px;
+    font-size: 12px;
     text-align: left;
-    font-weight: bold;
-    padding-bottom: 16px;
+    /* font-weight: bold; */
+    padding-bottom: 12px;
     padding-top: 120px;
 
-    /* border-bottom: 1px solid gainsboro; */
+    border-bottom: 1px solid gainsboro;
 }
 
 .MapAndList #contentList{

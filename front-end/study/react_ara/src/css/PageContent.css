@@ -1,66 +1,93 @@
 .PageContent {
 }
 
+.PageContent .top {
+    position: fixed;
+    left: 0px;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+}
+
+.PageContent .top #backImage {
+    position: fixed;
+    top: 21px;
+    left: 23px;
+
+    width: 20px;
+    height: 22px;
+    background-color: rgb(255, 255, 255);
+}
+
 .PageContent .bottom {
-    margin-top: 65px;
+    margin-top: 45px;
 }
 
 .PageContent .bottom #contentImgSelf{
-    margin-top: 20px;
     width: 100vw;
 }
-.PageContent .bottom #contentInforFirst {
-    height: 38px;
+
+.PageContent .bottom #contentInfor{
     width: 100vw;
-    padding: 6px;
-    padding-left: 10px;
-
-    font-size: 18px;
-    font-weight: bold;
-
-    border-radius: 3px;
-    border: 1px solid gainsboro;
-    box-shadow: 0px 2px 2px gainsboro;
 }
 
 .PageContent .bottom #contentTitle {
-    height: 38px;
-    width: 100vw;
-    padding: 6px;
-    padding-left: 10px;
-
-    font-size: 18px;
+    font-size: 34px;
     font-weight: bold;
 
-    border-radius: 3px;
+    /* border-radius: 3px;
     border: 1px solid gainsboro;
-    box-shadow: 0px 2px 2px gainsboro;
+    box-shadow: 0px 2px 2px gainsboro; */
 }
 
+.PageContent .bottom #contentInforFirst {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
 .PageContent .bottom #contentInforThird {
-    height: 38px;
-    width: 100vw;
-    padding: 6px;
-    padding-left: 10px;
 
     font-size: 18px;
     font-weight: bold;
 
-    border-radius: 3px;
+}
+
+.PageContent .bottom .contentBottom {
+    position: fixed;
+    bottom: 0px;
+
+    width: 100vw;
+    height: 70px;
+
     border: 1px solid gainsboro;
-    box-shadow: 0px 2px 2px gainsboro;
+}
+
+.PageContent .bottom #num_of_people {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    width: 120px;
+
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+
+    background-color: rgb(254, 90, 96);
 }
 
 .PageContent .bottom #button {
-    height: 38px;
-    width: 100vw;
-    padding: 6px;
-    padding-left: 10px;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
 
-    font-size: 18px;
+    width: 180px;
+    height: 50px;
+
+    font-size: 16px;
     font-weight: bold;
+    color: rgb(255, 255, 255);
 
-    border-radius: 3px;
-    border: 1px solid gainsboro;
-    box-shadow: 0px 2px 2px gainsboro;
+    border-radius: 5px;
+    background-color: rgb(0, 132, 137);
 }

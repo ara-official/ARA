@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logoImage from '../img/ara_logo_3.png';
+import backImage from '../img/back.png';
 
 import {Link} from 'react-router-dom';
 
@@ -17,45 +17,41 @@ class PageContent extends React.Component{
         return(
             <div className="PageContent">
                 <div className="top">
-                    <Link to="/"><img id="logo" alt='imsi_logo' src={logoImage}/></Link>
-                    <input 
-                        id="searchBar" 
-                        placeholder="목적지 입력"
-                        value={this.props.input}
-                        onChange={this.props.handleChange}
-                        onKeyPress={this.props.handleKeyPress}
-                    />
+                    <Link to="/MapAndList"><img id="backImage" alt='imsi_logo' src={backImage}/></Link>
+                    <div style={{marginLeft: "50px", marginTop: "10px"}}>[id] : {this.props.storeInfo.id}</div>
                 </div>
 
-                <div className="middle">
-                {/* {'middle'} */}
-                </div>
+                {/* <div className="middle">
+                </div> */}
                 <div className="bottom">
                         <div id="contentImg">
                             <img id="contentImgSelf" alt='imsi_logo' src={this.props.storeInfo.image_path}/>
                             {/* <img id="contentImgSelf" alt='imsi_img' src={imgSrc}/> */}
                         </div>
                         <div id="contentInfor">
-                            <li>[id] : {this.props.storeInfo.id}</li>
-                            <div id="contentInforFirst">
-                                {/* {nickName} · {phone} */}
-                                {this.props.storeInfo.nick_name + ' · ' + this.props.storeInfo.phone_number}
-                            </div>
                             <div id="contentTitle">
                                 {/* #{id} : {title} */}
                                 {/* {title} */}
                                 {this.props.storeInfo.title}
                             </div>
+                            <div id="contentInforFirst">
+                                {/* {nickName} · {phone} */}
+                                {this.props.storeInfo.region + ' · ' +this.props.storeInfo.perpose}
+                            </div>
+                            
                             {/* {address}<br/> */} 
                             <div id="contentInforThird">
                                 {/* {destination} · {perpose} */}
-                                {this.props.storeInfo.region + ' · ' +this.props.storeInfo.perpose}
+                                {this.props.storeInfo.nick_name + ' · ' + this.props.storeInfo.phone_number}
                             </div>
+                        </div>
+                        <div className="contentBottom">
                             <Link to="/MapAndList">
                                 <button id="button" onClick={this.handleUpdate}>
                                     확정하기
                                 </button>
                             </Link>
+                            <div id="num_of_people">인원 : {this.props.storeInfo.num_of_people}</div>
                         </div>
                 </div>
                 {console.log('ⓙⓢ PageContent render() END')}

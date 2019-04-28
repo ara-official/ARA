@@ -121,7 +121,7 @@ export default handleActions({
         const item = Map({ 
             id: count++,
             title: inputInfo.title,
-            // meeting_date: '??'
+            meeting_date: inputInfo.meeting_date,
             region: inputInfo.region,
             num_of_people: inputInfo.num_of_people,
             nick_name: inputInfo.nick_name,
@@ -130,6 +130,7 @@ export default handleActions({
             image_path: inputInfo.image_path,
             closed: false
         });
+        console.log('item : ' + item);
         return state.update('information', information => information.push(item));
     }
     ,
