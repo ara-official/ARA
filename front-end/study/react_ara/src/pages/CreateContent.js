@@ -65,7 +65,7 @@ class CreateContent extends React.Component{
                     <Link to="/">
                         <img id="logo" alt='imsi_logo' src={logoImage}/>
                     </Link>
-                    <div id="defaultStyle">
+                    <div id="pageName">
                         {pageName}
                     </div>
                 </div>

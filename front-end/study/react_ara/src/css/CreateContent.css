@@ -9,6 +9,14 @@
     /* background-color: white */
     width: 100vw;
 }
+
+.CreateContent .top #pageName {
+    position: fixed;
+    left: 50px;
+    
+    font-size: 14px;
+}
+
 .CreateContent .bottom {
     height: 100vmax;
     margin-top: 80px;

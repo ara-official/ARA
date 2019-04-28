@@ -84,7 +84,7 @@ class MapAndList extends Component {
           //   alert(t);
           // }}
           > */}
-          <div className="middle" onScroll={this.handleScroll.bind(this)}>
+          <div className="middle" onScroll={this.handleScroll}>
               <button id="filter" name="date" onClick={(e) => this.handleManyButtonClick(1, e)}>날짜</button>
               <button id="filter" name="number" onClick={(e) => this.handleManyButtonClick(2, e)}>인원</button>
               <button id="filter" name="etc" onClick={(e) => this.handleManyButtonClick(3, e)}>필터</button>

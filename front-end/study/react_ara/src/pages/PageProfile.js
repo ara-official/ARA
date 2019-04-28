@@ -14,7 +14,7 @@ class PageProfile extends React.Component{
             <div className="PageProfile">
                 <div className="top">
                     <Link to="/"><img id="logo" alt='imsi_logo' src={logoImage}/></Link>
-                    {pageName}
+                    <div id="pageName">{pageName}</div>
                 </div>
                 {/* <div className="middle">
                 </div> */}
