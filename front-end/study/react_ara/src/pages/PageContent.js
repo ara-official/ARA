@@ -10,7 +10,8 @@ import '../css/PageContent.css';
 class PageContent extends React.Component{
     handleUpdate = (e) => {
         // e.preventDefault();
-        this.props.update(this.props.storeInfo.id);
+        // this.props.update(this.props.storeInfo.id);
+        this.props.update(this.props.storeInfo.db_id);
     }
     render(){
         console.log('ⓙⓢ PageContent render() START');
@@ -18,7 +19,7 @@ class PageContent extends React.Component{
             <div className="PageContent">
                 <div className="top">
                     <Link to="/MapAndList"><img id="backImage" alt='imsi_logo' src={backImage}/></Link>
-                    <div style={{marginLeft: "50px", marginTop: "10px"}}>[id] : {this.props.storeInfo.id}</div>
+                    <div style={{marginLeft: "50px", marginTop: "10px"}}>[id] : {this.props.storeInfo.id}, [db_id] : {this.props.storeInfo.db_id}</div>
                 </div>
 
                 {/* <div className="middle">

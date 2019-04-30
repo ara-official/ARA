@@ -3,6 +3,8 @@ import '../css/Content.css';
 
 import { Link } from 'react-router-dom';
 
+import the_end_image from '../img/the_end.png';
+
 class Content extends Component {
     handleOnClick = (e) => {
         // e.preventDefault(); // Link to 가 동작해야 함
@@ -34,7 +36,7 @@ class Content extends Component {
                     style={{textDecoration : 'none', color: 'black'}} 
                     onClick={this.handleOnClick}
                 >
-                    {console.log('closed === false')}
+                    {/* {console.log('closed === false')} */}
                     <div className="Content" >
                         <div id="contentImg">
                             {/* <img id="contentImgSelf" src="https://github.com/ara-official/ARA/blob/master/front-end/img/seoul.jpg?raw=true"/> */}
@@ -63,10 +65,10 @@ class Content extends Component {
                 <div 
                     style={{textDecoration: 'line-through', color: 'black'}} 
                 >
-                    {console.log('closed === true')}
+                    {/* {console.log('closed === true')} */}
                     <div className="Content" >
                         <div id="contentImg">
-                            <img id="contentImgSelf" alt='imsi_img' src="https://images-na.ssl-images-amazon.com/images/I/714EhXiPFhL._SL1500_.jpg"/>
+                            <img id="contentImgSelf" alt='imsi_img' src={the_end_image}/>
                             {/* <img id="contentImgSelf" alt='imsi_img' src={image_path}/> */}
                         </div>
                         <div id="contentInfor">

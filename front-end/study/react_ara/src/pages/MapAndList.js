@@ -9,6 +9,7 @@ import {ContentList} from '../components';
 import {FilterDate, FilterPeople, FilterEtc} from '../components';
 import {Link} from 'react-router-dom';
 
+
 // animate on scroll
 // import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -23,6 +24,7 @@ class MapAndList extends Component {
     }
     // this.handleManyButtonClick = this.handleManyButtonClick.bind(this);
   }
+
   handleManyButtonClick = (id, e) => {
     e.preventDefault();
     if(id === 1)

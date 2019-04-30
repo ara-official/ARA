@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ContentContainer from '../containers/ContentContainer';
 
+let count = 0;
 class ContentList extends Component{
 
 
@@ -18,43 +19,47 @@ class ContentList extends Component{
             //         info={info}
             //     />)
             // );
+            
+            console.log('information : ' + information);
+
             const list = information.map(
                 info => {
-                    const { id } = info.toJS();
+                    console.log('ContentList info : ' + info);
                     return (<ContentContainer
-                    key={id}
+                    key={info.id}
                     info={info}
                     />);
-            }
+                }
             );
             return(
                 <div>
+                    {console.log('list : ' + list)}
                     {list}
                     {console.log('ⓙⓢ END render() - ContentList.js ')}
                 </div>
             );
         }
-        else
-        {
-            console.log('search keyword(region) o');
-            // console.log('information : ' + information);
-            const list = information.filter(info => info.toJS().region === region).map(
-                info => 
-                {
-                    const { id } = info.toJS();
-                    return (<ContentContainer
-                    key={id}
-                    info={info}
-                    />);
-            }
-            );
-            return(
-                <div>
-                    {list}
-                    {console.log('ⓙⓢ END render() - ContentList.js ')}
-                </div>
-            );
-        }
+        // else
+        // {
+        //     console.log('search keyword(region) o');
+        //     // console.log('information : ' + information);
+        //     const list = information.filter(info => info.toJS().region === region).map(
+        //         info => 
+        //         {
+        //             const { id } = info.toJS();
+        //             return (<ContentContainer
+        //             key={id}
+        //             info={info}
+        //             />);
+        //     }
+        //     );
+        //     return(
+        //         <div>
+        //             {list}
+        //             {console.log('ⓙⓢ END render() - ContentList.js ')}
+        //         </div>
+        //     );
+        // }
 
 
     }
