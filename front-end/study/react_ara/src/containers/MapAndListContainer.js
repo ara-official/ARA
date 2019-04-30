@@ -143,12 +143,16 @@ class MapAndListContainer extends React.Component{
         console.log('[handleInsert] this.props.input : ' + this.props.input);
         console.log('[handleInsert] input : ' + input);
         // REST
-        // this.getListFromServer(this.props.region);
-        // this.getListFromServer(this.props.input);
-        this.getListFromServer(input);
-        // response success 일 경우, 아래 command 동작하도록!
+        if(this.props.input !== this.props.region)
+        {
+            this.getListFromServer(input);
 
-        // this.props.insertSearch(input);
+            this.props.insertSearch(input);
+        }
+        else
+        {
+            console.log('[동일한 요청입니다!!]');
+        }
     }
 
     handleKeyPress = (e) => {

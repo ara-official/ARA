@@ -4,9 +4,9 @@ import ContentContainer from '../containers/ContentContainer';
 class ContentList extends Component{
     render(){
         console.log('ⓙⓢ START render() - ContentList.js ');
-        const { information, region } = this.props;
-        console.log('search keyword(region) : ' + region);
-        if(region === '')
+        const { information } = this.props;
+        // console.log('search keyword(region) : ' + region);
+        // if(region === '')
         {
             console.log('search keyword(region) x');
             // console.log('information : ' + information);
