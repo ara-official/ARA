@@ -8,8 +8,6 @@ import * as contentActions from '../store/modules/content';
 // axios
 import axios from 'axios';
 
-import store from '../store';
-
 class MapAndListContainer extends React.Component{
    // componentDidMount() {
     //     console.log('MapAndListContainer - componentDidMount START');
@@ -57,7 +55,7 @@ class MapAndListContainer extends React.Component{
     }
 
     getListFromServer = (region) => {
-        return axios.get('http://localhost:3005/api/v1/contents/' + region)
+        return axios.get('http://172.20.10.3:3005/api/v1/contents/' + region)
         .then( response => {
                 console.log(response); 
                 // module content
@@ -80,8 +78,8 @@ class MapAndListContainer extends React.Component{
                             image_path: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Andromeda_Galaxy_%28with_h-alpha%29.jpg/1920px-Andromeda_Galaxy_%28with_h-alpha%29.jpg',
                             closed: false
                         };
-                        console.log('info : ' + info);
-                        console.log('title /  : ' + title + ' / ' + meeting_date + ' / ' + num_of_member);
+                        // console.log('info : ' + info);
+                        // console.log('title /  : ' + title + ' / ' + meeting_date + ' / ' + num_of_member);
                         this.props.insertContent(info);
                     }
                 }

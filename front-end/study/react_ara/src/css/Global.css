@@ -46,7 +46,7 @@
     top: 10px;
     left: 50px;
 
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
 
     border-radius: 50px;
@@ -115,7 +115,7 @@
 }
 
 .middle #filter{
-    height: 44px;
+    height: 46px;
     width: 60px;
 
     margin-right: 8px;

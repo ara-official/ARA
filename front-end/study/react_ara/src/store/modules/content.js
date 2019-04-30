@@ -5,12 +5,12 @@ import { Map, List } from 'immutable';
 // axios
 // import axios from 'axios';
 
-import dummy_image_1 from '../../img/dummy_img/image_1.jpg';
-import dummy_image_2 from '../../img/dummy_img/image_2.jpg';
-import dummy_image_3 from '../../img/dummy_img/image_3.jpg';
-import dummy_image_4 from '../../img/dummy_img/image_4.png';
-import dummy_image_5 from '../../img/dummy_img/image_5.jpg';
-import dummy_image_6 from '../../img/dummy_img/image_6.jpg';
+// import dummy_image_1 from '../../img/dummy_img/image_1.jpg';
+// import dummy_image_2 from '../../img/dummy_img/image_2.jpg';
+// import dummy_image_3 from '../../img/dummy_img/image_3.jpg';
+// import dummy_image_4 from '../../img/dummy_img/image_4.png';
+// import dummy_image_5 from '../../img/dummy_img/image_5.jpg';
+// import dummy_image_6 from '../../img/dummy_img/image_6.jpg';
 
 // type
 const SET_CONTENT_DATA = 'content/SET_CONTENT_DATA';
@@ -28,7 +28,7 @@ export const update = createAction(UPDATE, id => id);
 export const clear = createAction(CLEAR);
 export const remove = createAction(REMOVE, id => id);
 
-let count = 1;
+let count = 0;
 const empty = List();
 const initialState = Map({
     info: {
@@ -44,19 +44,19 @@ const initialState = Map({
         input__image_path: ''
     },
     information: List([
-        Map({
-          id: 0,
-          db_id: 0,
-          title: '강남 쉐이크쉑 같이 드실 1~2 분 구해요~',
-          meeting_date: '10/10',
-          region: '강남',
-          num_of_people: 0,
-          nick_name: '알*고',
-          phone_number: '0103223****',
-          perpose: '점심식사',
-          image_path: dummy_image_1,
-          closed: false
-        })
+        // Map({
+        //   id: 0,
+        //   db_id: 0,
+        //   title: '강남 쉐이크쉑 같이 드실 1~2 분 구해요~',
+        //   meeting_date: '10/10',
+        //   region: '강남',
+        //   num_of_people: 0,
+        //   nick_name: '알*고',
+        //   phone_number: '0103223****',
+        //   perpose: '점심식사',
+        //   image_path: dummy_image_1,
+        //   closed: false
+        // })
         // ,
         // Map({
         //   id: 1,
@@ -147,7 +147,7 @@ export default handleActions({
             image_path: inputInfo.image_path,
             closed: false
         });
-        console.log('item : ' + item);
+        // console.log('item : ' + item);
         return state.update('information', information => information.push(item));
     }
     ,
@@ -165,7 +165,7 @@ export default handleActions({
     },
     [REMOVE]: (state, { payload: db_id}) => {
         console.log('[REMOVE] id : ' + db_id);
-        const id = state.get('information').findIndex(item => item.get('db_id') == db_id);
+        const id = state.get('information').findIndex(item => item.get('db_id') === db_id);
         return state.deleteIn(['information', id]);
     }
 }, initialState);

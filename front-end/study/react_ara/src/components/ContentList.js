@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import ContentContainer from '../containers/ContentContainer';
 
-let count = 0;
 class ContentList extends Component{
-
-
     render(){
         console.log('ⓙⓢ START render() - ContentList.js ');
         const { information, region } = this.props;
@@ -13,20 +10,13 @@ class ContentList extends Component{
         {
             console.log('search keyword(region) x');
             // console.log('information : ' + information);
-            // const list = information.map(
-            //     info => (<ContentContainer
-            //         key={info.id}
-            //         info={info}
-            //     />)
-            // );
-            
-            console.log('information : ' + information);
 
             const list = information.map(
                 info => {
-                    console.log('ContentList info : ' + info);
+                    // console.log('ContentList info : ' + info);
+                    const {id} = info.toJS();
                     return (<ContentContainer
-                    key={info.id}
+                    key={id}
                     info={info}
                     />);
                 }
@@ -60,8 +50,6 @@ class ContentList extends Component{
         //         </div>
         //     );
         // }
-
-
     }
 }
 
