@@ -12,6 +12,9 @@ $ ./0_1_add_redux.sh
 $ ./1_start.sh
 </code></pre>
 
+3. 참고
+* back-end django rest server와 연동 test 하기 위해서, **MapAndListContainer 및 PageContentContainer** 의 axios.get axios.delete 뒤의 ip 주소 및 port 주소를 django rest server 에 맞게 바꿔줘야 한다.
+
 ### Run [back-end] server
 > 맥북에서는 안됨~~
 
