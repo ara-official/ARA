@@ -68,12 +68,26 @@ class MapAndList extends Component {
             <Link to="/"><img id="logo" alt='imsi_logo' src={logoImage}/></Link>
             <input 
               id="searchBar" 
-              placeholder="목적지 입력"
+              placeholder="검색"
               value={this.props.input}
               onChange={this.props.handleChange}
               onKeyPress={this.props.handleKeyPress}
             />
-            <Link to="/MapAndList/CreateContent">
+
+
+             {(this.state.isToggleDate || this.state.isTogglePeople || this.state.isToggleEtc) &&
+            // toggle 활성화 시, button 색도 바꿀 수 있을 거다.
+              <div className="bottom_front">
+                {console.log('isToggleDate   : ' + this.state.isToggleDate)}
+                {console.log('isTogglePeople : ' + this.state.isTogglePeople)}
+                {console.log('isToggleEtc    : ' + this.state.isToggleEtc)}
+                {this.state.isToggleDate && <FilterDate handleManyButtonClick={(e) => this.handleManyButtonClick(1, e)}/>}
+                {this.state.isTogglePeople && <FilterPeople handleManyButtonClick={(e) => this.handleManyButtonClick(2, e)}/>}
+                {this.state.isToggleEtc && <FilterEtc handleManyButtonClick={(e) => this.handleManyButtonClick(3, e)}/>}
+              </div>
+            }
+
+                        <Link to="/MapAndList/CreateContent">
               <button id="searchButton" >방생성</button>
             </Link>
           </div>
@@ -94,17 +108,7 @@ class MapAndList extends Component {
           {/* </ScrollAnimation> */}
 
           <div className="bottom">
-            {(this.state.isToggleDate || this.state.isTogglePeople || this.state.isToggleEtc) &&
-            // toggle 활성화 시, button 색도 바꿀 수 있을 거다.
-              <div className="bottom_front">
-                {console.log('isToggleDate   : ' + this.state.isToggleDate)}
-                {console.log('isTogglePeople : ' + this.state.isTogglePeople)}
-                {console.log('isToggleEtc    : ' + this.state.isToggleEtc)}
-                {this.state.isToggleDate && <FilterDate handleManyButtonClick={(e) => this.handleManyButtonClick(1, e)}/>}
-                {this.state.isTogglePeople && <FilterPeople handleManyButtonClick={(e) => this.handleManyButtonClick(2, e)}/>}
-                {this.state.isToggleEtc && <FilterEtc handleManyButtonClick={(e) => this.handleManyButtonClick(3, e)}/>}
-              </div>
-            }
+           
 
             <div className="bottom_back">
               <div id="alarmMsg">

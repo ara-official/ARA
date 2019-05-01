@@ -4,12 +4,12 @@
     align-items: center;
 
     position: fixed;
-    top: -7px;
+    top: 0px;
 
     width: 100vw;
-    height: 52px;
+    height: 65px;
 
-    padding: 10px;
+    /* padding: 10px; */
 
     /* border: 1px solid black; */
     /* border-bottom: 1px solid gainsboro; */
@@ -18,7 +18,7 @@
     /* background-color: rgb(200, 200, 200); */
     background-color: rgb(255, 255, 255);
 
-    z-index: 2;
+    z-index: 3;
 }
 
 #logo{
@@ -56,7 +56,6 @@
     background: rgb(242,242,242);
 }
 
-
 .top #searchButton{
     height: 48px;
     width: 76px;
@@ -77,7 +76,7 @@
     border: 1px solid gainsboro;
     box-shadow: 0px 1px 2px gainsboro;
 
-    z-index: 2;
+    z-index: 0;
 }
 
 .middle {
@@ -102,7 +101,10 @@
 
     border-bottom: 1px solid gainsboro;
     /* background-color: rgb(0, 217, 255); */
-    background-color: rgb(0, 132, 137);
+    /* background-color: rgb(0, 132, 137); */
+    background-color: rgba(255, 255, 255, 0.92);
+
+    z-index: 2;
 }
 
 @keyframes slideDown {
@@ -127,7 +129,7 @@
 
     border-radius: 50px;
     border: 1px solid gainsboro;
-    z-index: 2;
+    z-index: 3;
 }
 
 .bottom {
@@ -136,14 +138,14 @@
     align-items: center;
 
     /* height: 100vmin; */
-    padding: 8px;
     padding-top: 22px;
+    /* padding: 8px;
     padding-left: 12px;
-    padding-right: 12px;
+    padding-right: 12px; */
 
     /* background-color: rgb(255, 230, 0); */
     background-color: rgb(255, 255, 255);
-    z-index: 0;
+    z-index: 1;
 }
 
 #defaultStyle {

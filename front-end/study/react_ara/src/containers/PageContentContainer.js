@@ -22,7 +22,7 @@ class PageContentContainer extends React.Component{
     // }
     
     deleteItemFromServer = (region) => {
-        return axios.delete('http://172.20.10.3:3005/api/v1/contents/' + region)
+        return axios.delete('http://localhost:3005/api/v1/contents/' + region)
         .then( response => {
                 console.log(response); 
                 // module content

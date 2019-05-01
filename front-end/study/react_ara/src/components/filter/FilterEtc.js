@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../css/Global.css';
 import '../../css/FilterEtc.css'
 
 class FilterEtc extends React.Component{
@@ -6,10 +7,18 @@ class FilterEtc extends React.Component{
         console.log('ⓙⓢ FilterEtc | render() | START');
         return(
             <div className="FilterEtc">
-                <div className="InnerBox">
-                    <h2>FilterEtc.js</h2>
-                    <button id="closeButton" onClick={this.props.handleManyButtonClick}>X</button>
-                </div>
+                    <div className="top">
+                        <button id="closeButton" onClick={this.props.handleManyButtonClick}>X</button>
+                        <div id="title">필터</div>
+                    </div>
+                    <div className="middle">
+                    
+                    </div>
+                    <div className="bottom">
+                        <button id="button" onClick={this.props.handleManyButtonClick}>
+                            결과 보기
+                        </button>
+                    </div>
                 {console.log('ⓙⓢ FilterEtc | render() | END')}
             </div>
         );

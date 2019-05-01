@@ -55,7 +55,7 @@ class MapAndListContainer extends React.Component{
     }
 
     getListFromServer = (region) => {
-        return axios.get('http://172.20.10.3:3005/api/v1/contents/' + region)
+        return axios.get('http://localhost:3005/api/v1/contents/' + region)
         .then( response => {
                 console.log(response); 
                 // module content

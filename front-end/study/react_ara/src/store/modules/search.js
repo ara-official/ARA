@@ -34,7 +34,7 @@ export const insert = createAction(INSERT, text => text);
 // }
 const initialState = Map({
     input: '',
-    region: 'empty' // 서버로 반복 요청하는 경우 막기 위해 사용
+    region: '검색' // 서버로 반복 요청하는 경우 막기 위해 사용
     // todos: List([
     //     Map({
     //         id: 0,

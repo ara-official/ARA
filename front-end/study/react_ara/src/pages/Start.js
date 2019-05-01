@@ -24,7 +24,7 @@ class Start extends React.Component{
                     </Link>
                     <input 
                         id="searchBar" 
-                        placeholder="목적지 입력"
+                        placeholder="검색"
                         value={this.props.input}
                         onChange={this.props.handleChange}
                         onKeyPress={this.props.handleKeyPress}

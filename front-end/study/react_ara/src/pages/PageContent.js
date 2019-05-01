@@ -47,12 +47,12 @@ class PageContent extends React.Component{
                             </div>
                         </div>
                         <div className="contentBottom">
+                            <div id="num_of_people">인원 : {this.props.storeInfo.num_of_people}</div>
                             <Link to="/MapAndList">
                                 <button id="button" onClick={this.handleUpdate}>
                                     확정하기
                                 </button>
                             </Link>
-                            <div id="num_of_people">인원 : {this.props.storeInfo.num_of_people}</div>
                         </div>
                 </div>
                 {console.log('ⓙⓢ PageContent render() END')}
