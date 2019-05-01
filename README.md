@@ -16,7 +16,6 @@ $ ./1_start.sh
 * back-end django rest server와 연동 test 하기 위해서, **MapAndListContainer 및 PageContentContainer** 의 axios.get axios.delete 뒤의 ip 주소 및 port 주소를 django rest server 에 맞게 바꿔줘야 한다.
 
 ### Run [back-end] server
-> 맥북에서는 안됨~~
 
 0. 폴더로 이동
 <pre><code>
@@ -27,6 +26,7 @@ $ cd ARA/back-end/django_test/rest_server
 $ pip install django
 $ pip install djangorestframework
 $ pip install django-rest-swagger
+$ pip install django-cors-headers
 </code></pre>
 2. Run back-end
 <pre><code>
