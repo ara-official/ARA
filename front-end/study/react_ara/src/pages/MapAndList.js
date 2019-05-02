@@ -73,7 +73,9 @@ class MapAndList extends Component {
               onChange={this.props.handleChange}
               onKeyPress={this.props.handleKeyPress}
             />
-
+            <Link to="/MapAndList/CreateContent">
+              <button id="searchButton" >방생성</button>
+            </Link>
 
              {(this.state.isToggleDate || this.state.isTogglePeople || this.state.isToggleEtc) &&
             // toggle 활성화 시, button 색도 바꿀 수 있을 거다.
@@ -86,10 +88,6 @@ class MapAndList extends Component {
                 {this.state.isToggleEtc && <FilterEtc handleManyButtonClick={(e) => this.handleManyButtonClick(3, e)}/>}
               </div>
             }
-
-                        <Link to="/MapAndList/CreateContent">
-              <button id="searchButton" >방생성</button>
-            </Link>
           </div>
 
           {/* <ScrollAnimation className="middle" animateIn='fadeIn' animateOut='fadeOut' initiallyVisible={true} duration={1} 
@@ -114,7 +112,24 @@ class MapAndList extends Component {
               <div id="alarmMsg">
                 {firstMessage}
               </div>
+              {(this.props.count < 10) &&
+                <div id="alramMsg_2">
+                  {this.props.count}개의 만남
+                </div>
+              }
+              {(10 <= this.props.count) && (this.props.count < 100) &&
+                <div id="alramMsg_2">
+                  10여 개의 만남
+                </div>
+              }
+              {(100 <= this.props.count) &&
+                <div id="alramMsg_2">
+                  100여 개의 만남
+                </div>
+              }
               <div id="contentList">
+                {console.log('this.props.count : ' + this.props.count)}
+                
                 <ContentList 
                   information={this.props.information} 
                   region={this.props.region}

@@ -53,6 +53,9 @@ class PageContentContainer extends React.Component{
 
                     // function
                     update={this.handleUpdate}
+
+                    count={this.props.count}
+                    setCount={this.props.setCount}
                 />
             </div>
         );
@@ -62,14 +65,16 @@ class PageContentContainer extends React.Component{
 // [1] props 값으로 넣어 줄 state를 정의
 const mapStateToProps = ({content}) => ({
     storeInfo: content.get('info'),
-    information: content.get('information')
+    information: content.get('information'),
+    count: content.get('count')
 });
 
 // [2] props 값으로 넣어 줄 action을 정의
 const mapDispatchToProps = (dispatch) => ({
     // setContentData: (info) => dispatch(contentActions.setContentData(info)),
     update: (id) => dispatch(contentActions.update(id)),
-    remove: (id) => dispatch(contentActions.remove(id))
+    remove: (id) => dispatch(contentActions.remove(id)),
+    setCount: (value) => dispatch(contentActions.setCount(value))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PageContentContainer);

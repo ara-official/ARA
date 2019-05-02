@@ -11,6 +11,7 @@ class PageContent extends React.Component{
     handleUpdate = (e) => {
         // e.preventDefault();
         // this.props.update(this.props.storeInfo.id);
+        this.props.setCount(this.props.count - 1);
         this.props.update(this.props.storeInfo.db_id);
     }
     render(){

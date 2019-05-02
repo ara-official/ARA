@@ -63,6 +63,7 @@ class MapAndListContainer extends React.Component{
                 
                 console.log('response.data.length : ' + response.data.length);
                 // module content
+                this.props.setCount(response.data.length);
                 if(response.data.length){
                     for (const {id, title, meeting_date, num_of_member} of response.data)
                     {
@@ -167,7 +168,7 @@ class MapAndListContainer extends React.Component{
     }
 
     render(){
-        const {input, region, information} = this.props;
+        const {input, region, information, count} = this.props;
         const {handleChange, handleKeyPress} = this;
         return(
             <div>
@@ -181,6 +182,8 @@ class MapAndListContainer extends React.Component{
                     handleChange={handleChange} 
 
                     handleKeyPress={handleKeyPress}
+
+                    count={count}
                 />
             </div>
        );
@@ -191,8 +194,9 @@ class MapAndListContainer extends React.Component{
 const mapStateToProps = ({search, content}) => ({
     input: search.get('input'),
     region: search.get('region'),
-
-    information: content.get('information')
+    information: content.get('information'),
+    
+    count: content.get('count')
 });
 
 // [2] props 값으로 넣어 줄 action을 정의
@@ -202,7 +206,9 @@ const mapDispatchToProps = (dispatch) => ({
     insertSearch: (text) => dispatch(searchActions.insert(text)),
 
     clear: () => dispatch(contentActions.clear()),
-    insertContent: (info) => dispatch(contentActions.insert(info))
+    insertContent: (info) => dispatch(contentActions.insert(info)),
+
+    setCount: (value) => dispatch(contentActions.setCount(value))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MapAndListContainer);

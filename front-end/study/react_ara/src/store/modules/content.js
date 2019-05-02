@@ -19,6 +19,8 @@ const UPDATE = 'content/UPDATE';
 const CLEAR = 'content/CLEAR';
 const REMOVE = 'content/DELETE';
 
+const SET_COUNT = 'content/SET_COUNT';
+
 // action
 export const setContentData = createAction(SET_CONTENT_DATA, inputInfo => inputInfo); // 두 번째 param: payloadCreator, 세 번째 param: metaCreator
     // CreateContent 에서 사용
@@ -28,9 +30,13 @@ export const update = createAction(UPDATE, id => id);
 export const clear = createAction(CLEAR);
 export const remove = createAction(REMOVE, id => id);
 
+export const setCount = createAction(SET_COUNT, value => value);
+
+
 let count = 0;
 const empty = List();
 const initialState = Map({
+    count: 0,
     info: {
         input__id: 0,
         input__db_id: 0,
@@ -167,5 +173,8 @@ export default handleActions({
         console.log('[REMOVE] id : ' + db_id);
         const id = state.get('information').findIndex(item => item.get('db_id') === db_id);
         return state.deleteIn(['information', id]);
+    },
+    [SET_COUNT]: (state, { payload: value }) => {
+        return state.set('count', value);
     }
 }, initialState);
