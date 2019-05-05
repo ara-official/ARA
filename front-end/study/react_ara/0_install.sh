@@ -13,3 +13,6 @@ yarn add cross-env --dev
 
 #[animate-on-scroll]()
 npm install react-animate-on-scroll
+
+# google login
+yarn add react-google-login

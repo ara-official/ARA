@@ -20,7 +20,7 @@ class PageContent extends React.Component{
             <div className="PageContent">
                 <div className="top">
                     <Link to="/MapAndList"><img id="backImage" alt='imsi_logo' src={backImage}/></Link>
-                    <div style={{marginLeft: "50px", marginTop: "10px"}}>[id] : {this.props.storeInfo.id}, [db_id] : {this.props.storeInfo.db_id}</div>
+                    <div style={{marginLeft: "50px"}}>[id] : {this.props.storeInfo.id}, [db_id] : {this.props.storeInfo.db_id}</div>
                 </div>
 
                 {/* <div className="middle">

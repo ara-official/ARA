@@ -29,8 +29,9 @@ class Start extends React.Component{
                         onChange={this.props.handleChange}
                         onKeyPress={this.props.handleKeyPress}
                     />
-                    <Link to="./Profile">
-                        <button id="searchButton">계정</button>
+                    {/* <Link to="./Profile"> */}
+                    <Link to="./Login">
+                        <button id="searchButton">로그인</button>
                     </Link>
                 </div>
                 {console.log('Start.js render() END')}

@@ -3,7 +3,8 @@ import '../../css/Global.css';
 import '../../css/FilterPeople.css';
 
 class FilterPeople extends React.Component{
-    handleUpdate = () => {
+    handleOnClick = (e) => {
+
     }
     render(){
         console.log('ⓙⓢ FilterPeople | render() | START');
