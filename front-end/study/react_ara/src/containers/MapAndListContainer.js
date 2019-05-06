@@ -144,16 +144,16 @@ class MapAndListContainer extends React.Component{
         console.log('[handleInsert] this.props.input : ' + this.props.input);
         console.log('[handleInsert] input : ' + input);
         // REST
-        if(this.props.input !== this.props.region)
-        {
+        // if(this.props.input !== this.props.region)
+        // {
             this.getListFromServer(input);
 
             this.props.insertSearch(input);
-        }
-        else
-        {
-            console.log('[동일한 요청입니다!!]');
-        }
+        // }
+        // else
+        // {
+        //     console.log('[동일한 요청입니다!!]');
+        // }
     }
 
     handleKeyPress = (e) => {
@@ -168,7 +168,7 @@ class MapAndListContainer extends React.Component{
     }
 
     render(){
-        const {input, region, information, count} = this.props;
+        const {input, region, information, count, setFilter, filter_a} = this.props;
         const {handleChange, handleKeyPress} = this;
         return(
             <div>
@@ -184,6 +184,12 @@ class MapAndListContainer extends React.Component{
                     handleKeyPress={handleKeyPress}
 
                     count={count}
+
+                    handleInsert={this.handleInsert}
+
+                    handleInsertSearch={this.props.insertSearch}
+
+                    setFilter={setFilter}
                 />
             </div>
        );
@@ -208,7 +214,9 @@ const mapDispatchToProps = (dispatch) => ({
     clear: () => dispatch(contentActions.clear()),
     insertContent: (info) => dispatch(contentActions.insert(info)),
 
-    setCount: (value) => dispatch(contentActions.setCount(value))
+    setCount: (value) => dispatch(contentActions.setCount(value)),
+
+    setFilter: (value) => dispatch(contentActions.setFilter(value))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MapAndListContainer);

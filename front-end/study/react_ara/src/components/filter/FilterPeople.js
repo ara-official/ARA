@@ -3,8 +3,13 @@ import '../../css/Global.css';
 import '../../css/FilterPeople.css';
 
 class FilterPeople extends React.Component{
-    handleOnClick = (e) => {
-
+    handleSetFilter = (e) => {
+        console.log('handleSetFilter : ' + e.target.value);
+        const tmp = {
+            id: 1,
+            value: e.target.value
+        }
+        this.props.setFilter(tmp);
     }
     render(){
         console.log('ⓙⓢ FilterPeople | render() | START');
@@ -16,7 +21,12 @@ class FilterPeople extends React.Component{
                     </div>
                     <div className="middle">
                         <div id="num_of_people">인원</div>
-                        <input id="num_of_people_input" type="number" placeholder="0"></input>
+                        <input 
+                            id="num_of_people_input" 
+                            type="number" 
+                            placeholder="0" 
+                            onChange={this.handleSetFilter}>
+                        </input>
                     </div>
                     <div className="bottom">
                         <button id="button" onClick={this.props.handleManyButtonClick}>

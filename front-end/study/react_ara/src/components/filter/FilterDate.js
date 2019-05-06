@@ -21,7 +21,22 @@ class FilterDate extends React.Component{
             startDate: date
         });
         console.log('Date is' + date);
+
+        const tmp = {
+            id: 0,
+            value: date
+        }
+        this.props.setFilter(tmp);
     }
+
+    // handleSetFilter = (e) => {
+    //     console.log('handleSetFilter : ' + e.target.value);
+    //     const tmp = {
+    //         id: 0,
+    //         value: e.target.value
+    //     }
+    //     this.props.setFilter(tmp);
+    // }
 
     render(){
         console.log('ⓙⓢ FilterDate | render() | START');

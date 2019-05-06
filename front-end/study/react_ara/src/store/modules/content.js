@@ -21,6 +21,8 @@ const REMOVE = 'content/DELETE';
 
 const SET_COUNT = 'content/SET_COUNT';
 
+const SET_FILTER = 'content/SET_FILTER';
+
 // action
 export const setContentData = createAction(SET_CONTENT_DATA, inputInfo => inputInfo); // 두 번째 param: payloadCreator, 세 번째 param: metaCreator
     // CreateContent 에서 사용
@@ -32,11 +34,15 @@ export const remove = createAction(REMOVE, id => id);
 
 export const setCount = createAction(SET_COUNT, value => value);
 
+export const setFilter = createAction(SET_FILTER, arr => arr);
 
 let count = 0;
 const empty = List();
 const initialState = Map({
     count: 0,
+    filter_a: 0,
+    filter_b: 0,
+    filter_c: 0,
     info: {
         input__id: 0,
         input__db_id: 0,
@@ -176,5 +182,21 @@ export default handleActions({
     },
     [SET_COUNT]: (state, { payload: value }) => {
         return state.set('count', value);
+    },
+    [SET_FILTER]: (state, { payload: arr}) => {
+        console.log('[SET_FILTER] arr : ' + arr.id + ', ' + arr.value);
+        if(arr.id === 0) // date
+        {
+            return state.set('filter_a', arr.value);
+        }
+        else if(arr.id === 1) // num_of_people
+        {
+            return state.set('filter_b', arr.value);
+        }
+        else if(arr.id === 2) // etc
+        {
+            return state.set('filter_c', arr.value);
+        }
+        
     }
 }, initialState);

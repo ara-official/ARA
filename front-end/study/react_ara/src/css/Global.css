@@ -80,7 +80,7 @@
 }
 
 .middle {
-    animation: slideDown 1 0.05s linear;
+    /* animation: slideDown 1 0.05s linear; */
     z-index: 3;
     display: flex;
     flex-direction: row;

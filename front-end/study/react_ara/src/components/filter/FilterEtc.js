@@ -3,6 +3,14 @@ import '../../css/Global.css';
 import '../../css/FilterEtc.css'
 
 class FilterEtc extends React.Component{
+    handleSetFilter = (e) => {
+        console.log('handleSetFilter : ' + e.target.value);
+        const tmp = {
+            id: 2,
+            value: e.target.value
+        }
+        this.props.setFilter(tmp);
+    }
     render(){
         console.log('ⓙⓢ FilterEtc | render() | START');
         return(
