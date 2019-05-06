@@ -30,7 +30,13 @@ class MapAndList extends Component {
     // this.props.handleInsertSearch(this.props.input); // 최초에 Enter 키 눌렸을 때 검색되게 하기 위함
   }
 
+  componentWillMount = () => {
+    // this.props.handleInsert(this.props.input);
+  }
 
+  componentWillUpdate = () => {
+    // this.props.handleInsert(this.props.input);
+  }
 
   handleManyButtonClick = (id, e) => {
     e.preventDefault();
@@ -91,7 +97,7 @@ class MapAndList extends Component {
                 {console.log('isTogglePeople : ' + this.state.isTogglePeople)}
                 {console.log('isToggleEtc    : ' + this.state.isToggleEtc)}
                 {this.state.isToggleDate && <FilterDate setFilter={this.props.setFilter} handleManyButtonClick={(e) => this.handleManyButtonClick(1, e)}/>}
-                {this.state.isTogglePeople && <FilterPeople setFilter={this.props.setFilter} handleManyButtonClick={(e) => this.handleManyButtonClick(2, e)}/>}
+                {this.state.isTogglePeople && <FilterPeople setFilter={this.props.setFilter} handleManyButtonClick={this.handleManyButtonClick}/>}
                 {this.state.isToggleEtc && <FilterEtc setFilter={this.props.setFilter} handleManyButtonClick={(e) => this.handleManyButtonClick(3, e)}/>}
               </div>
             }

@@ -53,8 +53,9 @@ class FilterDate extends React.Component{
                             placeholder="년/월/일"
                             selected={this.state.startDate}
                             onChange={this.handleChange}
+                            popperPlacement="bottom-end"
                         />
-                    </div>
+                        </div>
                     <div className="bottom">
                         <button id="button" onClick={this.props.handleManyButtonClick}>
                             결과 보기

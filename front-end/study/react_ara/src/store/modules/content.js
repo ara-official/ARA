@@ -40,9 +40,9 @@ let count = 0;
 const empty = List();
 const initialState = Map({
     count: 0,
-    filter_a: 0,
-    filter_b: 0,
-    filter_c: 0,
+    filter_a: '',
+    filter_b: '',
+    filter_c: '',
     info: {
         input__id: 0,
         input__db_id: 0,
@@ -187,14 +187,17 @@ export default handleActions({
         console.log('[SET_FILTER] arr : ' + arr.id + ', ' + arr.value);
         if(arr.id === 0) // date
         {
+            console.log('filter_a');
             return state.set('filter_a', arr.value);
         }
         else if(arr.id === 1) // num_of_people
         {
+            console.log('filter_b');
             return state.set('filter_b', arr.value);
         }
         else if(arr.id === 2) // etc
         {
+            console.log('filter_c');
             return state.set('filter_c', arr.value);
         }
         

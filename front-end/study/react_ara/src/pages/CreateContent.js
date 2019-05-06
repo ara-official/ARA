@@ -19,26 +19,23 @@ class CreateContent extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-          startDate: new Date()
+          startDate: new Date(),
+          title: '',
+          meeting_date: '',
+          min_num_of_member: 0,
+          max_num_of_member: 0,
+          content: ''
         };
         this.handleDateChange = this.handleDateChange.bind(this);
       }
-    state = {
-        startDate: new Date(),
-        title: '',
-        meeting_date: '',
-        min_num_of_member: 0,
-        max_num_of_member: 0,
-        content: ''
-    }
      
-    postNumber = (title, meeting_date, num_of_member) => {
-        console.log(title+meeting_date+num_of_member);
+    postNumber = (input__title, input__meeting_date, input__num_of_member) => {
+        console.log('debug!!!! : ' + input__title+input__meeting_date+input__num_of_member);
         axios.post('http://localhost:3005/api/v1/contents/', {
-            title: title,
-            meeting_date: meeting_date,
+            title: input__title,
+            meeting_date: '20',
             region: '경복궁',
-            num_of_people: num_of_member,
+            num_of_people: input__num_of_member,
             nick_name: '최*훈',
             phone_number: '0103493****',
             perpose: '관광, 기타',
@@ -62,7 +59,7 @@ class CreateContent extends React.Component{
     }
 
     handleChange = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         console.log('name : value = ' + e.target.name + ' : ' +e.target.value);
         this.setState({
             [e.target.name] : e.target.value
@@ -70,10 +67,11 @@ class CreateContent extends React.Component{
         console.log(this.state);
     }
 
-    handleInsert = (e) => {
+    handleOnClick = (e) => {
         // e.preventDefault();
-        this.postNumber(this.state.title, this.state.meeting_date, this.state.min_num_of_member);
         console.log("title : "+ this.state.title + " meeting_date : "+ this.state.meeting_date +"num_mem : "+ this.state.min_num_of_member);
+        
+        this.postNumber(this.state.title, this.state.meeting_date, this.state.min_num_of_member);
         // const info = {
         //     title: this.state.title,
         //     meeting_date: this.state.meeting_date,
@@ -108,7 +106,7 @@ class CreateContent extends React.Component{
                 <div className="bottom">
                     <input 
                         id="title" 
-                        name='title'
+                        name="title"
                         placeholder="제목 입력"
                         value={this.state.title}
                         onChange={handleChange}
@@ -170,7 +168,7 @@ class CreateContent extends React.Component{
                     <Link to="/MapAndList">
                     
 
-                        <button id="searchButton" onClick={this.handleInsert}>등록</button>
+                        <button id="searchButton" onClick={this.handleOnClick}>등록</button>
                     </Link>
                 </div>
                 {console.log('CreateContent.js render() END')}

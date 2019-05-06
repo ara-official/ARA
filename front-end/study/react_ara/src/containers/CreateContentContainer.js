@@ -32,7 +32,7 @@ class CreateContentContainer extends React.Component{
 }
 
 // [1] props 값으로 넣어 줄 state를 정의
-const mapStateToProps = ({content}) => ({
+const mapStateToProps = ({search, content}) => ({
 });
 
 // [2] props 값으로 넣어 줄 action을 정의
