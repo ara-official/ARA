@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom';
 
 
 // animate on scroll
-// import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 class MapAndList extends Component {
   constructor(props) {
@@ -47,7 +47,7 @@ class MapAndList extends Component {
       this.setState({isToggleEtc: false});
     }
     else if(id === 2)
-    { 
+    {
       this.setState({isToggleDate: false});
       this.setState(prevState => ({isTogglePeople: !prevState.isTogglePeople}));
       this.setState({isToggleEtc: false});
@@ -60,15 +60,15 @@ class MapAndList extends Component {
     }
   }
 
-  handleScroll = (e) => {
-    e.preventDefault();
-    console.log('handleScroll START');
-    let element = e.target;
-    if (element.scrollHeight - element.scrollTop === element.clientHeight) {
-      console.log('handleScroll');
-    }
-    console.log('handleScroll END');
-  }
+  // handleScroll = (e) => {
+  //   e.preventDefault();
+  //   console.log('handleScroll START');
+  //   let element = e.target;
+  //   if (element.scrollHeight - element.scrollTop === element.clientHeight) {
+  //     console.log('handleScroll');
+  //   }
+  //   console.log('handleScroll END');
+  // }
 
   render() {
     console.log('ⓙⓢ MapAndList.js | render() | START');
@@ -79,8 +79,8 @@ class MapAndList extends Component {
         <form className="MapAndList">
           <div className="top">
             <Link to="/"><img id="logo" alt='imsi_logo' src={logoImage}/></Link>
-            <input 
-              id="searchBar" 
+            <input
+              id="searchBar"
               placeholder="검색"
               value={this.props.input}
               onChange={this.props.handleChange}
@@ -103,23 +103,24 @@ class MapAndList extends Component {
             }
           </div>
 
-          {/* <ScrollAnimation className="middle" animateIn='fadeIn' animateOut='fadeOut' initiallyVisible={true} duration={1} 
+          <ScrollAnimation className="middle" animateIn='fadeIn' animateOut='fadeOut' duration={1}
+          // initiallyVisible={false} 
           // afterAnimatedIn={function afterAnimatedIn(v) {
           //   var t = "Animate In finished.\n";
           //   t += 'v.onScreen: ' + v.onScreen + '\n';
           //   t += 'v.inViewport: ' + v.inViewPort;
           //   alert(t);
           // }}
-          > */}
-          <div className="middle" onScroll={this.handleScroll}>
-              <button id="filter" name="date" onClick={(e) => this.handleManyButtonClick(1, e)}>날짜</button>
-              <button id="filter" name="number" onClick={(e) => this.handleManyButtonClick(2, e)}>인원</button>
-              <button id="filter" name="etc" onClick={(e) => this.handleManyButtonClick(3, e)}>필터</button>
-          </div>
-          {/* </ScrollAnimation> */}
+          >
+            {/* <div className="middle" onScroll={this.handleScroll}> */}
+                <button id="filter" name="date" onClick={(e) => this.handleManyButtonClick(1, e)}>날짜</button>
+                <button id="filter" name="number" onClick={(e) => this.handleManyButtonClick(2, e)}>인원</button>
+                <button id="filter" name="etc" onClick={(e) => this.handleManyButtonClick(3, e)}>필터</button>
+            {/* </div> */}
+          </ScrollAnimation>
 
           <div className="bottom">
-           
+
 
             <div className="bottom_back">
               <div id="alarmMsg">
@@ -142,9 +143,9 @@ class MapAndList extends Component {
               }
               <div id="contentList">
                 {console.log('this.props.count : ' + this.props.count)}
-                
-                <ContentList 
-                  information={this.props.information} 
+
+                <ContentList
+                  information={this.props.information}
                   region={this.props.region}
                 />
               </div>

@@ -57,9 +57,9 @@ class MapAndListContainer extends React.Component{
     getListFromServer = (region) => {
         console.log('MapAndListContainer.js');
         console.log('getListFromServer - region : ' + region + ', filter_b : ' + this.props.filter_b);
-        if(this.props.filter_b === '')
+        if(this.props.filter_b === '' || this.props.filter_b === '0')
         {
-            const str = 'http://localhost:3005/api/v1/contents/' + region;
+            const str = 'http://172.20.10.3:3005/api/v1/contents/' + region;
             return axios.get(str)
             .then( response => {
                 console.log(response); 
@@ -141,7 +141,7 @@ class MapAndListContainer extends React.Component{
         }
         else
         {
-            const str = 'http://localhost:3005/api/v1/contents/' + region + '&' + this.props.filter_b;
+            const str = 'http://172.20.10.3:3005/api/v1/contents/' + region + '&' + this.props.filter_b;
             return axios.get(str)
             .then( response => {
                 console.log(response); 
