@@ -2,7 +2,7 @@
 import { createAction, handleActions } from 'redux-actions';
 import { Map } from 'immutable';
 
-// axios
+// axios`
 // import axios from 'axios';
 
 // type

@@ -6,13 +6,23 @@ import { Link } from 'react-router-dom';
 
 import '../css/Global.css';
 import '../css/CreateContent.css';
+import axios from 'axios';
 
 import DatePicker, { registerLocale } from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import enGB from 'date-fns/locale/en-GB';
 registerLocale('en-GB', enGB);
 
+
+
 class CreateContent extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+          startDate: new Date()
+        };
+        this.handleDateChange = this.handleDateChange.bind(this);
+      }
     state = {
         startDate: new Date(),
         title: '',
@@ -22,6 +32,28 @@ class CreateContent extends React.Component{
         content: ''
     }
      
+    postNumber = (title, meeting_date, num_of_member) => {
+        console.log(title+meeting_date+num_of_member);
+        axios.post('http://localhost:3005/api/v1/contents/', {
+            title: title,
+            meeting_date: meeting_date,
+            region: '경복궁',
+            num_of_people: num_of_member,
+            nick_name: '최*훈',
+            phone_number: '0103493****',
+            perpose: '관광, 기타',
+            image_path: 'https://github.com/ara-official/ARA/blob/master/front-end/img/seoul.jpg?raw=true'
+        // axios.post('https://reqres.in/api/users', {
+        //     title: "POST",
+        //     data: {
+        //         name: "paul rudd",
+        //         movies: ["I Love You Man", "Role Models"]
+        //     }
+        })
+        .then( response => { console.log(response) } )
+        .catch( response => { console.log(response) } );
+    };
+
     handleDateChange(date) {
         this.setState({
             startDate: date
@@ -40,19 +72,21 @@ class CreateContent extends React.Component{
 
     handleInsert = (e) => {
         // e.preventDefault();
-        const info = {
-            title: this.state.title,
-            meeting_date: this.state.meeting_date,
-            region: '꾸꾸집',
-            num_of_people: 4,
-            nick_name: '꾸꾸',
-            phone_number: '0103493****',
-            perpose: this.state.content,
-            image_path: 'https://avatars1.githubusercontent.com/u/47748609?s=200&v=4',
-            closed: false
-        };
-        console.log('info : ' + info);
-        this.props.insert(info);
+        this.postNumber(this.state.title, this.state.meeting_date, this.state.min_num_of_member);
+        console.log("title : "+ this.state.title + " meeting_date : "+ this.state.meeting_date +"num_mem : "+ this.state.min_num_of_member);
+        // const info = {
+        //     title: this.state.title,
+        //     meeting_date: this.state.meeting_date,
+        //     region: '꾸꾸집',
+        //     num_of_people: 4,
+        //     nick_name: '꾸꾸',
+        //     phone_number: '0103493****',
+        //     perpose: this.state.content,
+        //     image_path: 'https://avatars1.githubusercontent.com/u/47748609?s=200&v=4',
+        //     closed: false
+        // };
+        //console.log('info : ' + info);
+        //this.props.insert(info);
     }
 
     render(){
@@ -84,6 +118,7 @@ class CreateContent extends React.Component{
                         id="meeting_date"
                         placeholder="날짜 입력"
                         selected={this.state.startDate}
+                        onSelect={this.handleSelect} 
                         onChange={this.handleDateChange}
                         popperPlacement="bottom-end"
                         popperModifiers={{
@@ -97,12 +132,14 @@ class CreateContent extends React.Component{
                               boundariesElement: 'viewport'
                             }
                           }}
+                          
                         showTimeSelect
                         timeFormat="HH:mm"
                         timeIntervals={15}
                         dateFormat="MMMM d, yyyy h:mm aa"
                         timeCaption="time"
-                    />
+        
+                        />
                     
                     <input 
                         id="min_num_of_member"
@@ -131,6 +168,8 @@ class CreateContent extends React.Component{
                     />
                     
                     <Link to="/MapAndList">
+                    
+
                         <button id="searchButton" onClick={this.handleInsert}>등록</button>
                     </Link>
                 </div>
