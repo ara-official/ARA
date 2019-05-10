@@ -11,3 +11,6 @@ $ ./0_1_add_redux.sh
 $ ./1_start.sh
 </code></pre>
 
+
+### 20190511 frontend architecture
+<img src="https://github.com/ara-official/ARA/blob/master/front-end/img/20190511_frontend_architecture.png?raw=true"/>
