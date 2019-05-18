@@ -94,7 +94,7 @@ class CreateContent extends React.Component{
         return (
             <div className="CreateContent">
                 <div className="top">
-                    <Link to="/">
+                    <Link to="/MapAndList">
                         <img id="logo" alt='imsi_logo' src={logoImage}/>
                     </Link>
                     <div id="pageName">
@@ -104,6 +104,8 @@ class CreateContent extends React.Component{
                 {/* <div className="middle">
                 </div> */}
                 <div className="bottom">
+                <div>
+                    <text id="title_txt">제목</text>
                     <input 
                         id="title" 
                         name="title"
@@ -111,7 +113,9 @@ class CreateContent extends React.Component{
                         value={this.state.title}
                         onChange={handleChange}
                     />
-
+                </div>
+                <div>
+                <text id="meeting_date_txt">약속 날짜</text>
                     <DatePicker
                         id="meeting_date"
                         placeholder="날짜 입력"
@@ -138,7 +142,9 @@ class CreateContent extends React.Component{
                         timeCaption="time"
         
                         />
-                    
+                        </div>
+                        <div>
+                        <text id="min_num_of_member_txt">최소 인원</text>
                     <input 
                         id="min_num_of_member"
                         name='min_num_of_member'
@@ -147,6 +153,9 @@ class CreateContent extends React.Component{
                         value={this.state.min_num_of_member}
                         onChange={handleChange}
                     />
+                    </div>
+                    <div>
+                    <text id="max_num_of_member_txt">최대 인원</text>
                     <input 
                         id="max_num_of_member"
                         name='max_num_of_member'
@@ -155,7 +164,9 @@ class CreateContent extends React.Component{
                         value={this.state.max_num_of_member}
                         onChange={handleChange}
                     />
-                
+                </div>
+                <div>
+                <text id="content_txt">내용</text>
                     <textarea 
                         id="content" 
                         name='content'
@@ -164,7 +175,7 @@ class CreateContent extends React.Component{
                         value={this.state.content}
                         onChange={handleChange}
                     />
-                    
+                    </div>
                     <Link to="/MapAndList">
                     
 

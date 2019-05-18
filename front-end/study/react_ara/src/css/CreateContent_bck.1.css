@@ -1,0 +1,124 @@
+.CreateContent {
+    /* border: 3px solid black; */
+    /* padding: 8px; */
+    /* margin: 8px; */
+
+    /* background-image: url("../Shizuoka__wasabi_icecream.jpeg"); */
+    /* background-image: url("cafe.jpeg"); */
+    /* background-size: 100vw; */
+    /* background-color: white */
+    width: 100vw;
+}
+
+.CreateContent .top #pageName {
+    position: fixed;
+    top: 25px;
+    left: 50px;
+    
+    font-size: 14px;
+}
+
+.CreateContent .bottom {
+    height: 100vmax;
+    margin-top: 80px;
+    background-color: rgb(255, 230, 0);
+}
+
+.CreateContent .bottom #title {
+    height: 38px;
+    width: 65vw;
+    padding: 6px;
+    padding-left: 10px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
+
+.CreateContent .bottom #meeting_date {
+    height: 38px;
+    width: 30vw;
+    padding: 6px;
+    padding-left: 10px;
+
+    
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
+.CreateContent .bottom #min_num_of_member {
+    height: 38px;
+    width: 30vw;
+    padding: 6px;
+    padding-left: 10px;
+
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
+.CreateContent .bottom #max_num_of_member {
+    height: 38px;
+    width: 30vw;
+    padding: 6px;
+    padding-left: 10px;
+
+
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
+.CreateContent .bottom #content {
+    height: 80px;
+    width: 65vw;
+    padding: 6px;
+    padding-left: 10px;
+
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
+.CreateContent .bottom #sns_connect {
+    height: 38px;
+    width: 65vw;
+    padding: 6px;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 2px 2px gainsboro;
+}
+
+.CreateContent .bottom #searchButton {
+    height: 52px;
+    width: 78px;
+
+    /* margin-right: 8px; */
+    
+    font-size: 20px;
+
+    background-color: white; /*OS : windows*/
+
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    box-shadow: 0px 1px 2px gainsboro;
+}
