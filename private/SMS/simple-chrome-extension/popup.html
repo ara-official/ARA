@@ -7,43 +7,47 @@
     body {
       width: 500px;
     }
+
     .top {
       background-color: black;
       color: white;
       border-bottom: 1px solid black;
     }
-    .middle{
+    .middle {
       width: 100%;
-      font-size: 15px;
+      font-size: 20px;
+
       border-bottom: 1px solid black;
     }
     .middle #user {
       width: 100%;
       font-size: 20px;
     }
-    .bottom{
+    .bottom {
       font-size: 18px;
+    }
+    .bottom {
+      width: 100%;
     }
   </style>
 </head>
 
 <body>
   <div class="top">
-    현재 page 에서 {the|is|was|of} 비율
+    현재 page 에서 <text id="user_mirror"></text>  비율
   </div>
 
   <div class="middle">
     <textarea id="user" rows="3" placeholder="입력하세요."></textarea>
+    [Result] <text id="result"></text>
   </div>
 
   <div class="bottom">
-    <h2>[Result]</h2>
-    <text id="result"></text> <br/>
-    <h2>[bodyText]</h2>
-     <text id="result_body"></text>
+    <br /><br />
+    <text id="result_body"></text>
   </div>
 
-  <script src="popup.js"></script>
+  <script src="popup.js" charset="UTF-8"></script>
 </body>
 
 </html>

@@ -4,9 +4,7 @@
   "description": "please input keyword that you want to search.",
   "permissions": [
     "activeTab" 
-    // , "tabs"
-    // , "declarativeContent"
-    // , "storage"
+    , "storage"
   ],
   "background": {
     "scripts": ["background.js"],
