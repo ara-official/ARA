@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style type="text/css">
+    body {
+      width: 500px;
+    }
+    .top {
+      background-color: black;
+      color: white;
+      border-bottom: 1px solid black;
+    }
+    .middle{
+      width: 100%;
+      font-size: 15px;
+      border-bottom: 1px solid black;
+    }
+    .middle #user {
+      width: 100%;
+      font-size: 20px;
+    }
+    .bottom{
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">
+    현재 page 에서 {the|is|was|of} 비율
+  </div>
+
+  <div class="middle">
+    <textarea id="user" rows="3" placeholder="입력하세요."></textarea>
+  </div>
+
+  <div class="bottom">
+    <h2>[Result]</h2>
+    <text id="result"></text> <br/>
+    <h2>[bodyText]</h2>
+     <text id="result_body"></text>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
