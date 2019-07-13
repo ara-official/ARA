@@ -20,6 +20,15 @@
       "128": "images/get_started128.png"
     }
   },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Opens popup.html"
+    }
+  },
   "options_page" : "options.html",
   "icons": {
     "16": "images/get_started16.png",

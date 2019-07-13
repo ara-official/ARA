@@ -5,6 +5,7 @@ import { PageContent } from '../pages';
 // axios
 import axios from 'axios';
 
+import * as searchActions from '../store/modules/search';
 import * as contentActions from '../store/modules/content';
 
 class PageContentContainer extends React.Component{
@@ -22,7 +23,7 @@ class PageContentContainer extends React.Component{
     // }
     
     deleteItemFromServer = (region) => {
-        return axios.delete('http://172.20.10.3:3005/api/v1/contents/' + region)
+        return axios.delete('http://localhost:3005/api/v1/contents/' + region)
         .then( response => {
                 console.log(response); 
                 // module content
@@ -40,9 +41,11 @@ class PageContentContainer extends React.Component{
 
     handleUpdate = (id) => {
         console.log('id : ' + id);
-        this.props.remove(id);
+        // this.props.remove(id);
         this.deleteItemFromServer(id);
     }
+
+
     render(){
         const {storeInfo} = this.props;
         return(
@@ -53,6 +56,7 @@ class PageContentContainer extends React.Component{
 
                     // function
                     update={this.handleUpdate}
+
 
                     count={this.props.count}
                     setCount={this.props.setCount}
@@ -66,15 +70,21 @@ class PageContentContainer extends React.Component{
 const mapStateToProps = ({content}) => ({
     storeInfo: content.get('info'),
     information: content.get('information'),
-    count: content.get('count')
+    count: content.get('count'),
+
+    filter_b: content.get('filter_b')
 });
 
 // [2] props 값으로 넣어 줄 action을 정의
 const mapDispatchToProps = (dispatch) => ({
+    insertSearch: (value) => dispatch(searchActions.insert(value)),
+
     // setContentData: (info) => dispatch(contentActions.setContentData(info)),
     update: (id) => dispatch(contentActions.update(id)),
     remove: (id) => dispatch(contentActions.remove(id)),
-    setCount: (value) => dispatch(contentActions.setCount(value))
+    setCount: (value) => dispatch(contentActions.setCount(value)),
+
+    insertContent: (info) => dispatch(contentActions.insert(info))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PageContentContainer);

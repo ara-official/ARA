@@ -16,3 +16,6 @@ npm install react-animate-on-scroll
 
 # google login
 yarn add react-google-login
+
+# serve
+npm install -g serve

@@ -10,9 +10,9 @@ import '../css/PageContent.css';
 class PageContent extends React.Component{
     handleUpdate = (e) => {
         // e.preventDefault();
-        // this.props.update(this.props.storeInfo.id);
         this.props.setCount(this.props.count - 1);
         this.props.update(this.props.storeInfo.db_id);
+        // this.props.remove();
     }
     render(){
         console.log('ⓙⓢ PageContent render() START');
@@ -51,7 +51,7 @@ class PageContent extends React.Component{
                             <div id="num_of_people">인원 : {this.props.storeInfo.num_of_people}</div>
                             <Link to="/MapAndList">
                                 <button id="button" onClick={this.handleUpdate}>
-                                    확정하기
+                                    정하기
                                 </button>
                             </Link>
                         </div>

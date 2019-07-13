@@ -26,7 +26,7 @@ class MapAndList extends Component {
   }
 
   componentDidMount = () => {
-    this.props.handleInsert(this.props.input);
+    // this.props.handleInsert(this.props.input);
     // this.props.handleInsertSearch(this.props.input); // 최초에 Enter 키 눌렸을 때 검색되게 하기 위함
   }
 
@@ -103,7 +103,7 @@ class MapAndList extends Component {
             }
           </div>
 
-          <ScrollAnimation className="middle" animateIn='fadeIn' animateOut='fadeOut' duration={1}
+          {/* <ScrollAnimation className="middle" animateIn='fadeIn' animateOut='fadeOut' duration={1}
           // initiallyVisible={false} 
           // afterAnimatedIn={function afterAnimatedIn(v) {
           //   var t = "Animate In finished.\n";
@@ -111,13 +111,13 @@ class MapAndList extends Component {
           //   t += 'v.inViewport: ' + v.inViewPort;
           //   alert(t);
           // }}
-          >
-            {/* <div className="middle" onScroll={this.handleScroll}> */}
+          > */}
+            <div className="middle" onScroll={this.handleScroll}>
                 <button id="filter" name="date" onClick={(e) => this.handleManyButtonClick(1, e)}>날짜</button>
                 <button id="filter" name="number" onClick={(e) => this.handleManyButtonClick(2, e)}>인원</button>
                 <button id="filter" name="etc" onClick={(e) => this.handleManyButtonClick(3, e)}>필터</button>
-            {/* </div> */}
-          </ScrollAnimation>
+            </div>
+          {/* </ScrollAnimation> */}
 
           <div className="bottom">
 

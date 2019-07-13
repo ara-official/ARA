@@ -34,18 +34,38 @@ class MapAndListContainer extends React.Component{
     //     console.log('MapAndListContainer - componentWillReceiveProps END');
     // }
 
-    componentDidMount() {
-        // store.subscribe(() => this.forceUpdate());
+    state = {
+        bTest: false
     }
-      
-    shouldComponentUpdate() {
-        console.log('shouldComponentUpdate()');
+
+    componentDidMount() {
+        console.log('componentDidMount() : ' + this.state.bTest);
+        if(this.state.bTest === false)
+        {
+            this.handleInsert('');
+            this.setState({
+                bTest: true
+            })
+        }
+    }
+
+    shouldComponentUpdate = () => {
+        console.log('shouldComponentUpdate() : ' + this.state.bTest);
         // this.handleInsert('');
         return true;
     }
 
+    componentDidUpdate() {
+        console.log('componentDidUpdate() : ' + this.state.bTest);
+
+    }
+
     componentWillReceiveProps() {
-        console.log('!!!!!!!!!!!! componentWillReceiveProps()');
+        console.log('componentWillReceiveProps() : ' + this.state.bTest);
+    } 
+
+    componentWillUpdate() {
+
     }
 
     handleChange = (e) => {
@@ -59,7 +79,7 @@ class MapAndListContainer extends React.Component{
         console.log('getListFromServer - region : ' + region + ', filter_b : ' + this.props.filter_b);
         if(this.props.filter_b === '' || this.props.filter_b === '0')
         {
-            const str = 'http://172.20.10.3:3005/api/v1/contents/' + region;
+            const str = 'http://localhost:3005/api/v1/contents/' + region;
             return axios.get(str)
             .then( response => {
                 console.log(response); 
@@ -141,7 +161,7 @@ class MapAndListContainer extends React.Component{
         }
         else
         {
-            const str = 'http://172.20.10.3:3005/api/v1/contents/' + region + '&' + this.props.filter_b;
+            const str = 'http://localhost:3005/api/v1/contents/' + region + '&' + this.props.filter_b;
             return axios.get(str)
             .then( response => {
                 console.log(response); 

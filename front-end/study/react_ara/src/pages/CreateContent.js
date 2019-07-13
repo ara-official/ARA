@@ -31,7 +31,7 @@ class CreateContent extends React.Component{
      
     postNumber = (input__title, input__meeting_date, input__num_of_member) => {
         console.log('debug!!!! : ' + input__title+input__meeting_date+input__num_of_member);
-        axios.post('http://172.20.10.3:3005/api/v1/contents/', {
+        axios.post('http://localhost:3005/api/v1/contents/', {
             title: input__title,
             meeting_date: '20',
             region: '경복궁',
